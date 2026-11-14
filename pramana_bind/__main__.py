@@ -15,7 +15,9 @@ def main(argv: list[str] | None = None) -> int:
     k = sub.add_parser("keygen"); k.add_argument("key", type=Path)
     s = sub.add_parser("sign"); s.add_argument("ledger", type=Path); s.add_argument("key", type=Path)
     a = sub.add_parser("audit"); a.add_argument("ledger", type=Path)
-    a.add_argument("--pubkey"); a.add_argument("--json", action="store_true")
+    a.add_argument("--pubkey", help="trusted signer key (base64), obtained out-of-band")
+    a.add_argument("--checkpoint", help="SEQ:HASH of a head you saw earlier (detects rollback)")
+    a.add_argument("--json", action="store_true")
     x = sub.add_parser("crosscheck"); x.add_argument("--per-class", type=int, default=100)
     args = ap.parse_args(argv)
 
@@ -29,14 +31,21 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(r, indent=1))
         return 0 if not r["disagreements"] else 1
     else:
-        rep = c.audit(args.ledger, args.pubkey)
+        cp = None
+        if args.checkpoint:
+            n, h = args.checkpoint.split(":", 1)
+            cp = (int(n), h)
+        rep = c.audit(args.ledger, args.pubkey, checkpoint=cp)
         if args.json:
             print(json.dumps(rep.to_dict(), indent=1))
         else:
             for st in rep.steps:
                 where = f" seq {st.seq}" if st.seq is not None else ""
                 print(f"{'PASS' if st.ok else 'FAIL'}  {st.step}{where}  {st.detail}")
-            print(f"{'AUDIT PASSED' if rep.ok else 'AUDIT FAILED'}: {rep.n_certificates} certificates, {rep.n_events} events")
+            print(f"{'INTEGRITY AND REPLAY CHECKS PASSED' if rep.ok else 'AUDIT FAILED'}: "
+                  f"{rep.n_certificates} certificates, {rep.n_events} events")
+            if rep.ok:
+                print("This does not assert that the extracted interpretation of the source is correct.")
         return 0 if rep.ok else 1
     return 0
 

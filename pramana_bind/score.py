@@ -1,6 +1,9 @@
 """Per-citation binding score PBS = G * V * D in [0, 1].
 
-For ranking and thresholds only; the categorical verdict stays strict.
+EXPERIMENTAL. PBS is an uncalibrated ranking heuristic. It is not a
+probability and 0.8 does not mean "80% confident". It moves when the extractor
+lists more or fewer facts (see tests/test_semantic_boundary.py), so outcome
+metrics are computed from the support status, never from PBS.
 """
 from __future__ import annotations
 

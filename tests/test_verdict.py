@@ -9,8 +9,11 @@ from pramana_bind.world import build_world, counts
 P, A = Polarity.present, Polarity.absent
 
 
+_n = iter(range(10**6))
+
+
 def fact(prop, pol=P, located=True, **kw):
-    return Fact(prop=prop, polarity=pol, quote="q", located=located, **kw)
+    return Fact(prop=prop, polarity=pol, quote=f"q{next(_n)}", located=located, **kw)
 
 
 def av(upanaya=fact("H"), loci=(), mention=None):

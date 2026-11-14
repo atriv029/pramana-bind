@@ -2,6 +2,11 @@
 
 Only located quotes write cells. Silence is ``unknown``, not deviation: this
 is the open-world departure from nyaya_validity.derive_verdict.
+
+Independence: two loci whose S-evidence is the same span of text are one
+observation, not two. Corroboration and deviation are counted over distinct
+evidence, and a "locus" that merely re-quotes the subject's own statement is
+not a corroborating example.
 """
 from __future__ import annotations
 
@@ -11,6 +16,7 @@ from typing import Iterable, Optional
 from .schema import (
     HETU,
     PAKSA,
+    SADHYA,
     Avayava,
     Cell,
     Defeater,
@@ -19,6 +25,14 @@ from .schema import (
     Resolution,
     Source,
 )
+
+Span = tuple  # (source_id, start, end) or (source_id, normalised quote) when ungrounded
+
+
+def span_of(f: Fact) -> Span:
+    if f.start is not None:
+        return (f.source_id, f.start, f.end)
+    return (f.source_id, " ".join(f.quote.split()))
 
 
 @dataclass
@@ -32,8 +46,9 @@ class World3:
     partial: set[tuple[str, str]] = field(default_factory=set)
     # cells with located quotes on both sides; held at unknown and reported
     conflicts: set[tuple[str, str]] = field(default_factory=set)
+    evidence: dict[tuple[str, str], frozenset] = field(default_factory=dict)
     defeaters: list[Defeater] = field(default_factory=list)  # located only
-    # G sub-score bookkeeping over the premise facts the extractor proposed
+    # G sub-score bookkeeping over the distinct premise facts proposed
     weight_total: float = 0.0
     weight_located: float = 0.0
 
@@ -42,9 +57,6 @@ class World3:
 
     def loci(self) -> list[str]:
         return sorted({l for l, _ in self.cells})
-
-    def has_unknown(self, props: Iterable[str]) -> bool:
-        return any(self.get(l, p) is Cell.unknown for l in self.loci() for p in props)
 
 
 def _premise_facts(av: Avayava, paksa: str) -> list[tuple[str, Fact]]:
@@ -67,15 +79,23 @@ def build_world(
     w = World3(paksa=paksa, resolution=src.resolution, cited_rank=src.authority_rank)
 
     seen: dict[tuple[str, str], set[Polarity]] = {}
+    ev: dict[tuple[str, str], set] = {}
     full_present: set[tuple[str, str]] = set()
     part_present: set[tuple[str, str]] = set()
+    counted: set[tuple] = set()
     for locus_id, fact in _premise_facts(avayava, paksa):
-        w.weight_total += fact.weight
+        # a fact repeated verbatim (same property, polarity and words) is one fact
+        dedupe = (fact.prop, fact.polarity, fact.source_id, " ".join(fact.quote.split()))
+        if dedupe not in counted:
+            counted.add(dedupe)
+            w.weight_total += fact.weight
+            if fact.located:
+                w.weight_located += fact.weight
         if not fact.located:
             continue
-        w.weight_located += fact.weight
         key = (locus_id, fact.prop)
         seen.setdefault(key, set()).add(fact.polarity)
+        ev.setdefault(key, set()).add(span_of(fact))
         if fact.polarity is Polarity.present:
             (part_present if fact.scope == "part" else full_present).add(key)
         if locus_id == paksa and fact.source_id == "T":
@@ -87,6 +107,7 @@ def build_world(
             w.cells[key] = Cell.unknown
         else:
             w.cells[key] = Cell(next(iter(pols)).value)
+        w.evidence[key] = frozenset(ev[key])
     w.partial = {k for k in part_present - full_present if w.cells.get(k) is Cell.present}
 
     mention = avayava.pratijna.paksa_mention
@@ -97,11 +118,29 @@ def build_world(
     return w
 
 
-def counts(w: World3, hetu: str = HETU, sadhya: str = "S") -> dict[str, int]:
-    """n_plus (sapaksa), n_minus (vipaksa where H strays), and the number of
-    H-loci whose S cell is known."""
-    h_plus = [l for l in w.loci() if w.get(l, hetu) is Cell.present]
-    n_plus = sum(1 for l in h_plus if l != w.paksa and w.get(l, sadhya) is Cell.present)
-    n_minus = sum(1 for l in h_plus if w.get(l, sadhya) is Cell.absent)
-    known = sum(1 for l in h_plus if w.get(l, sadhya) is not Cell.unknown)
-    return {"n_plus": n_plus, "n_minus": n_minus, "known": known}
+def counts(w: World3, hetu: str = HETU, sadhya: str = SADHYA) -> dict[str, int]:
+    """n_plus (sapaksa), n_minus (deviating), and the number of H-loci whose S
+    cell is known -- each counted over DISTINCT S-evidence, so the same passage
+    filed under two locus names is one observation. A locus whose S-evidence is
+    the subject's own is the subject, not a corroborating example."""
+    p_ev = w.evidence.get((w.paksa, sadhya), frozenset())
+    groups: dict[tuple, str] = {}  # (cell, evidence) -> representative locus
+    for l in w.loci():
+        if w.get(l, hetu) is not Cell.present:
+            continue
+        cell = w.get(l, sadhya)
+        if cell is Cell.unknown:
+            continue
+        e = w.evidence.get((l, sadhya), frozenset())
+        is_p = l == w.paksa or (e and e == p_ev)
+        key = ("p",) if is_p else (cell, e or l)
+        if is_p and l != w.paksa and ("p",) in groups:
+            continue
+        groups.setdefault(key, l if not is_p else w.paksa)
+    n_plus = sum(1 for k in groups if k != ("p",) and k[0] is Cell.present)
+    n_minus = sum(1 for k in groups if k != ("p",) and k[0] is Cell.absent)
+    p_known = w.get(w.paksa, hetu) is Cell.present and w.get(w.paksa, sadhya) is not Cell.unknown
+    if p_known and w.get(w.paksa, sadhya) is Cell.absent:
+        n_minus += 1
+    return {"n_plus": n_plus, "n_minus": n_minus, "known": n_plus + n_minus + (
+        1 if p_known and w.get(w.paksa, sadhya) is Cell.present else 0)}

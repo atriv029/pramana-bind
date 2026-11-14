@@ -10,6 +10,9 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
+SCHEMA_VERSION = "2"
+RULES_VERSION = "R0-R8+status/2"
+
 HETU = "H"
 SADHYA = "S"
 PAKSA = "p"
@@ -50,6 +53,16 @@ class Verdict(str, Enum):
     uncorroborated = "uncorroborated"  # aprasiddha
 
 
+class SupportStatus(str, Enum):
+    """The reader-facing outcome. Distinct from the Nyaya verdict: 'valid' under
+    the finite-world rules (R8) is NOT by itself 'supported'."""
+
+    supported = "supported"
+    not_established = "not_established"
+    contradicted = "contradicted"
+    unresolved = "unresolved"
+
+
 class AsiddhaSubtype(str, Enum):
     asraya = "asraya"  # R1: the subject is not identifiable in the source
     svarupa = "svarupa"  # R2: the source does not put H at p
@@ -72,6 +85,9 @@ class Quote(BaseModel):
     end: Optional[int] = None
     offsets_source: Optional[Literal["system"]] = None
     located: bool = False
+    # Derived by grounding, never by the model:
+    match: Optional[Literal["exact", "whitespace_collapsed", "ungrounded"]] = None
+    flags: list[str] = Field(default_factory=list)  # quote-context cues, see ground.py
 
 
 class Fact(Quote):
@@ -82,6 +98,19 @@ class Fact(Quote):
     # judgement is not.
     scope: Literal["full", "part"] = "full"
     weight: float = 1.0  # w_i in the G sub-score
+    # Strength of the SOURCE statement as the extractor reads it (testimony).
+    # Compared mechanically with the claim's quantifier/modality.
+    quantifier: Optional[Quantifier] = None
+    modality: Optional[Modality] = None
+
+
+class Condition(Quote):
+    """A qualification the source attaches to the statement that the claim
+    leaves out (time limit, precondition, exception). Extractor testimony;
+    only the quote is checked."""
+
+    kind: Literal["temporal", "condition", "exception", "other"] = "other"
+    text: str = ""
 
 
 class Locus(BaseModel):
@@ -113,6 +142,8 @@ class Nigamana(BaseModel):
     verdict: Verdict
     subtype: Optional[AsiddhaSubtype] = None
     rule: str
+    status: SupportStatus = SupportStatus.unresolved
+    reasons: list[str] = Field(default_factory=list)
     pbs: dict[str, float] = Field(default_factory=dict)
 
 
@@ -121,6 +152,7 @@ class Avayava(BaseModel):
     hetu: Hetu
     udaharana: Udaharana = Field(default_factory=Udaharana)
     upanaya: Optional[Fact] = None  # "H holds of p, in this source"
+    conditions: list[Condition] = Field(default_factory=list)
     nigamana: Optional[Nigamana] = None  # derived, never extracted
 
 
