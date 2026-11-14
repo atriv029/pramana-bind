@@ -1,0 +1,13 @@
+$ python -m pramana_bind audit ledger/ledger.jsonl --pubkey <trusted key>
+PASS  hash_chain  6 events, head ce546f6519de
+PASS  signature seq 5  head seq 5 signed by pinned key 3FJX0QD0dpy+oqSF...
+PASS  certificate_id seq 1  
+This does not assert that the extracted interpretation of the source is correct.
+
+$ # change two words in the third ledger line, then audit again
+FAIL  hash_chain seq 2  this_hash mismatch
+AUDIT FAILED: 0 certificates, 2 events
+
+$ # audit without a separately obtained key
+FAIL  signature seq 5  no trusted public key supplied: the key inside the bundle cannot vouch for itself (pass --pubkey)
+AUDIT FAILED: 5 certificates, 6 events

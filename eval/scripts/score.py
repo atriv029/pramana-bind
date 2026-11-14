@@ -126,7 +126,7 @@ for kind in ("direct", "taxonomy"):
 cost = {}
 for sysname in sorted({c["tag"]["system"] for c in C}):
     cs = [c for c in C if c["tag"]["system"] == sysname]
-    ok = [c for c in cs if c.get("ok")]
+    ok = [c for c in cs if c.get("ok")] or [{"latency_s": 0, "input_tokens": 0, "output_tokens": 0}]
     cost[sysname] = {"calls": len(cs), "failed_calls": len(cs) - len(ok), "retried_calls": sum(c["attempts"] > 1 for c in cs),
                      "mean_latency_s": round(sum(c["latency_s"] for c in ok) / len(ok), 2),
                      "mean_input_tokens": round(sum(c["input_tokens"] for c in ok) / len(ok)),

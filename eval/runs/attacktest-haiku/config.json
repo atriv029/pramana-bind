@@ -1,0 +1,22 @@
+{
+ "model": {
+  "provider": "anthropic (first-party, via Claude Code CLI headless mode)",
+  "model": "claude-haiku-5-5",
+  "system_prompt": "You are a careful analyst. Follow the user's instructions exactly.",
+  "tools": "disabled",
+  "temperature": "provider default (not settable through this interface)",
+  "max_output_tokens": "provider default",
+  "response_format": "free text; JSON object parsed by caller",
+  "retries": 2,
+  "timeout_s": 180
+ },
+ "runs": 3,
+ "items_file": "eval/data/attack_test.jsonl",
+ "n_items": 23,
+ "prompt_sha256": {
+  "extract": "98cb5f7ca0eb0e317bf4cac5536973344a61b9ef578ec99481fb93b653162b65",
+  "direct": "7ccd237e59cbf4599192bb54574e7376177cde8ba78602d825b69d41a850d0bc",
+  "taxonomy": "38f276b2056fa719903022e6bd2f320988cabdbb19f2491aebbf25b15c30f3e6"
+ },
+ "started": "2026-11-14T12:11:41Z"
+}

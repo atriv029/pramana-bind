@@ -1,0 +1,3 @@
+According to the Johns Hopkins University of Medicine COVID-19 dashboard, there have been 3,353,056 recoveries over 8,406,718 cases in the US as of October 23. This makes for a case recovery rate of 39.88%. Globally, there were 28,349,541 recoveries out of 41,705,699 cases as of October 23, which makes a case recovery rate of 67.97%.
+
+In addition, 223,042 deaths out of 8,406,718 cases were reported in the US as of October 23, equivalent to a case fatality rate of 2.65%. Globally, there have been 1,137,333 deaths out of 41,705,699 recorded cases as of October 23, which makes for a 2.72% case fatality rate.

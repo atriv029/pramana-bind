@@ -1,0 +1,8 @@
+{
+ "type": "Ed25519",
+ "public_key": "3FJX0QD0dpy+oqSFrKnOLthBjCGKk4d5YKeAip/QL3Q=",
+ "signed_over": "this_hash",
+ "seq": 5,
+ "this_hash": "ce546f6519de9c1f7c729a6361204fe8f27ea7bb079a3f554799e44686df1ef2",
+ "signature": "MOL6n+H7X2+xdvkQJr+8Wxzb4YWqbIkpz5eTDjBsoj7hzGV/H4V6clBXz8y7i53EM3xc+C8ol7bc64zSRSXwDw=="
+}
