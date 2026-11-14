@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pramāṇa-Bind viewer</title>
+<style>
+:root{--bg:#f7f6f2;--panel:#fff;--ink:#1c1b19;--mut:#63605a;--line:#d9d6ce;--acc:#27408b;
+--ok:#1d6b3a;--okbg:#e3f1e6;--no:#8a5a00;--nobg:#fbeecd;--bad:#9c2222;--badbg:#f8dddd;--unk:#4a4a4a;--unkbg:#e6e6e6;
+--q1:#cfe3ff;--q2:#ffd9d2;--q3:#e9dcff;--q4:#fff1a8}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#16161a;--panel:#1f2026;--ink:#ecebe6;--mut:#a3a09a;--line:#383a44;--acc:#9bb4ff;
+--ok:#8fdba6;--okbg:#17351f;--no:#f1c96b;--nobg:#3d3010;--bad:#ff9d9d;--badbg:#461b1b;--unk:#cfcfcf;--unkbg:#33343c;
+--q1:#1f3a63;--q2:#5a2a24;--q3:#3d2f63;--q4:#5a4f12}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:18px 16px 8px;max-width:1180px;margin:auto}h1{font:600 22px/1.2 Georgia,serif;margin:0 0 4px}
+.sub{color:var(--mut);font-size:13px;max-width:75ch}
+main{display:grid;grid-template-columns:330px 1fr;gap:16px;max-width:1180px;margin:auto;padding:8px 16px 40px}
+@media(max-width:820px){main{grid-template-columns:1fr}}
+.list{display:flex;flex-direction:column;gap:8px}.item{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.item[aria-current=true]{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc) inset}.item .cl{font-size:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-top:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12.5px;padding:2px 9px;border-radius:999px;border:1px solid currentColor}
+.supported{color:var(--ok);background:var(--okbg)}.not_established{color:var(--no);background:var(--nobg)}.contradicted{color:var(--bad);background:var(--badbg)}.unresolved,.extraction_failed{color:var(--unk);background:var(--unkbg)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+h2{font:600 13px/1 system-ui;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:0 0 10px}
+.claim{font:18px/1.4 Georgia,serif}.src{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;font-size:14.5px;overflow-wrap:anywhere}
+mark{color:inherit;border-radius:3px;padding:1px 0}.m-S{background:var(--q1)}.m-neg{background:var(--q2)}.m-cond{background:var(--q3)}.m-H{background:var(--q4)}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-top:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600;font-size:12.5px}
+.tw{overflow-x:auto}.mut{color:var(--mut)}.sm{font-size:13px}.why li{margin:2px 0}.term{color:var(--mut);font-size:12.5px;font-style:italic}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:820px){.two{grid-template-columns:1fr}}
+.pass{color:var(--ok);font-weight:600}.fail{color:var(--bad);font-weight:600}
+code,pre{font:12.5px/1.45 ui-monospace,Menlo,Consolas,monospace}pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px;overflow-x:auto;margin:6px 0}
+button.b{font:inherit;border:1px solid var(--acc);color:var(--acc);background:transparent;border-radius:6px;padding:6px 12px;cursor:pointer}
+.warn{border-left:4px solid var(--no);padding:6px 10px;background:var(--nobg);border-radius:4px;font-size:13.5px;margin-top:8px}
+.legend span{display:inline-block;padding:0 6px;border-radius:3px;margin-right:8px;font-size:12.5px}
+</style></head><body>
+<header><h1 id="title"></h1><p class="sub" id="note"></p>
+<p class="sub">Two separate questions are answered here and they are never merged into one badge.
+<b>Support</b>: what the pipeline concluded about the claim, from an AI model's reading of the source that was then checked only for verbatim quotes.
+<b>Integrity and replay</b>: whether this certificate is unchanged and its conclusion can be recomputed. A certificate can pass every integrity check and still rest on a wrong reading.</p></header>
+<main><nav class="list" id="list" aria-label="Certificates"></nav><div id="detail"></div></main>
+<script>
+const D=/*DATA*/null;
+const LABEL={supported:"Supported",not_established:"Not established",contradicted:"Contradicted",unresolved:"Unresolved",extraction_failed:"Extraction failed"};
+const ICON={supported:"✓",not_established:"△",contradicted:"✕",unresolved:"?",extraction_failed:"!"};
+const PLAIN={source_not_located:"The cited source could not be located, so nothing was checked. This is not evidence against the citation.",
+subject_not_in_source:"No quote was found in the source that is about the subject of the claim.",
+claim_not_stated_in_source:"No quote was found in which the source states what the claim says.",
+finite_rule_pass_only:"The source gives a corroborating example and no counterexample, but does not itself state the claim. That is not enough to establish it.",
+narrower_subject:"The source says this only of a narrower subject than the claim covers.",
+quantifier_inflated:"The claim is broader than the source's statement (for example “all” where the source says “some”).",
+modality_inflated:"The claim is stated more strongly than the source (for example “does” where the source says “may”).",
+qualification_omitted:"The source attaches a condition, time limit or exception that the claim leaves out.",
+exception_in_source:"The source itself gives a case where the claim's conclusion does not hold.",
+conflicting_statements:"The source contains quotes on both sides of this claim.",
+source_denies_claim:"The source states the opposite of the claim.",
+reason_proves_opposite:"Every case the source gives points against the claim.",
+overridden_by_higher_authority:"A higher-ranked source states the opposite.",
+contested_by_equal_source:"An equally ranked source supports an incompatible conclusion.",
+negation_cue_before_quote:"The quoted words are preceded by a negation in the same sentence (lexical guard).",
+qualifier_cue_outside_quote:"The quoted words sit next to “unless/except/only if…” outside the quote (lexical guard)."};
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const chip=s=>`<span class="chip ${s}"><span aria-hidden="true">${ICON[s]||"·"}</span>${LABEL[s]||esc(s)}</span>`;
+function quotes(av,ds){const q=[];const p=av.pratijna;
+ if(p.paksa_mention)q.push({role:"Subject mention",cls:"H",...p.paksa_mention});
+ if(av.upanaya)q.push({role:"Reason holds of subject",cls:"H",...av.upanaya});
+ for(const l of av.udaharana.loci)for(const f of l.facts){const subj=l.id==="p";
+  q.push({role:(subj?"Source on the claim":"Other case “"+(l.label||l.id)+"”")+": "+(f.prop==="S"?(f.polarity==="present"?"asserts it":"denies it"):(f.polarity==="present"?"reason holds":"reason absent")),
+   cls:f.polarity==="absent"?"neg":(f.prop==="S"?"S":"H"),extra:[f.scope==="part"?"narrower subject":"",f.quantifier?"source says: "+f.quantifier:"",f.modality?f.modality:""].filter(Boolean).join(" · "),...f});}
+ for(const c of av.conditions||[])q.push({role:"Condition the claim omits ("+c.kind+")",cls:"cond",extra:c.text,...c});
+ for(const d of ds||[])q.push({role:"Counter-source",cls:"neg",...d.quote});return q}
+function highlight(text,qs){const sp=qs.filter(q=>q.located&&q.source_id==="T"&&q.start!=null).map(q=>[q.start,q.end,q.cls]).sort((a,b)=>a[0]-b[0]);
+ let o="",pos=0;for(const[s,e,c]of sp){if(s<pos)continue;o+=esc(text.slice(pos,s))+`<mark class="m-${c}">`+esc(text.slice(s,e))+"</mark>";pos=e}return o+esc(text.slice(pos))}
+function show(i){const {cert:c,texts,audit}=D.certs[i];const av=c.avayava,n=av.nigamana,ex=c.extraction,qs=quotes(av,c.defeaters);
+ document.querySelectorAll(".item").forEach((b,j)=>b.setAttribute("aria-current",j===i));
+ const reasons=(n.reasons||[]).map(r=>`<li>${esc(PLAIN[r]||r)} <span class="term">${esc(D.terms[r]||"")}</span></li>`).join("");
+ const runs=(ex.run_statuses||[]).map(chip).join(" ");
+ const cmd=`python -m pramana_bind audit ${D.ledger.file} --pubkey ${D.ledger.pubkey}`;
+ const allok=audit.every(s=>s.ok)&&D.ledger.steps.every(s=>s.ok);
+ document.getElementById("detail").innerHTML=`
+<div class="card"><h2>Claim</h2><p class="claim">${esc(c.subject.claim_text)}</p>
+<p class="sm mut">Cited as: ${esc(c.subject.citation_raw||"—")}</p></div>
+<div class="two">
+<div class="card"><h2>Support (the pipeline's conclusion)</h2><p>${chip(c.status)}</p>
+${c.status==="supported"?`<p>The source is on record, by a located quote, as stating the claim at the claimed scope and strength, and no located quote cuts against it.</p>`:`<ul class="why">${reasons}</ul>`}
+<p class="sm mut">Classical verdict of the inference rules: <i>${esc(n.verdict)}</i> (${esc(n.rule)})${n.subtype?" / "+esc(n.subtype):""}. Experimental ranking score PBS ${n.pbs.value.toFixed(2)} — not a probability.</p>
+<p class="sm"><b>Extraction runs:</b> ${runs||"none"}</p>
+${ex.unstable?`<div class="warn"><b>Unstable extraction.</b> The model's three readings did not reach the same outcome. Agreement is a measure of stability, not of confidence or correctness.</div>`:""}
+<p class="sm mut">Reading by ${esc(ex["gen_ai.request.model"]||"—")}; it is model testimony. Only the quotes below were checked, and only for occurring verbatim.</p></div>
+<div class="card"><h2>Integrity and replay (independent of the above)</h2>
+<p class="${allok?"pass":"fail"}">${allok?"All integrity and replay checks passed":"One or more checks failed"}</p>
+<div class="tw"><table><tr><th>Check</th><th>Result</th><th>Detail</th></tr>
+${D.ledger.steps.concat(audit).map(s=>`<tr><td>${esc(s.step)}</td><td class="${s.ok?"pass":"fail"}">${s.ok?"pass":"FAIL"}</td><td class="sm">${esc(s.detail)}</td></tr>`).join("")}</table></div>
+<p class="sm mut">Recorded when this page was built. The signature was checked against a public key supplied separately from the ledger. A pass does not mean the reading above is right, and an older signed copy of the ledger would also pass unless you hold a newer checkpoint.</p>
+<p class="sm">Re-run it yourself, offline:</p><pre>${esc(cmd)}</pre>
+<button class="b" id="dl">Download certificate (JSON)</button></div></div>
+<div class="card"><h2>Source, with located quotes</h2>
+<p class="legend sm"><span class="m-S">source asserts</span><span class="m-neg">source denies / counter-case</span><span class="m-cond">omitted condition</span><span class="m-H">subject / reason</span></p>
+<div class="src">${texts.T==null?'<span class="mut">No source text: the source was not located.</span>':highlight(texts.T,qs)}</div>
+<p class="sm mut">sha256 ${esc(c.texts.T||"—")}</p></div>
+<div class="card"><h2>What the model extracted, and what the string matcher did with it</h2>
+<p class="sm"><b>Subject:</b> ${esc(av.pratijna.paksa)} &nbsp; <b>Asserted of it:</b> ${esc(av.pratijna.sadhya)} &nbsp; <b>Claim strength:</b> ${esc(av.pratijna.quantifier)}, ${esc(av.pratijna.modality)}</p>
+<div class="tw"><table><tr><th>Filed by the model as</th><th>Quote</th><th>Located?</th><th>Offsets</th></tr>
+${qs.map(q=>`<tr><td>${esc(q.role)}${q.extra?`<br><span class="sm mut">${esc(q.extra)}</span>`:""}</td><td>“${esc(q.quote)}”</td><td class="${q.located?"pass":"fail"}">${q.located?"yes ("+esc(q.match)+")":"refused"}</td><td class="sm">${q.located&&q.start!=null?q.start+"–"+q.end:"—"}${(q.flags||[]).length?"<br>"+esc(q.flags.join(", ")):""}</td></tr>`).join("")||'<tr><td colspan=4 class="mut">No quotes were proposed.</td></tr>'}</table></div>
+<p class="sm mut">“Located” means only that these exact words occur once in the source. Whether they mean what they are filed as is not checked by any program.</p></div>
+<div class="card"><h2>Certificate</h2><p class="sm">id <code>${esc(c.id)}</code><br>ledger seq ${c.seq} · ${esc(c.t)} · this_hash <code>${esc(c.this_hash)}</code><br>schema ${esc(c.schema_version)} · rules ${esc(c.checks.rules_version)} · extractor prompt sha256 <code>${esc(ex.prompt_sha256||"").slice(0,16)}…</code> · Lean check ran: ${c.checks.lean.ran}</p></div>`;
+ document.getElementById("dl").onclick=()=>{const u=URL.createObjectURL(new Blob([JSON.stringify(c,null,1)],{type:"application/json"}));const a=document.createElement("a");a.href=u;a.download=c.id.split(":").pop().slice(0,16)+".json";a.click();URL.revokeObjectURL(u)}}
+document.getElementById("title").textContent=D.title;document.getElementById("note").textContent=D.note;
+document.getElementById("list").innerHTML=D.certs.map((x,i)=>`<button class="item" data-i="${i}">${chip(x.cert.status)}${x.cert.extraction.unstable?' <span class="sm mut">unstable</span>':''}<div class="cl">${esc(x.cert.subject.claim_text)}</div></button>`).join("");
+document.getElementById("list").onclick=e=>{const b=e.target.closest(".item");if(b)show(+b.dataset.i)};
+if(D.certs.length)show(0);
+</script></body></html>
