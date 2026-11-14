@@ -40,8 +40,14 @@ If the source only makes the weaker statement, leave direct empty. polarity "abs
   scope "part" if the passage is about a narrower subject than p (the claim says "adults", the source says \
 "men aged 40-60"; the claim says "all offences", the source says "theft"); otherwise "full".
   quantifier and modality: the strength of the SOURCE's own statement in that passage.
-- conditions: every time limit, precondition, exception or proviso the source attaches to that statement \
-which the claim leaves out. kind: temporal | condition | exception | other.
+- conditions: ONLY a limit that narrows when S holds of p and that the claim does not already state. \
+Test: is there a case the claim covers where, according to the source, S would NOT hold because this limit \
+is not met? If yes, and the claim does not mention the limit even in other words, list it. \
+kind: temporal | condition | exception | other.
+  Do NOT list: anything the claim already states or implies in its own wording; extra detail that adds information \
+without narrowing the claim; further cases to which the rule ALSO applies (these widen it); reasons, purposes or \
+consequences; savings clauses that do not change whether S holds of p. \
+If the claim is a faithful, possibly shorter, restatement of the passage, conditions must be empty.
 - hetu (H): if the claim follows from the source only through a reason (the source says p has some property H, \
 and H is supposed to bring S), name H; otherwise null. upanaya: the passage saying H holds of p, or null.
 - loci: other cases, groups or examples in the source (not p) about which it says whether H or S holds. \

@@ -1,0 +1,1474 @@
+{
+ "n_items": 7,
+ "n_families": 7,
+ "primary_system": "pipeline_noguard",
+ "systems": {
+  "direct_1": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 6,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3903
+    ]
+   },
+   "supported_recall": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "precision_of_support": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 7,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3543
+    ]
+   },
+   "coverage": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "wilson95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "supported": 1
+    },
+    "not_supported": {
+     "not_supported": 6
+    }
+   },
+   "by_slice": {
+    "attack": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "supported_recall": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 7,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3543
+      ]
+     },
+     "coverage": {
+      "k": 7,
+      "n": 7,
+      "rate": 1.0,
+      "wilson95": [
+       0.6457,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "cherry_picked_fragment": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction_control": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "fabricated_fact_with_genuine_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "irrelevant_true_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misattributed_entity": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "scope_modality_inflation": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    }
+   }
+  },
+  "direct_3": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 6,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3903
+    ]
+   },
+   "supported_recall": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "precision_of_support": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 7,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3543
+    ]
+   },
+   "coverage": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "wilson95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "supported": 1
+    },
+    "not_supported": {
+     "not_supported": 6
+    }
+   },
+   "by_slice": {
+    "attack": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "supported_recall": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 7,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3543
+      ]
+     },
+     "coverage": {
+      "k": 7,
+      "n": 7,
+      "rate": 1.0,
+      "wilson95": [
+       0.6457,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "cherry_picked_fragment": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction_control": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "fabricated_fact_with_genuine_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "irrelevant_true_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misattributed_entity": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "scope_modality_inflation": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    }
+   }
+  },
+  "taxonomy_1": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 6,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3903
+    ]
+   },
+   "supported_recall": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "precision_of_support": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 7,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3543
+    ]
+   },
+   "coverage": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "wilson95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "supported": 1
+    },
+    "not_supported": {
+     "not_supported": 6
+    }
+   },
+   "by_slice": {
+    "attack": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "supported_recall": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 7,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3543
+      ]
+     },
+     "coverage": {
+      "k": 7,
+      "n": 7,
+      "rate": 1.0,
+      "wilson95": [
+       0.6457,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "cherry_picked_fragment": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction_control": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "fabricated_fact_with_genuine_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "irrelevant_true_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misattributed_entity": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "scope_modality_inflation": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    }
+   }
+  },
+  "taxonomy_3": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 6,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3903
+    ]
+   },
+   "supported_recall": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "precision_of_support": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 7,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3543
+    ]
+   },
+   "coverage": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "wilson95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "supported": 1
+    },
+    "not_supported": {
+     "not_supported": 6
+    }
+   },
+   "by_slice": {
+    "attack": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "supported_recall": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 7,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3543
+      ]
+     },
+     "coverage": {
+      "k": 7,
+      "n": 7,
+      "rate": 1.0,
+      "wilson95": [
+       0.6457,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "cherry_picked_fragment": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction_control": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "fabricated_fact_with_genuine_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "irrelevant_true_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misattributed_entity": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "scope_modality_inflation": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    }
+   }
+  },
+  "pipeline_noguard": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 6,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3903
+    ]
+   },
+   "supported_recall": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "precision_of_support": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 7,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3543
+    ]
+   },
+   "coverage": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "wilson95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "supported": 1
+    },
+    "not_supported": {
+     "not_established": 4,
+     "contradicted": 2
+    }
+   },
+   "by_slice": {
+    "attack": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "supported_recall": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 7,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3543
+      ]
+     },
+     "coverage": {
+      "k": 7,
+      "n": 7,
+      "rate": 1.0,
+      "wilson95": [
+       0.6457,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "cherry_picked_fragment": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction_control": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "fabricated_fact_with_genuine_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "irrelevant_true_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misattributed_entity": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "scope_modality_inflation": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    }
+   }
+  },
+  "pipeline": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 6,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3903
+    ]
+   },
+   "supported_recall": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "precision_of_support": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 7,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3543
+    ]
+   },
+   "coverage": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "wilson95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "supported": 1
+    },
+    "not_supported": {
+     "not_established": 4,
+     "contradicted": 2
+    }
+   },
+   "by_slice": {
+    "attack": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "supported_recall": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 7,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3543
+      ]
+     },
+     "coverage": {
+      "k": 7,
+      "n": 7,
+      "rate": 1.0,
+      "wilson95": [
+       0.6457,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "cherry_picked_fragment": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction_control": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "fabricated_fact_with_genuine_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "irrelevant_true_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misattributed_entity": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "scope_modality_inflation": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    }
+   }
+  },
+  "pipeline_noground": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 6,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3903
+    ]
+   },
+   "supported_recall": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "precision_of_support": {
+    "k": 1,
+    "n": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 7,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3543
+    ]
+   },
+   "coverage": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "wilson95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "supported": 1
+    },
+    "not_supported": {
+     "not_established": 4,
+     "contradicted": 2
+    }
+   },
+   "by_slice": {
+    "attack": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "supported_recall": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 7,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3543
+      ]
+     },
+     "coverage": {
+      "k": 7,
+      "n": 7,
+      "rate": 1.0,
+      "wilson95": [
+       0.6457,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "cherry_picked_fragment": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "embedded_instruction_control": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "fabricated_fact_with_genuine_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "irrelevant_true_quotes": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misattributed_entity": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "scope_modality_inflation": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    }
+   }
+  }
+ },
+ "paired": {
+  "pipeline_noguard minus direct_1": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus direct_3": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus taxonomy_1": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus taxonomy_3": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus pipeline": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus pipeline_noground": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  }
+ },
+ "pipeline": {
+  "quote_location_rate": {
+   "k": 12,
+   "n": 12,
+   "rate": 1.0,
+   "wilson95": [
+    0.7575,
+    1.0
+   ]
+  },
+  "quote_refusal_reasons": {
+   "ok": 12
+  },
+  "extraction_parse_failures": {
+   "k": 0,
+   "n": 21,
+   "rate": 0.0,
+   "wilson95": [
+    0.0,
+    0.1546
+   ]
+  },
+  "items_all_runs_failed": 0,
+  "run_status_counts": {
+   "not_established": 11,
+   "contradicted": 6,
+   "supported": 4
+  },
+  "stability_all_runs_agree": {
+   "k": 6,
+   "n": 7,
+   "rate": 0.8571428571428571,
+   "wilson95": [
+    0.4869,
+    0.9743
+   ]
+  },
+  "reasons_on_unsupported_gold": {
+   "claim_not_stated_in_source": 4,
+   "qualification_omitted": 1,
+   "source_denies_claim": 2
+  },
+  "reasons_on_supported_gold": {},
+  "accuracy_stable": {
+   "k": 6,
+   "n": 6,
+   "rate": 1.0,
+   "wilson95": [
+    0.6097,
+    1.0
+   ]
+  },
+  "accuracy_unstable": {
+   "k": 1,
+   "n": 1,
+   "rate": 1.0,
+   "wilson95": [
+    0.2065,
+    1.0
+   ]
+  }
+ },
+ "baseline_stability": {
+  "direct": {
+   "k": 7,
+   "n": 7,
+   "rate": 1.0,
+   "wilson95": [
+    0.6457,
+    1.0
+   ]
+  },
+  "taxonomy": {
+   "k": 7,
+   "n": 7,
+   "rate": 1.0,
+   "wilson95": [
+    0.6457,
+    1.0
+   ]
+  }
+ },
+ "baseline_parse_failures": {
+  "direct": {
+   "k": 0,
+   "n": 21,
+   "rate": 0.0,
+   "wilson95": [
+    0.0,
+    0.1546
+   ]
+  },
+  "taxonomy": {
+   "k": 0,
+   "n": 21,
+   "rate": 0.0,
+   "wilson95": [
+    0.0,
+    0.1546
+   ]
+  }
+ },
+ "cost_per_call_by_prompt": {
+  "direct": {
+   "calls": 21,
+   "failed_calls": 0,
+   "retried_calls": 0,
+   "mean_latency_s": 3.88,
+   "mean_input_tokens": 1610,
+   "mean_output_tokens": 76,
+   "total_cost_usd": 0.0067,
+   "cost_per_call_usd": 0.00032
+  },
+  "extract": {
+   "calls": 21,
+   "failed_calls": 0,
+   "retried_calls": 0,
+   "mean_latency_s": 6.57,
+   "mean_input_tokens": 2657,
+   "mean_output_tokens": 723,
+   "total_cost_usd": 0.0153,
+   "cost_per_call_usd": 0.00073
+  },
+  "taxonomy": {
+   "calls": 21,
+   "failed_calls": 0,
+   "retried_calls": 0,
+   "mean_latency_s": 4.71,
+   "mean_input_tokens": 1973,
+   "mean_output_tokens": 257,
+   "total_cost_usd": 0.0084,
+   "cost_per_call_usd": 0.0004
+  }
+ },
+ "calls_per_item": {
+  "direct_1": 1,
+  "taxonomy_1": 1,
+  "direct_3": 3,
+  "taxonomy_3": 3,
+  "pipeline*": 3
+ }
+}

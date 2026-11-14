@@ -1,0 +1,1688 @@
+{
+ "n_items": 21,
+ "n_families": 8,
+ "primary_system": "pipeline_noguard",
+ "systems": {
+  "direct_1": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 12,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2425
+    ]
+   },
+   "supported_recall": {
+    "k": 9,
+    "n": 9,
+    "rate": 1.0,
+    "wilson95": [
+     0.7008,
+     1.0
+    ]
+   },
+   "precision_of_support": {
+    "k": 9,
+    "n": 9,
+    "rate": 1.0,
+    "wilson95": [
+     0.7008,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 21,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1546
+    ]
+   },
+   "coverage": {
+    "k": 21,
+    "n": 21,
+    "rate": 1.0,
+    "wilson95": [
+     0.8454,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "supported": 9
+    },
+    "not_supported": {
+     "not_supported": 12
+    }
+   },
+   "by_slice": {
+    "averitec_derived": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.5615
+      ]
+     },
+     "supported_recall": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "coverage": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     }
+    },
+    "statutory": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 9,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2992
+      ]
+     },
+     "supported_recall": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 15,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2039
+      ]
+     },
+     "coverage": {
+      "k": 15,
+      "n": 15,
+      "rate": 1.0,
+      "wilson95": [
+       0.7961,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "contradicted": {
+     "k": 0,
+     "n": 4,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.4899
+     ]
+    },
+    "exception_omitted": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misbinding": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "missing_evidence": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "scope_inflation": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.5615
+     ]
+    }
+   }
+  },
+  "direct_3": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 12,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2425
+    ]
+   },
+   "supported_recall": {
+    "k": 9,
+    "n": 9,
+    "rate": 1.0,
+    "wilson95": [
+     0.7008,
+     1.0
+    ]
+   },
+   "precision_of_support": {
+    "k": 9,
+    "n": 9,
+    "rate": 1.0,
+    "wilson95": [
+     0.7008,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 21,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1546
+    ]
+   },
+   "coverage": {
+    "k": 21,
+    "n": 21,
+    "rate": 1.0,
+    "wilson95": [
+     0.8454,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "supported": 9
+    },
+    "not_supported": {
+     "not_supported": 12
+    }
+   },
+   "by_slice": {
+    "averitec_derived": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.5615
+      ]
+     },
+     "supported_recall": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "coverage": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     }
+    },
+    "statutory": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 9,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2992
+      ]
+     },
+     "supported_recall": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 15,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2039
+      ]
+     },
+     "coverage": {
+      "k": 15,
+      "n": 15,
+      "rate": 1.0,
+      "wilson95": [
+       0.7961,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "contradicted": {
+     "k": 0,
+     "n": 4,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.4899
+     ]
+    },
+    "exception_omitted": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misbinding": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "missing_evidence": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "scope_inflation": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.5615
+     ]
+    }
+   }
+  },
+  "taxonomy_1": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 12,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2425
+    ]
+   },
+   "supported_recall": {
+    "k": 7,
+    "n": 9,
+    "rate": 0.7777777777777778,
+    "wilson95": [
+     0.4526,
+     0.9368
+    ]
+   },
+   "precision_of_support": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "wilson95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 21,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1546
+    ]
+   },
+   "coverage": {
+    "k": 21,
+    "n": 21,
+    "rate": 1.0,
+    "wilson95": [
+     0.8454,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "not_supported": 2,
+     "supported": 7
+    },
+    "not_supported": {
+     "not_supported": 12
+    }
+   },
+   "by_slice": {
+    "averitec_derived": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.5615
+      ]
+     },
+     "supported_recall": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "coverage": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     }
+    },
+    "statutory": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 9,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2992
+      ]
+     },
+     "supported_recall": {
+      "k": 4,
+      "n": 6,
+      "rate": 0.6666666666666666,
+      "wilson95": [
+       0.3,
+       0.9032
+      ]
+     },
+     "precision_of_support": {
+      "k": 4,
+      "n": 4,
+      "rate": 1.0,
+      "wilson95": [
+       0.5101,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 15,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2039
+      ]
+     },
+     "coverage": {
+      "k": 15,
+      "n": 15,
+      "rate": 1.0,
+      "wilson95": [
+       0.7961,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "contradicted": {
+     "k": 0,
+     "n": 4,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.4899
+     ]
+    },
+    "exception_omitted": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misbinding": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "missing_evidence": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "scope_inflation": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.5615
+     ]
+    }
+   }
+  },
+  "taxonomy_3": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 12,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2425
+    ]
+   },
+   "supported_recall": {
+    "k": 7,
+    "n": 9,
+    "rate": 0.7777777777777778,
+    "wilson95": [
+     0.4526,
+     0.9368
+    ]
+   },
+   "precision_of_support": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "wilson95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 21,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1546
+    ]
+   },
+   "coverage": {
+    "k": 21,
+    "n": 21,
+    "rate": 1.0,
+    "wilson95": [
+     0.8454,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "not_supported": 2,
+     "supported": 7
+    },
+    "not_supported": {
+     "not_supported": 12
+    }
+   },
+   "by_slice": {
+    "averitec_derived": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.5615
+      ]
+     },
+     "supported_recall": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "coverage": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     }
+    },
+    "statutory": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 9,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2992
+      ]
+     },
+     "supported_recall": {
+      "k": 4,
+      "n": 6,
+      "rate": 0.6666666666666666,
+      "wilson95": [
+       0.3,
+       0.9032
+      ]
+     },
+     "precision_of_support": {
+      "k": 4,
+      "n": 4,
+      "rate": 1.0,
+      "wilson95": [
+       0.5101,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 15,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2039
+      ]
+     },
+     "coverage": {
+      "k": 15,
+      "n": 15,
+      "rate": 1.0,
+      "wilson95": [
+       0.7961,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "contradicted": {
+     "k": 0,
+     "n": 4,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.4899
+     ]
+    },
+    "exception_omitted": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misbinding": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "missing_evidence": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "scope_inflation": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.5615
+     ]
+    }
+   }
+  },
+  "pipeline_noguard": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 12,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2425
+    ]
+   },
+   "supported_recall": {
+    "k": 8,
+    "n": 9,
+    "rate": 0.8888888888888888,
+    "wilson95": [
+     0.565,
+     0.9801
+    ]
+   },
+   "precision_of_support": {
+    "k": 8,
+    "n": 8,
+    "rate": 1.0,
+    "wilson95": [
+     0.6756,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 21,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1546
+    ]
+   },
+   "coverage": {
+    "k": 21,
+    "n": 21,
+    "rate": 1.0,
+    "wilson95": [
+     0.8454,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "not_established": 1,
+     "supported": 8
+    },
+    "not_supported": {
+     "not_established": 8,
+     "contradicted": 4
+    }
+   },
+   "by_slice": {
+    "averitec_derived": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.5615
+      ]
+     },
+     "supported_recall": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "coverage": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     }
+    },
+    "statutory": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 9,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2992
+      ]
+     },
+     "supported_recall": {
+      "k": 5,
+      "n": 6,
+      "rate": 0.8333333333333334,
+      "wilson95": [
+       0.4365,
+       0.9699
+      ]
+     },
+     "precision_of_support": {
+      "k": 5,
+      "n": 5,
+      "rate": 1.0,
+      "wilson95": [
+       0.5655,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 15,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2039
+      ]
+     },
+     "coverage": {
+      "k": 15,
+      "n": 15,
+      "rate": 1.0,
+      "wilson95": [
+       0.7961,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "contradicted": {
+     "k": 0,
+     "n": 4,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.4899
+     ]
+    },
+    "exception_omitted": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misbinding": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "missing_evidence": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "scope_inflation": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.5615
+     ]
+    }
+   }
+  },
+  "pipeline": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 12,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2425
+    ]
+   },
+   "supported_recall": {
+    "k": 8,
+    "n": 9,
+    "rate": 0.8888888888888888,
+    "wilson95": [
+     0.565,
+     0.9801
+    ]
+   },
+   "precision_of_support": {
+    "k": 8,
+    "n": 8,
+    "rate": 1.0,
+    "wilson95": [
+     0.6756,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 21,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1546
+    ]
+   },
+   "coverage": {
+    "k": 21,
+    "n": 21,
+    "rate": 1.0,
+    "wilson95": [
+     0.8454,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "not_established": 1,
+     "supported": 8
+    },
+    "not_supported": {
+     "not_established": 8,
+     "contradicted": 4
+    }
+   },
+   "by_slice": {
+    "averitec_derived": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.5615
+      ]
+     },
+     "supported_recall": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "coverage": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     }
+    },
+    "statutory": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 9,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2992
+      ]
+     },
+     "supported_recall": {
+      "k": 5,
+      "n": 6,
+      "rate": 0.8333333333333334,
+      "wilson95": [
+       0.4365,
+       0.9699
+      ]
+     },
+     "precision_of_support": {
+      "k": 5,
+      "n": 5,
+      "rate": 1.0,
+      "wilson95": [
+       0.5655,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 15,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2039
+      ]
+     },
+     "coverage": {
+      "k": 15,
+      "n": 15,
+      "rate": 1.0,
+      "wilson95": [
+       0.7961,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "contradicted": {
+     "k": 0,
+     "n": 4,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.4899
+     ]
+    },
+    "exception_omitted": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misbinding": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "missing_evidence": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "scope_inflation": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.5615
+     ]
+    }
+   }
+  },
+  "pipeline_noground": {
+   "false_support_rate": {
+    "k": 0,
+    "n": 12,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2425
+    ]
+   },
+   "supported_recall": {
+    "k": 8,
+    "n": 9,
+    "rate": 0.8888888888888888,
+    "wilson95": [
+     0.565,
+     0.9801
+    ]
+   },
+   "precision_of_support": {
+    "k": 8,
+    "n": 8,
+    "rate": 1.0,
+    "wilson95": [
+     0.6756,
+     1.0
+    ]
+   },
+   "abstention": {
+    "k": 0,
+    "n": 21,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1546
+    ]
+   },
+   "coverage": {
+    "k": 21,
+    "n": 21,
+    "rate": 1.0,
+    "wilson95": [
+     0.8454,
+     1.0
+    ]
+   },
+   "confusion": {
+    "supported": {
+     "not_established": 1,
+     "supported": 8
+    },
+    "not_supported": {
+     "not_established": 8,
+     "contradicted": 4
+    }
+   },
+   "by_slice": {
+    "averitec_derived": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.5615
+      ]
+     },
+     "supported_recall": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "precision_of_support": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "wilson95": [
+       0.4385,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 6,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.3903
+      ]
+     },
+     "coverage": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+       0.6097,
+       1.0
+      ]
+     }
+    },
+    "statutory": {
+     "false_support_rate": {
+      "k": 0,
+      "n": 9,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2992
+      ]
+     },
+     "supported_recall": {
+      "k": 5,
+      "n": 6,
+      "rate": 0.8333333333333334,
+      "wilson95": [
+       0.4365,
+       0.9699
+      ]
+     },
+     "precision_of_support": {
+      "k": 5,
+      "n": 5,
+      "rate": 1.0,
+      "wilson95": [
+       0.5655,
+       1.0
+      ]
+     },
+     "abstention": {
+      "k": 0,
+      "n": 15,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.2039
+      ]
+     },
+     "coverage": {
+      "k": 15,
+      "n": 15,
+      "rate": 1.0,
+      "wilson95": [
+       0.7961,
+       1.0
+      ]
+     }
+    }
+   },
+   "false_support_by_subtype": {
+    "contradicted": {
+     "k": 0,
+     "n": 4,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.4899
+     ]
+    },
+    "exception_omitted": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "misbinding": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "missing_evidence": {
+     "k": 0,
+     "n": 2,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.6576
+     ]
+    },
+    "scope_inflation": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "wilson95": [
+      0.0,
+      0.5615
+     ]
+    }
+   }
+  }
+ },
+ "paired": {
+  "pipeline_noguard minus direct_1": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": -0.1111111111111111,
+    "ci95": [
+     -0.375,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 1,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus direct_3": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": -0.1111111111111111,
+    "ci95": [
+     -0.375,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 1,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus taxonomy_1": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.1111111111111111,
+    "ci95": [
+     0.0,
+     0.375
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 1,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus taxonomy_3": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.1111111111111111,
+    "ci95": [
+     0.0,
+     0.375
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 1,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus pipeline": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  },
+  "pipeline_noguard minus pipeline_noground": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "supported_recall": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "method": "family-cluster bootstrap, 10000 resamples, seed 0"
+   },
+   "mcnemar_accuracy": {
+    "only_first_correct": 0,
+    "only_second_correct": 0,
+    "p_exact": 1.0
+   }
+  }
+ },
+ "pipeline": {
+  "quote_location_rate": {
+   "k": 44,
+   "n": 45,
+   "rate": 0.9777777777777777,
+   "wilson95": [
+    0.8843,
+    0.9961
+   ]
+  },
+  "quote_refusal_reasons": {
+   "ok": 44,
+   "ambiguous_quote": 1
+  },
+  "extraction_parse_failures": {
+   "k": 0,
+   "n": 63,
+   "rate": 0.0,
+   "wilson95": [
+    0.0,
+    0.0575
+   ]
+  },
+  "items_all_runs_failed": 0,
+  "run_status_counts": {
+   "supported": 25,
+   "not_established": 24,
+   "contradicted": 14
+  },
+  "stability_all_runs_agree": {
+   "k": 18,
+   "n": 21,
+   "rate": 0.8571428571428571,
+   "wilson95": [
+    0.6536,
+    0.9502
+   ]
+  },
+  "reasons_on_unsupported_gold": {
+   "narrower_subject": 1,
+   "qualification_omitted": 2,
+   "source_denies_claim": 4,
+   "claim_not_stated_in_source": 2,
+   "conflicting_statements": 1,
+   "subject_not_in_source": 4
+  },
+  "reasons_on_supported_gold": {
+   "negation_cue_before_quote": 1
+  },
+  "accuracy_stable": {
+   "k": 18,
+   "n": 18,
+   "rate": 1.0,
+   "wilson95": [
+    0.8241,
+    1.0
+   ]
+  },
+  "accuracy_unstable": {
+   "k": 2,
+   "n": 3,
+   "rate": 0.6666666666666666,
+   "wilson95": [
+    0.2077,
+    0.9385
+   ]
+  }
+ },
+ "baseline_stability": {
+  "direct": {
+   "k": 20,
+   "n": 21,
+   "rate": 0.9523809523809523,
+   "wilson95": [
+    0.7733,
+    0.9915
+   ]
+  },
+  "taxonomy": {
+   "k": 20,
+   "n": 21,
+   "rate": 0.9523809523809523,
+   "wilson95": [
+    0.7733,
+    0.9915
+   ]
+  }
+ },
+ "baseline_parse_failures": {
+  "direct": {
+   "k": 0,
+   "n": 63,
+   "rate": 0.0,
+   "wilson95": [
+    0.0,
+    0.0575
+   ]
+  },
+  "taxonomy": {
+   "k": 0,
+   "n": 63,
+   "rate": 0.0,
+   "wilson95": [
+    0.0,
+    0.0575
+   ]
+  }
+ },
+ "cost_per_call_by_prompt": {
+  "direct": {
+   "calls": 63,
+   "failed_calls": 0,
+   "retried_calls": 0,
+   "mean_latency_s": 4.66,
+   "mean_input_tokens": 1795,
+   "mean_output_tokens": 216,
+   "total_cost_usd": 0.0232,
+   "cost_per_call_usd": 0.00037
+  },
+  "extract": {
+   "calls": 63,
+   "failed_calls": 0,
+   "retried_calls": 0,
+   "mean_latency_s": 10.54,
+   "mean_input_tokens": 2841,
+   "mean_output_tokens": 1732,
+   "total_cost_usd": 0.0773,
+   "cost_per_call_usd": 0.00123
+  },
+  "taxonomy": {
+   "calls": 63,
+   "failed_calls": 0,
+   "retried_calls": 0,
+   "mean_latency_s": 6.0,
+   "mean_input_tokens": 2156,
+   "mean_output_tokens": 512,
+   "total_cost_usd": 0.034,
+   "cost_per_call_usd": 0.00054
+  }
+ },
+ "calls_per_item": {
+  "direct_1": 1,
+  "taxonomy_1": 1,
+  "direct_3": 3,
+  "taxonomy_3": 3,
+  "pipeline*": 3
+ }
+}

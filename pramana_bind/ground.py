@@ -40,7 +40,8 @@ def context_flags(text: str, start: int, end: int) -> list[str]:
     flags = []
     if _NEG.search(before):
         flags.append(NEG_FLAG)
-    if _QUAL.search(before) or _QUAL.search(after):
+    # "Provided that <quote>" introduces the quote; it does not qualify it.
+    if _QUAL.search(re.sub(r"provided that", " ", before, flags=re.I)) or _QUAL.search(after):
         flags.append(QUAL_FLAG)
     return flags
 
