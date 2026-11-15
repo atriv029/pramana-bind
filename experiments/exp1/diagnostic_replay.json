@@ -1,0 +1,78 @@
+{
+ "note": "EXPLORATORY post-hoc replay of the Experiment 1 extractions with individual reasons switched off.\nNo model call. The extractions are the recorded ones; only the decision rule changes. This isolates a rule effect.\nIt is NOT a held-out test of any revised method: the rules were chosen after seeing Experiment 1's errors.",
+ "n": 117,
+ "variants": {
+  "as_run (guard off)": {
+   "false_support": [
+    0,
+    68
+   ],
+   "supported_recall": [
+    29,
+    49
+   ],
+   "unsupported_items_accepted": []
+  },
+  "minus qualification_omitted": {
+   "false_support": [
+    3,
+    68
+   ],
+   "supported_recall": [
+    45,
+    49
+   ],
+   "unsupported_items_accepted": [
+    "test-stat-COI-Article156-1",
+    "test-stat-BNSS-Section16-2",
+    "test-avt-60-2"
+   ]
+  },
+  "minus narrower_subject": {
+   "false_support": [
+    0,
+    68
+   ],
+   "supported_recall": [
+    29,
+    49
+   ],
+   "unsupported_items_accepted": []
+  },
+  "minus quantifier/modality checks": {
+   "false_support": [
+    0,
+    68
+   ],
+   "supported_recall": [
+    29,
+    49
+   ],
+   "unsupported_items_accepted": []
+  },
+  "minus all three": {
+   "false_support": [
+    12,
+    68
+   ],
+   "supported_recall": [
+    46,
+    49
+   ],
+   "unsupported_items_accepted": [
+    "test-stat-COI-Article30-1",
+    "test-stat-BNS-Section220-2",
+    "test-stat-BSA-Section48-1",
+    "test-stat-BNSS-Section314-1",
+    "test-stat-COI-Article156-1",
+    "test-stat-BNSS-Section39-1",
+    "test-stat-BNSS-Section16-2",
+    "test-stat-COI-Article193-3",
+    "test-stat-COI-Article212-2",
+    "test-avt-371-2",
+    "test-avt-60-2",
+    "test-avt-451-2"
+   ]
+  }
+ }
+}

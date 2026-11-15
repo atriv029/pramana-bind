@@ -29,3 +29,17 @@ python -m pramana_bind audit ledger/ledger.jsonl
 ```
 
 In the demo the public key sits next to the ledger for convenience. In real use it must come from somewhere else.
+
+## Revised demo (after Experiment 2): use `demo/viewer_exp2.html` first, then `demo/viewer.html`
+
+All recorded results; say so. No baseline error is staged.
+
+| Time | Screen | Say |
+|---|---|---|
+| 0:00–0:25 | Title | "Does a structured, quote-grounded verifier beat asking a model directly? We registered the test twice. It does not. Here is what it does give you." |
+| 0:25–1:00 | `viewer_exp2.html` item 3 (Zoey Deutch, supported) | "The model fills a record; each quote is found verbatim; a fixed rule decides. Left: the conclusion. Right: integrity. Never merged." |
+| 1:00–1:50 | Items 1 then 2 (same claim, '320 reviews' vs '323 reviews') | "An evidence intervention from VitaminC: one figure in the source changes. The claim says fewer than 322 reviews. With 320 the record says the passage affirms by necessary implication: supported. With 323, denies: contradicted. Same claim, same rule, one changed fact." |
+| 1:50–2:30 | `viewer.html` item 2 (Article 133, Experiment 1) | "A scope error localised: the claim drops the certification condition, and the record points at the clause." |
+| 2:30–3:15 | `viewer_exp2.html` item 4 (ContractNLI, wrong by the benchmark label) | "This one disagrees with the benchmark. Every integrity check passes. Integrity is not correctness: the labels in the record are the model's." |
+| 3:15–4:00 | Terminal: tamper commands below | "Audit with a separately held key passes. Change two words: fails at that line. No trusted key: fails." |
+| 4:00–4:45 | Figure 1 of the report | "Four public benchmarks. Structured methods accept slightly fewer unsupported claims and miss more supported ones. Typed Nyāya structure and generic structure are indistinguishable. The quote check never fired. Use the best judge for the label; attach the record as evidence." |

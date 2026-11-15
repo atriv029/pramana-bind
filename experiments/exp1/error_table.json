@@ -1,0 +1,455 @@
+{
+ "note": "Stage-level diagnosis of every Experiment 1 pipeline error (20 of 117 items; all are rejections of items labelled supported). Diagnoses were made by the authoring AI assistant reading each certificate. They are not human-reviewed, and no request/parser/aggregation failure occurred.",
+ "primary_cause_counts": {
+  "Necessary condition versus incidental detail confusion": 15,
+  "Annotation ambiguity/error": 2,
+  "Wrong polarity or negation scope": 3
+ },
+ "rows": [
+  {
+   "item": "test-stat-BSA-Section53-0",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "not_supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": "Representation cannot express the task",
+   "note": "Extractor quoted a real proviso (court may still require proof). Schema 2 had one untyped 'omitted condition' flag, so an exception to a default rule blocked support. Flagged for human adjudication.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:fb93db3155ee4126cc83f172499cd013711c3f72e95ce8c111d17011d5bbc515",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-COI-Article96-3",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": "Representation cannot express the task",
+   "note": "Real carve-out ('not in the case of an equality of votes') treated as blocking.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:87e1430a46752dc81a85edcc4679901f82d855e185d35f5ebd996022fe3bfbd6",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-COI-Article23-0",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": "Representation cannot express the task",
+   "note": "Saving clause for compulsory public service treated as blocking a default-rule claim.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:16bf2b93f7e5fd630a7f2d9833c41ebdb8360d1ae6eaed6274a668d30098983a",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-BSA-Section128-0",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "not_supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": "Representation cannot express the task",
+   "note": "Listed exceptions treated as blocking a default-rule claim.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:ba156fad7dff827589d449f440973dbf367c75a66a4b6a4607afbb4700459350",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-COI-Article179-0",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": "Annotation ambiguity/error",
+   "note": "Dissolution proviso treated as blocking. Flagged for human adjudication.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:2b33af5b9d86c3ac82529afff0c14772828a8338675be3e108d2848789a804e4",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-BSA-Section48-3",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "not_supported",
+   "primary_cause": "Annotation ambiguity/error",
+   "secondary_cause": "Necessary condition versus incidental detail confusion",
+   "note": "Extractor cited 'where consent is in issue', a real restriction the claim does not repeat; label depends on whether 'also applies to attempts' is read as carrying the section's other limits.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:96d3850d474750813c8ab5fc6cd141913cf85b648e85c7871b1f659ef383306b",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-avt-451-1",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "narrower_subject",
+    "qualification_omitted"
+   ],
+   "direct_judge": "not_supported",
+   "primary_cause": "Annotation ambiguity/error",
+   "secondary_cause": "Necessary condition versus incidental detail confusion",
+   "note": "Claim omits 'when the sexual contact is oral, anal or digital', which the source states; the 'supported' label is doubtful.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:e421507946de9c0bb53575e3c23bfecfffcd320374193d2c7dee92f5e17372ee",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-avt-371-1",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": null,
+   "note": "Conditions listed are what the claim already summarises as 'certain categories'; extractor did not recognise them as stated in the claim.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:8676c3dd3c5a48184e69c07498ef9e449fea9f4e47d49fe960f307bb465d7e66",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-avt-402-0",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "claim_not_stated_in_source",
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": null,
+   "note": "Alternative penalty (fine) listed as a condition; it does not change 'punishable by imprisonment'.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:668f176d62ec8811c41bdcb7c057a7d53df278b8f1262f506c837bed09e30516",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-avt-285-1",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": null,
+   "note": "Incidental detail ('a man') listed as a condition.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:a461c5f2908dddf1f885f29c05427572aa0e933727b21eacc987028a8e9acdfa",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-BSA-Section53-3",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "supported",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": null,
+   "note": "Listed condition is the section's own subject matter, already implied by the claim.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:9eed0535b0206fd4b9673ed55e4c809b41f50572091155011942255c0995721a",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-COI-Article133-1",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualifier_cue_outside_quote",
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": "Annotation ambiguity/error",
+   "note": "Listed conditions include ones the claim states; also flagged for adjudication because the single-judge bar is omitted.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:ff043ecfc63171629cd4dda3b8c725bc8d78c24960b827cf72b2e837767c4459",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-COI-Article30-4",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "supported",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "negation_cue_before_quote",
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": null,
+   "note": "Listed condition ('religion or language') does not narrow the claim.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:9ed0d31645716648c7e874d0e9a621d32581deb1e5a33b845fb2fd889fdc8401",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-COI-Article203-2",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": null,
+   "note": "Governor's recommendation concerns making a demand, not the Assembly's power to reduce it.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:ce63d4f4a2d9a52a9cd16b77ac7300a7d3939c80164724bb1967275207d859c6",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-BNSS-Section81-0",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": null,
+   "note": "Detail of which magistrate; does not narrow the claim.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:0f0b8ff3428f54af5466660999810ec442bb2c43992405f359c7596f47e2a730",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-BNSS-Section81-2",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "not_established"
+   ],
+   "reasons": [
+    "qualification_omitted"
+   ],
+   "direct_judge": "not_supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": null,
+   "note": "Conditions listed are stated in the claim itself.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:dd02a7adbe2d53b87e3c2d1cef05d589aaa08a08f1f6d7722ccacf3441df811e",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-BNSS-Section39-3",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "not_established",
+    "supported"
+   ],
+   "reasons": [
+    "narrower_subject",
+    "qualification_omitted"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Necessary condition versus incidental detail confusion",
+   "secondary_cause": "Quantifier/population mismatch",
+   "note": "Proviso read as covering a narrower subject; claim already restricts to persons arrested under the section.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:5b3ae64469b58d0a4e9ed471e4ae2bb0514cbcfacc2aaf52721302ff1748434e",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-COI-Article23-2",
+   "gold_original": "supported",
+   "pipeline": "not_established",
+   "run_statuses": [
+    "not_established",
+    "supported",
+    "not_established"
+   ],
+   "reasons": [
+    "conflicting_statements"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Wrong polarity or negation scope",
+   "secondary_cause": "Representation cannot express the task",
+   "note": "Claim part 'may not discriminate' matched by a negative source sentence that the extractor filed as denying the claim. Schema 2 had no claim polarity.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:d85583eb856d3977a514d42093f7f91d036db5311b5e402097742c6e1cbcef76",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-COI-Article133-3",
+   "gold_original": "supported",
+   "pipeline": "contradicted",
+   "run_statuses": [
+    "supported",
+    "contradicted",
+    "contradicted"
+   ],
+   "reasons": [
+    "source_denies_claim"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Wrong polarity or negation scope",
+   "secondary_cause": "Representation cannot express the task",
+   "note": "'No appeal lies' claim; negative source sentence filed as denial in 2 of 3 runs.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:c48f30f2708fdf289f366ded670a49804d918773cf67b69a3df781e90d10fdfe",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  },
+  {
+   "item": "test-stat-COI-Article203-0",
+   "gold_original": "supported",
+   "pipeline": "contradicted",
+   "run_statuses": [
+    "contradicted",
+    "supported",
+    "contradicted"
+   ],
+   "reasons": [
+    "source_denies_claim"
+   ],
+   "direct_judge": "supported",
+   "primary_cause": "Wrong polarity or negation scope",
+   "secondary_cause": "Representation cannot express the task",
+   "note": "'Not submitted to the vote' claim; negative source sentence filed as denial in 2 of 3 runs.",
+   "artifact": {
+    "certificate": "urn:pramana:cert:6ac72e6b10a0aa37dd924d3fa6a0610652017be3869fb3585a92260691eb5363",
+    "ledger": "eval/runs/test-haiku/ledger.jsonl",
+    "raw_calls": "eval/runs/test-haiku/calls.jsonl"
+   }
+  }
+ ]
+}

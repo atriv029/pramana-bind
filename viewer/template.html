@@ -67,7 +67,7 @@ function quotes(av,ds){const q=[];const p=av.pratijna;
  for(const d of ds||[])q.push({role:"Counter-source",cls:"neg",...d.quote});return q}
 function highlight(text,qs){const sp=qs.filter(q=>q.located&&q.source_id==="T"&&q.start!=null).map(q=>[q.start,q.end,q.cls]).sort((a,b)=>a[0]-b[0]);
  let o="",pos=0;for(const[s,e,c]of sp){if(s<pos)continue;o+=esc(text.slice(pos,s))+`<mark class="m-${c}">`+esc(text.slice(s,e))+"</mark>";pos=e}return o+esc(text.slice(pos))}
-function show(i){const {cert:c,texts,audit}=D.certs[i];const av=c.avayava,n=av.nigamana,ex=c.extraction,qs=quotes(av,c.defeaters);
+var show=function(i){const {cert:c,texts,audit}=D.certs[i];const av=c.avayava,n=av.nigamana,ex=c.extraction,qs=quotes(av,c.defeaters);
  document.querySelectorAll(".item").forEach((b,j)=>b.setAttribute("aria-current",j===i));
  const reasons=(n.reasons||[]).map(r=>`<li>${esc(PLAIN[r]||r)} <span class="term">${esc(D.terms[r]||"")}</span></li>`).join("");
  const runs=(ex.run_statuses||[]).map(chip).join(" ");
@@ -101,8 +101,53 @@ ${qs.map(q=>`<tr><td>${esc(q.role)}${q.extra?`<br><span class="sm mut">${esc(q.e
 <p class="sm mut">“Located” means only that these exact words occur once in the source. Whether they mean what they are filed as is not checked by any program.</p></div>
 <div class="card"><h2>Certificate</h2><p class="sm">id <code>${esc(c.id)}</code><br>ledger seq ${c.seq} · ${esc(c.t)} · this_hash <code>${esc(c.this_hash)}</code><br>schema ${esc(c.schema_version)} · rules ${esc(c.checks.rules_version)} · extractor prompt sha256 <code>${esc(ex.prompt_sha256||"").slice(0,16)}…</code> · Lean check ran: ${c.checks.lean.ran}</p></div>`;
  document.getElementById("dl").onclick=()=>{const u=URL.createObjectURL(new Blob([JSON.stringify(c,null,1)],{type:"application/json"}));const a=document.createElement("a");a.href=u;a.download=c.id.split(":").pop().slice(0,16)+".json";a.click();URL.revokeObjectURL(u)}}
+Object.assign(PLAIN,{insufficient_evidence:"No located passage states or necessarily implies this.",
+scope_extension:"The source says this only of a narrower subject, or the claim drops a restriction on who or what is covered.",
+strength_inflation:"The source says something weaker than the claim (a hedge, an association, a possibility).",
+necessary_condition_omitted:"The source makes this conditional on something the claim leaves out.",
+temporal_mismatch:"The source limits this to a time the claim does not carry.",
+exception_omitted_from_universal:"The claim is worded as universal and the source gives an exception.",
+conflicting_evidence:"Located passages point both ways; both are kept.",
+source_denies:"A located passage states the opposite of the claim.",
+inferred_only:"The source only makes this likely or gives examples. That is not proof.",
+counterexample_in_source:"The source gives a case that cuts against the claim.",
+wrong_entity:"The located passages are about a different subject."});
+function show3(i){const {cert:c,texts,audit}=D.certs[i];const r=c.record||{},d=c.derived||{};
+ document.querySelectorAll(".item").forEach((b,j)=>b.setAttribute("aria-current",j===i));
+ const ev=(r.evidence||[]).map((e,k)=>({...e,...(d.evidence_located||[])[k],kind:"ev"}));
+ const qu=(r.qualifiers||[]).map((q,k)=>({...q,...(d.qualifiers_located||[])[k],kind:"q"}));
+ const sp=ev.concat(qu).filter(x=>x.located&&x.start!=null).map(x=>[x.start,x.end,x.kind==="q"?"cond":(x.stance==="denies"?"neg":(x.stance==="affirms"?"S":"H"))]).sort((a,b)=>a[0]-b[0]);
+ let o="",pos=0;const T=texts.T||"";for(const[s0,e0,cl]of sp){if(s0<pos)continue;o+=esc(T.slice(pos,s0))+`<mark class="m-${cl}">`+esc(T.slice(s0,e0))+"</mark>";pos=e0}o+=esc(T.slice(pos));
+ const reasons=(d.reasons||[]).map(x=>{const t=x.split(":").pop();const pt=x.includes(":")?x.split(":")[0].replace("part","part ")+": ":"";return `<li>${esc(pt)}${esc(PLAIN[t]||t)}</li>`}).join("");
+ const allok=audit.every(s=>s.ok)&&D.ledger.steps.every(s=>s.ok);const cmd=`python -m pramana_bind audit ${D.ledger.file} --pubkey ${D.ledger.pubkey}`;
+ const runs=(c.extraction.run_statuses||[]);
+ document.getElementById("detail").innerHTML=`
+<div class="card"><h2>Claim</h2><p class="claim">${esc(c.subject.claim_text)}</p>${c.subject.note?`<p class="sm mut">${esc(c.subject.note)}</p>`:""}</div>
+<div class="two"><div class="card"><h2>Support (the method's conclusion)</h2><p>${chip(c.status)}</p>
+${c.status==="supported"?`<p>A located passage states or necessarily implies each part of the claim, about the same subject, and no located qualifier of a blocking kind applies.</p>`:`<ul class="why">${reasons}</ul>`}
+<p class="sm"><b>Inference path reported by the model:</b> ${esc(d.path||"none")}${d.conflict?" · <b>conflict flagged</b>":""}</p>
+${runs.length>1?`<p class="sm"><b>Extraction runs:</b> ${runs.map(chip).join(" ")}</p>`:""}
+<p class="sm mut">Every label in the table below (stance, basis, subject match, relation) was assigned by ${esc(c.extraction["gen_ai.request.model"]||"a model")}. Only the quotes were checked, and only for occurring verbatim. The decision is a fixed function of those labels.</p></div>
+<div class="card"><h2>Integrity and replay (independent of the above)</h2>
+<p class="${allok?"pass":"fail"}">${allok?"All integrity and replay checks passed":"One or more checks failed"}</p>
+<div class="tw"><table><tr><th>Check</th><th>Result</th><th>Detail</th></tr>${D.ledger.steps.concat(audit).map(s=>`<tr><td>${esc(s.step)}</td><td class="${s.ok?"pass":"fail"}">${s.ok?"pass":"FAIL"}</td><td class="sm">${esc(s.detail)}</td></tr>`).join("")}</table></div>
+<p class="sm mut">Recorded when this page was built, against a public key supplied separately. A pass does not mean the reading is right.</p><pre>${esc(cmd)}</pre>
+<button class="b" id="dl">Download certificate (JSON)</button></div></div>
+<div class="card"><h2>Source, with located quotes</h2><p class="legend sm"><span class="m-S">affirms the claim</span><span class="m-neg">denies the claim</span><span class="m-cond">qualifier</span><span class="m-H">weaker / other</span></p>
+<div class="src" style="max-height:420px;overflow:auto">${o}</div><p class="sm mut">sha256 ${esc(c.texts.T||"—")}</p></div>
+<div class="card"><h2>Structured record (model-assigned) and quote checks (mechanical)</h2>
+<p class="sm"><b>Subject:</b> ${esc((r.claim||{}).subject)}</p>
+<div class="tw"><table><tr><th>Claim part</th><th>Polarity</th><th>Quantifier</th><th>Modality</th><th>Outcome</th></tr>
+${((r.claim||{}).parts||[]).map((p,k)=>`<tr><td>${esc(p.predicate)}</td><td>${esc(p.polarity)}</td><td>${esc(p.quantifier)}${p.universal_wording?" (universal wording)":""}</td><td>${esc(p.modality)}</td><td>${chip(((d.parts||[])[k]||{}).status||"")}</td></tr>`).join("")}</table></div>
+<div class="tw"><table><tr><th>Evidence: stance · basis · subject</th><th>Quote</th><th>Located?</th></tr>
+${ev.map(e=>`<tr><td>part ${e.part??0}: ${esc(e.stance)} · ${esc(e.basis)} · ${esc(e.subject_match)}${e.role==="counterexample"?" · counterexample":""}</td><td>“${esc(e.quote)}”</td><td class="${e.located?"pass":"fail"}">${e.located?"yes "+(e.start!=null?e.start+"–"+e.end:""):"refused ("+esc(e.reason)+")"}</td></tr>`).join("")||'<tr><td colspan=3 class="mut">No evidence proposed.</td></tr>'}</table></div>
+<div class="tw"><table><tr><th>Qualifier: relation · changes · stated in claim?</th><th>Quote</th><th>Located?</th></tr>
+${qu.map(q=>`<tr><td>${esc(q.relation)} · ${esc(q.claim_part_changed)} · ${q.stated_in_claim?"yes":"no"}<br><span class="sm mut">${esc(q.text)}</span></td><td>“${esc(q.quote)}”</td><td class="${q.located?"pass":"fail"}">${q.located?"yes":"refused"}</td></tr>`).join("")||'<tr><td colspan=3 class="mut">No qualifiers proposed.</td></tr>'}</table></div></div>
+<div class="card"><h2>Certificate</h2><p class="sm">id <code>${esc(c.id)}</code><br>ledger seq ${c.seq} · ${esc(c.t)} · schema ${esc(c.schema_version)} · rules ${esc(c.checks.rules_version)}</p></div>`;
+ document.getElementById("dl").onclick=()=>{const u=URL.createObjectURL(new Blob([JSON.stringify(c,null,1)],{type:"application/json"}));const a=document.createElement("a");a.href=u;a.download=c.id.split(":").pop().slice(0,16)+".json";a.click();URL.revokeObjectURL(u)}}
+const _show2=show;show=function(i){return D.certs[i].cert.schema_version==="3"?show3(i):_show2(i)};
 document.getElementById("title").textContent=D.title;document.getElementById("note").textContent=D.note;
-document.getElementById("list").innerHTML=D.certs.map((x,i)=>`<button class="item" data-i="${i}">${chip(x.cert.status)}${x.cert.extraction.unstable?' <span class="sm mut">unstable</span>':''}<div class="cl">${esc(x.cert.subject.claim_text)}</div></button>`).join("");
+document.getElementById("list").innerHTML=D.certs.map((x,i)=>`<button class="item" data-i="${i}">${chip(x.cert.status)}${(x.cert.extraction.unstable||new Set(x.cert.extraction.run_statuses||[]).size>1)?' <span class="sm mut">unstable</span>':''}<div class="cl">${esc(x.cert.subject.claim_text)}</div></button>`).join("");
 document.getElementById("list").onclick=e=>{const b=e.target.closest(".item");if(b)show(+b.dataset.i)};
 if(D.certs.length)show(0);
 </script></body></html>

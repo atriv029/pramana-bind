@@ -1,0 +1,1 @@
+In the past YOLO struggled with small objects. However, now we see a reversal in that trend. With the new multi-scale predictions we see YOLOv3 has relatively high AP{}_{S} performance. However, it has comparatively worse performance on medium and larger size objects. More investigation is needed to get to the bottom of this.

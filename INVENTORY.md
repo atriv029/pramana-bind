@@ -60,3 +60,20 @@ Also: exhaustive agreement on more than 50,000 (paksa, sadhya, hetu) triples wit
 `tests/test_ground_crosscheck.py`.
 
 This is symbolic regression agreement on constructed closed worlds. It is not evidence about natural-language support.
+
+## Addendum: Experiment 2 (15 Nov 2026)
+| Module / artefact | Purpose | Tests / runs | Known limitations |
+|---|---|---|---|
+| pramana_bind/v3.py | schema-3 record (N1), generic structured baseline (B1), direct and taxonomy prompts, decision rules, versioned certificate and audit replay | tests/test_v3.py (16 cases on frozen records, incl. single-field interventions and a control); 4,656 live calls | every stance/basis/subject/relation label is model-assigned; time only as a qualifier |
+| experiments/exp1/ | immutable manifest (tag `exp1-frozen`), exploratory rule replay, stage-level error table | replay re-derives 29/49, 0/68 exactly | replay and diagnoses are post-hoc, AI-made |
+| experiments/exp2/ | pinned fetch script, adapters, protocol, runner, scorer, figures, ledger builder, annotation policy v1.1, blind review packet | all four evaluation runs, 0 failed calls | modest samples; no human review recorded |
+| submission/build_report.py | report and claim-to-evidence table generated from result files | run | narrative text is hand-written around generated numbers |
+
+Test summary: 76 tests pass. Of these, 3 (`test_LIMIT_*`) are **known-limit characterisations** that assert wrong
+behaviour on purpose (inverted polarity, wrong entity, correlation as causation); 73 are correctness tests.
+Model identity: every successful call in both experiments reports `claude-haiku-5-5` as the served model
+(`served_models` in each metrics.json); no alias or fallback was observed.
+Not done from the handoff: human review and adjudication; independently annotated failure tags; the 2×2
+corrected-extraction diagnostic (needs human-corrected records); pipeline-level synthetic interventions beyond
+VitaminC's own contrast pairs; human audit study; FOLIO/ProofWriter/SciFact/ERASER; a second model; fine-tuning;
+the full-size allocation (754 items evaluated, not ~5,000).

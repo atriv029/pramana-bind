@@ -3,15 +3,20 @@
 A quote-grounded, rule-based citation checker with signed, replayable certificates, built for the AI × Epistemics
 Research Sprint (13–15 Nov 2026), Track 2.
 
-**Headline result (held-out, 117 items, one model):** the pipeline did not beat simpler baselines. No system accepted
-an unsupported citation (0/68 each). The pipeline recovered 29/49 supported claims; a one-call direct judge 43/49; a
-judge prompted with the same failure taxonomy 37/49. Quote grounding changed no outcome. What the pipeline adds is an
-audit trail, not accuracy. Labels are AI-drafted and **not yet human-reviewed**. See `submission/report.pdf`.
+**Headline (two registered evaluations, one model).** Structure did not make the verifier more accurate than asking
+directly. On four public benchmarks (754 items) the revised structured method accepted equal or fewer unsupported
+claims than a direct judge on every dataset (29 vs 40 of 402 in total) but recovered fewer supported ones (190 vs
+218 of 352). A generic structured verifier performed the same as the Nyāya-typed one. Verbatim quote grounding
+changed no outcome. On our own 117 items no system accepted an unsupported claim; those labels are AI-drafted and
+**not yet human-reviewed**. See `submission/report.pdf` and `submission/CLAIMS.md`.
 
 ## Where things are
 | Path | What |
 |---|---|
-| `submission/report.pdf` | research report (6 pages incl. appendices) |
+| `submission/report.pdf`, `submission/CLAIMS.md` | research report in the official template's structure; table linking every number to its result file |
+| `submission/exp1_report/` | the earlier Experiment-1-only report, kept for the record |
+| `experiments/exp1/` | immutable manifest of Experiment 1, exploratory rule replay, stage-level error table |
+| `experiments/exp2/` | protocol, annotation policy, blind review packet, dataset manifest and adapters, runs, signed ledger for the external evaluation |
 | `INVENTORY.md` | every module: behaviour, tests run, limits, dependency versions |
 | `eval/PROTOCOL.md` | analysis protocol frozen before the held-out run |
 | `eval/DATASET.md`, `eval/data/` | dataset, annotation and licence notes; dev, test and attack files |
