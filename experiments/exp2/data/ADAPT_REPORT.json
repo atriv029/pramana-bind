@@ -1,0 +1,115 @@
+{
+ "contractnli_dev": {
+  "items": 51,
+  "families": 3,
+  "labels": {
+   "not_established": 23,
+   "supported": 26,
+   "contradicted": 2
+  },
+  "source_chars_max": 13925,
+  "sha256": "abe180eb04cd023d674369bcfd0fc13b58efb6c8f93218e104d0960a3182a0ed"
+ },
+ "contractnli_eval": {
+  "items": 204,
+  "families": 12,
+  "labels": {
+   "not_established": 97,
+   "supported": 86,
+   "contradicted": 21
+  },
+  "source_chars_max": 23765,
+  "sha256": "1e21ba8dac8b36c393df2f908684576883ab9852303eaf876c8437f492f52268"
+ },
+ "vitaminc_dev_population": {
+  "cases_total": 18836,
+  "contrast_cases": 18653
+ },
+ "vitaminc_dev": {
+  "items": 62,
+  "families": 20,
+  "labels": {
+   "not_established": 11,
+   "supported": 31,
+   "contradicted": 20
+  },
+  "source_chars_max": 369,
+  "sha256": "03587bf4f872791870df678b19d784a8e2a8a7d8fe3735d68ee9bed53f03e2ee"
+ },
+ "vitaminc_test_population": {
+  "cases_total": 16487,
+  "contrast_cases": 16346
+ },
+ "vitaminc_eval": {
+  "items": 240,
+  "families": 70,
+  "labels": {
+   "supported": 120,
+   "contradicted": 98,
+   "not_established": 22
+  },
+  "source_chars_max": 461,
+  "sha256": "7625fdf268030ce0dd7504c292daba15cc4a416f75de80a2febfe8c9ea411f46"
+ },
+ "scicite_join": {
+  "rows": 1034,
+  "labels": {
+   "Correct": 302,
+   "Incorrect": 302,
+   "Unrelated": 430
+  },
+  "not_joined_to_qasa": {
+   "Correct": 1,
+   "Incorrect": 2,
+   "Unrelated": 430
+  }
+ },
+ "scicite_eval": {
+  "items": 160,
+  "families": 17,
+  "labels": {
+   "supported": 60,
+   "not_supported": 100
+  },
+  "source_chars_max": 10529,
+  "sha256": "2497b1ba00636aa47e8d1aad89c0f17b5a6253c612dfbafae5f9d1a5fd68b6a8"
+ },
+ "attributionbench_dev": {
+  "items": 40,
+  "families": 40,
+  "labels": {
+   "not_supported": 20,
+   "supported": 20
+  },
+  "source_chars_max": 21970,
+  "sha256": "ffde253354974cb436a2c389519a896e14063601bbbd279c6772bb91715bdbda"
+ },
+ "attributionbench_eval": {
+  "items": 150,
+  "families": 143,
+  "labels": {
+   "supported": 86,
+   "not_supported": 64
+  },
+  "source_chars_max": 4827,
+  "sha256": "1e8f538f26ddd5c5bf1f7077d13c664d889f77e8e06b184095712efbf3dbb43e"
+ },
+ "overlap_dev_eval": {
+  "contractnli_eval": {
+   "same_claim_and_source": 0,
+   "same_source_text": 0
+  },
+  "vitaminc_eval": {
+   "same_claim_and_source": 0,
+   "same_source_text": 0
+  },
+  "attributionbench_eval": {
+   "same_claim_and_source": 0,
+   "same_source_text": 0
+  },
+  "scicite_eval": {
+   "same_claim_and_source": 0,
+   "same_source_text": 0
+  }
+ }
+}

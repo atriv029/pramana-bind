@@ -1,0 +1,33 @@
+{
+ "model": {
+  "provider": "anthropic (first-party, via Claude Code CLI headless mode)",
+  "model": "claude-haiku-5-5",
+  "system_prompt": "You are a careful analyst. Follow the user's instructions exactly.",
+  "tools": "disabled",
+  "temperature": "provider default (not settable through this interface)",
+  "max_output_tokens": "provider default",
+  "response_format": "free text; JSON object parsed by caller",
+  "retries": 2,
+  "timeout_s": 240
+ },
+ "items_file": "experiments/exp2/data/contractnli_dev.jsonl",
+ "n_items": 40,
+ "systems": [
+  "B0",
+  "T",
+  "B1",
+  "N1"
+ ],
+ "extra_subset": 0,
+ "prompt_sha256": {
+  "B0": "07a0fac6e5e5d089fcb264c59da2743ef7b01f35ee7cd27b676576aae5fc5be0",
+  "T": "1f500f0a57287ad2998ea24c15b147924d13de3a61564c4176a5460299e437b1",
+  "B1": "1d9c17b540d5f0a2496d2fc124f50030bf6df4d3027cec4a94283ef30cf00ca0",
+  "N1": "278fb34128c1d747e23981ee6b97563ba41297ea25f5e6faba036304e17d1ef5"
+ },
+ "rules": {
+  "N1": "N1/3.1",
+  "B1": "B1/1.0"
+ },
+ "finished": "2026-11-15T06:24:31Z"
+}

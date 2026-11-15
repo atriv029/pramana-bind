@@ -1,0 +1,823 @@
+{
+ "n": 40,
+ "families": 40,
+ "three_way_gold": false,
+ "gold": {
+  "not_supported": 20,
+  "supported": 20
+ },
+ "systems": {
+  "B0": {
+   "false_support": {
+    "k": 2,
+    "n": 20,
+    "rate": 0.1,
+    "wilson95": [
+     0.0279,
+     0.301
+    ]
+   },
+   "supported_recall": {
+    "k": 12,
+    "n": 20,
+    "rate": 0.6,
+    "wilson95": [
+     0.3866,
+     0.7812
+    ]
+   },
+   "support_precision": {
+    "k": 12,
+    "n": 14,
+    "rate": 0.8571,
+    "wilson95": [
+     0.6006,
+     0.9599
+    ]
+   },
+   "failed": {
+    "k": 0,
+    "n": 40,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.0876
+    ]
+   },
+   "confusion": {
+    "not_supported": {
+     "not_established": 17,
+     "supported": 2,
+     "contradicted": 1
+    },
+    "supported": {
+     "not_established": 8,
+     "supported": 12
+    }
+   }
+  },
+  "T": {
+   "false_support": {
+    "k": 2,
+    "n": 20,
+    "rate": 0.1,
+    "wilson95": [
+     0.0279,
+     0.301
+    ]
+   },
+   "supported_recall": {
+    "k": 12,
+    "n": 20,
+    "rate": 0.6,
+    "wilson95": [
+     0.3866,
+     0.7812
+    ]
+   },
+   "support_precision": {
+    "k": 12,
+    "n": 14,
+    "rate": 0.8571,
+    "wilson95": [
+     0.6006,
+     0.9599
+    ]
+   },
+   "failed": {
+    "k": 0,
+    "n": 40,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.0876
+    ]
+   },
+   "confusion": {
+    "not_supported": {
+     "not_established": 17,
+     "supported": 2,
+     "contradicted": 1
+    },
+    "supported": {
+     "not_established": 8,
+     "supported": 12
+    }
+   }
+  },
+  "B1": {
+   "false_support": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.1611
+    ]
+   },
+   "supported_recall": {
+    "k": 6,
+    "n": 20,
+    "rate": 0.3,
+    "wilson95": [
+     0.1455,
+     0.519
+    ]
+   },
+   "support_precision": {
+    "k": 6,
+    "n": 6,
+    "rate": 1.0,
+    "wilson95": [
+     0.6097,
+     1
+    ]
+   },
+   "failed": {
+    "k": 1,
+    "n": 40,
+    "rate": 0.025,
+    "wilson95": [
+     0.0044,
+     0.1288
+    ]
+   },
+   "confusion": {
+    "not_supported": {
+     "not_established": 20
+    },
+    "supported": {
+     "not_established": 13,
+     "supported": 6,
+     "failed": 1
+    }
+   }
+  },
+  "N1": {
+   "false_support": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.1611
+    ]
+   },
+   "supported_recall": {
+    "k": 9,
+    "n": 20,
+    "rate": 0.45,
+    "wilson95": [
+     0.2582,
+     0.6579
+    ]
+   },
+   "support_precision": {
+    "k": 9,
+    "n": 9,
+    "rate": 1.0,
+    "wilson95": [
+     0.7008,
+     1
+    ]
+   },
+   "failed": {
+    "k": 0,
+    "n": 40,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.0876
+    ]
+   },
+   "confusion": {
+    "not_supported": {
+     "not_established": 18,
+     "contradicted": 2
+    },
+    "supported": {
+     "not_established": 11,
+     "supported": 9
+    }
+   }
+  },
+  "N1_noqual": {
+   "false_support": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.1611
+    ]
+   },
+   "supported_recall": {
+    "k": 13,
+    "n": 20,
+    "rate": 0.65,
+    "wilson95": [
+     0.4329,
+     0.8188
+    ]
+   },
+   "support_precision": {
+    "k": 13,
+    "n": 13,
+    "rate": 1.0,
+    "wilson95": [
+     0.7719,
+     1
+    ]
+   },
+   "failed": {
+    "k": 0,
+    "n": 40,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.0876
+    ]
+   },
+   "confusion": {
+    "not_supported": {
+     "not_established": 18,
+     "contradicted": 2
+    },
+    "supported": {
+     "not_established": 7,
+     "supported": 13
+    }
+   }
+  },
+  "N1_noground": {
+   "false_support": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.1611
+    ]
+   },
+   "supported_recall": {
+    "k": 10,
+    "n": 20,
+    "rate": 0.5,
+    "wilson95": [
+     0.2993,
+     0.7007
+    ]
+   },
+   "support_precision": {
+    "k": 10,
+    "n": 10,
+    "rate": 1.0,
+    "wilson95": [
+     0.7225,
+     1
+    ]
+   },
+   "failed": {
+    "k": 0,
+    "n": 40,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.0876
+    ]
+   },
+   "confusion": {
+    "not_supported": {
+     "not_established": 18,
+     "contradicted": 2
+    },
+    "supported": {
+     "not_established": 10,
+     "supported": 10
+    }
+   }
+  }
+ },
+ "paired_vs_N1": {
+  "N1 minus B0": {
+   "false_support": {
+    "diff": -0.1,
+    "ci95": [
+     -0.25,
+     0.0
+    ]
+   },
+   "supported_recall": {
+    "diff": -0.15,
+    "ci95": [
+     -0.4118,
+     0.1111
+    ]
+   },
+   "method": "family-cluster bootstrap, 5000 resamples, seed 0; 5 comparisons, unadjusted"
+  },
+  "N1 minus T": {
+   "false_support": {
+    "diff": -0.1,
+    "ci95": [
+     -0.25,
+     0.0
+    ]
+   },
+   "supported_recall": {
+    "diff": -0.15,
+    "ci95": [
+     -0.4,
+     0.1111
+    ]
+   },
+   "method": "family-cluster bootstrap, 5000 resamples, seed 0; 5 comparisons, unadjusted"
+  },
+  "N1 minus B1": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "supported_recall": {
+    "diff": 0.15,
+    "ci95": [
+     -0.0556,
+     0.3684
+    ]
+   },
+   "method": "family-cluster bootstrap, 5000 resamples, seed 0; 5 comparisons, unadjusted"
+  },
+  "N1 minus N1_noqual": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "supported_recall": {
+    "diff": -0.2,
+    "ci95": [
+     -0.3889,
+     -0.0476
+    ]
+   },
+   "method": "family-cluster bootstrap, 5000 resamples, seed 0; 5 comparisons, unadjusted"
+  },
+  "N1 minus N1_noground": {
+   "false_support": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "supported_recall": {
+    "diff": -0.05,
+    "ci95": [
+     -0.1667,
+     0.0
+    ]
+   },
+   "method": "family-cluster bootstrap, 5000 resamples, seed 0; 5 comparisons, unadjusted"
+  }
+ },
+ "by_original_label": {
+  "attributable": {
+   "B0": {
+    "k": 12,
+    "n": 20,
+    "rate": 0.6,
+    "wilson95": [
+     0.3866,
+     0.7812
+    ]
+   },
+   "T": {
+    "k": 12,
+    "n": 20,
+    "rate": 0.6,
+    "wilson95": [
+     0.3866,
+     0.7812
+    ]
+   },
+   "B1": {
+    "k": 6,
+    "n": 20,
+    "rate": 0.3,
+    "wilson95": [
+     0.1455,
+     0.519
+    ]
+   },
+   "N1": {
+    "k": 9,
+    "n": 20,
+    "rate": 0.45,
+    "wilson95": [
+     0.2582,
+     0.6579
+    ]
+   },
+   "N1_noqual": {
+    "k": 13,
+    "n": 20,
+    "rate": 0.65,
+    "wilson95": [
+     0.4329,
+     0.8188
+    ]
+   },
+   "N1_noground": {
+    "k": 10,
+    "n": 20,
+    "rate": 0.5,
+    "wilson95": [
+     0.2993,
+     0.7007
+    ]
+   }
+  },
+  "not attributable": {
+   "B0": {
+    "k": 2,
+    "n": 20,
+    "rate": 0.1,
+    "wilson95": [
+     0.0279,
+     0.301
+    ]
+   },
+   "T": {
+    "k": 2,
+    "n": 20,
+    "rate": 0.1,
+    "wilson95": [
+     0.0279,
+     0.301
+    ]
+   },
+   "B1": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.1611
+    ]
+   },
+   "N1": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.1611
+    ]
+   },
+   "N1_noqual": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.1611
+    ]
+   },
+   "N1_noground": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.1611
+    ]
+   }
+  }
+ },
+ "by_original_label_note": "cell = share predicted 'supported' within that gold stratum",
+ "by_src_dataset": {
+  "AttributedQA": {
+   "B0": {
+    "k": 0,
+    "n": 2,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.6576
+    ]
+   },
+   "T": {
+    "k": 1,
+    "n": 2,
+    "rate": 0.5,
+    "wilson95": [
+     0.0945,
+     0.9055
+    ]
+   },
+   "B1": {
+    "k": 0,
+    "n": 2,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.6576
+    ]
+   },
+   "N1": {
+    "k": 0,
+    "n": 2,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.6576
+    ]
+   },
+   "N1_noqual": {
+    "k": 0,
+    "n": 2,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.6576
+    ]
+   },
+   "N1_noground": {
+    "k": 0,
+    "n": 2,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.6576
+    ]
+   }
+  },
+  "ExpertQA": {
+   "B0": {
+    "k": 2,
+    "n": 16,
+    "rate": 0.125,
+    "wilson95": [
+     0.035,
+     0.3602
+    ]
+   },
+   "T": {
+    "k": 3,
+    "n": 16,
+    "rate": 0.1875,
+    "wilson95": [
+     0.0659,
+     0.4301
+    ]
+   },
+   "B1": {
+    "k": 0,
+    "n": 16,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.1936
+    ]
+   },
+   "N1": {
+    "k": 1,
+    "n": 16,
+    "rate": 0.0625,
+    "wilson95": [
+     0.0111,
+     0.2833
+    ]
+   },
+   "N1_noqual": {
+    "k": 2,
+    "n": 16,
+    "rate": 0.125,
+    "wilson95": [
+     0.035,
+     0.3602
+    ]
+   },
+   "N1_noground": {
+    "k": 2,
+    "n": 16,
+    "rate": 0.125,
+    "wilson95": [
+     0.035,
+     0.3602
+    ]
+   }
+  },
+  "LFQA": {
+   "B0": {
+    "k": 2,
+    "n": 4,
+    "rate": 0.5,
+    "wilson95": [
+     0.15,
+     0.85
+    ]
+   },
+   "T": {
+    "k": 1,
+    "n": 4,
+    "rate": 0.25,
+    "wilson95": [
+     0.0456,
+     0.6994
+    ]
+   },
+   "B1": {
+    "k": 0,
+    "n": 4,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.4899
+    ]
+   },
+   "N1": {
+    "k": 0,
+    "n": 4,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.4899
+    ]
+   },
+   "N1_noqual": {
+    "k": 1,
+    "n": 4,
+    "rate": 0.25,
+    "wilson95": [
+     0.0456,
+     0.6994
+    ]
+   },
+   "N1_noground": {
+    "k": 0,
+    "n": 4,
+    "rate": 0.0,
+    "wilson95": [
+     0,
+     0.4899
+    ]
+   }
+  },
+  "Stanford-GenSearch": {
+   "B0": {
+    "k": 10,
+    "n": 18,
+    "rate": 0.5556,
+    "wilson95": [
+     0.3372,
+     0.7544
+    ]
+   },
+   "T": {
+    "k": 9,
+    "n": 18,
+    "rate": 0.5,
+    "wilson95": [
+     0.2903,
+     0.7097
+    ]
+   },
+   "B1": {
+    "k": 6,
+    "n": 18,
+    "rate": 0.3333,
+    "wilson95": [
+     0.1628,
+     0.5625
+    ]
+   },
+   "N1": {
+    "k": 8,
+    "n": 18,
+    "rate": 0.4444,
+    "wilson95": [
+     0.2456,
+     0.6628
+    ]
+   },
+   "N1_noqual": {
+    "k": 10,
+    "n": 18,
+    "rate": 0.5556,
+    "wilson95": [
+     0.3372,
+     0.7544
+    ]
+   },
+   "N1_noground": {
+    "k": 8,
+    "n": 18,
+    "rate": 0.4444,
+    "wilson95": [
+     0.2456,
+     0.6628
+    ]
+   }
+  }
+ },
+ "by_src_dataset_note": "cell = share predicted 'supported' within that gold stratum",
+ "B1_quote_location": {
+  "k": 135,
+  "n": 138,
+  "rate": 0.9783,
+  "wilson95": [
+   0.938,
+   0.9926
+  ]
+ },
+ "N1_quote_location": {
+  "k": 129,
+  "n": 132,
+  "rate": 0.9773,
+  "wilson95": [
+   0.9353,
+   0.9922
+  ]
+ },
+ "N1_reasons_by_gold": {
+  "not_supported": {
+   "wrong_entity": 8,
+   "strength_inflation": 15,
+   "inferred_only": 1,
+   "insufficient_evidence": 3,
+   "source_denies": 2
+  },
+  "supported": {
+   "wrong_entity": 2,
+   "strength_inflation": 9,
+   "exception_omitted_from_universal": 1,
+   "insufficient_evidence": 2,
+   "inferred_only": 1,
+   "scope_extension": 3,
+   "necessary_condition_omitted": 1
+  }
+ },
+ "N1_path": {
+  "none": 21,
+  "induction": 2,
+  "deduction": 4,
+  "direct_assertion": 13
+ },
+ "N1_conflict_flagged": 0,
+ "cost": {
+  "B0": {
+   "ok_calls": 40,
+   "failed_call_records": 0,
+   "mean_latency_s": 5.18,
+   "mean_input_tokens": 2605,
+   "mean_output_tokens": 366,
+   "cost_per_call_usd": 0.0007,
+   "total_cost_usd": 0.028,
+   "served_models": {
+    "claude-haiku-5-5": 40
+   }
+  },
+  "B1": {
+   "ok_calls": 40,
+   "failed_call_records": 0,
+   "mean_latency_s": 9.78,
+   "mean_input_tokens": 2932,
+   "mean_output_tokens": 1547,
+   "cost_per_call_usd": 0.00136,
+   "total_cost_usd": 0.054,
+   "served_models": {
+    "claude-haiku-5-5": 40
+   }
+  },
+  "N1": {
+   "ok_calls": 40,
+   "failed_call_records": 0,
+   "mean_latency_s": 12.97,
+   "mean_input_tokens": 3695,
+   "mean_output_tokens": 2224,
+   "cost_per_call_usd": 0.00185,
+   "total_cost_usd": 0.074,
+   "served_models": {
+    "claude-haiku-5-5": 40
+   }
+  },
+  "T": {
+   "ok_calls": 40,
+   "failed_call_records": 0,
+   "mean_latency_s": 5.59,
+   "mean_input_tokens": 2900,
+   "mean_output_tokens": 486,
+   "cost_per_call_usd": 0.00082,
+   "total_cost_usd": 0.033,
+   "served_models": {
+    "claude-haiku-5-5": 40
+   }
+  }
+ }
+}

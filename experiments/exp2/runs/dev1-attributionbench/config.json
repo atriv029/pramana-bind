@@ -1,0 +1,33 @@
+{
+ "model": {
+  "provider": "anthropic (first-party, via Claude Code CLI headless mode)",
+  "model": "claude-haiku-5-5",
+  "system_prompt": "You are a careful analyst. Follow the user's instructions exactly.",
+  "tools": "disabled",
+  "temperature": "provider default (not settable through this interface)",
+  "max_output_tokens": "provider default",
+  "response_format": "free text; JSON object parsed by caller",
+  "retries": 2,
+  "timeout_s": 240
+ },
+ "items_file": "experiments/exp2/data/attributionbench_dev.jsonl",
+ "n_items": 40,
+ "systems": [
+  "B0",
+  "T",
+  "B1",
+  "N1"
+ ],
+ "extra_subset": 0,
+ "prompt_sha256": {
+  "B0": "bedd2b07c17b073fdb2b9b316fc663db796ff55d7a10ba06ad0310f72d82ff88",
+  "T": "e619492d84d38fff1daf0bcf3d63d34956ee619c6a271d23f6a7e205aaee110d",
+  "B1": "9ec671825705746f89b0eb0b485cacbd9b8f6bf18948aaf299b9f261e29cff69",
+  "N1": "f239fc8d57ccd63492c06f2fffcbf8a7a743674e1edd3844fd6f34a0c4788ba6"
+ },
+ "rules": {
+  "N1": "N1/3.0",
+  "B1": "B1/1.0"
+ },
+ "finished": "2026-11-15T06:19:44Z"
+}

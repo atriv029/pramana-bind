@@ -4,3 +4,4 @@ __pycache__/
 .pytest_cache/
 *.key
 eval/runs/*/signer.key
+data_cache/

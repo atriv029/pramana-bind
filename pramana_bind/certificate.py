@@ -224,6 +224,20 @@ def audit_certificate(body: dict[str, Any], texts_dir: Path, seq: Optional[int] 
         steps.append(Step(step, ok, seq, cid, detail))
 
     add("certificate_id", cert_id(body) == cid, "" if cert_id(body) == cid else "id is not the hash of the body")
+    if body.get("schema_version") == "3":
+        # Versioned dispatch: schema-3 certificates replay under the schema-3 rules, never under these.
+        from .v3 import audit_v3
+        texts3, bad3 = {}, []
+        for sid, sha in body.get("texts", {}).items():
+            f = Path(texts_dir) / f"{sha}.txt"
+            if f.exists() and hashlib.sha256(f.read_bytes()).hexdigest() == sha:
+                texts3[sid] = f.read_bytes().decode("utf-8")
+            else:
+                bad3.append(f"{sid}: text {sha[:12]} missing or altered")
+        add("source_hashes", not bad3, "; ".join(bad3))
+        for step, ok, detail in audit_v3(body, texts3):
+            add(step, ok, detail)
+        return steps
     ver = (body.get("schema_version"), body.get("checks", {}).get("rules_version"))
     add("versions", ver == (SCHEMA_VERSION, RULES_VERSION),
         f"schema {ver[0]}, rules {ver[1]}" if ver == (SCHEMA_VERSION, RULES_VERSION)
