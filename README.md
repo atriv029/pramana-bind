@@ -193,4 +193,4 @@ The commit history was rewritten once before publication to set the author ident
 
 ## Citation
 
-Trivedi, A. (2026). *Pramāṇa-Bind: Auditable Evidence Commitments and the Cost of Qualification in Citation Verification.* AI × Epistemics Research Sprint, Apart Research.
+Trivedi, A. (2026). *Pramāna-Bind: Auditable citation verification through explicit evidence commitments.* AI × Epistemics Research Sprint, Apart Research.
