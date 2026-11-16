@@ -1,0 +1,62 @@
+[
+ {
+  "property": "Quote occurs in the supplied source",
+  "status": "checked",
+  "implementation": "Exact or whitespace-collapsed string match; zero or multiple matches refused; offsets recomputed on audit",
+  "assumption": "The supplied text is the right text"
+ },
+ {
+  "property": "Source text is the one the certificate was built from",
+  "status": "checked",
+  "implementation": "SHA-256 of the stored text compared with the certificate",
+  "assumption": "The source is authoritative, complete or current"
+ },
+ {
+  "property": "Evidence is bound to the stated claim part",
+  "status": "checked",
+  "implementation": "Part references resolved by a fixed rule; invalid references reported; binding stored and recomputed (rules N1/3.2)",
+  "assumption": "The model referenced the part it meant"
+ },
+ {
+  "property": "Decision follows from the record",
+  "status": "checked",
+  "implementation": "Versioned rule re-run on audit; superseded versions replay under their own rule",
+  "assumption": "The rule is the right rule for the task"
+ },
+ {
+  "property": "Record unchanged since signing",
+  "status": "checked",
+  "implementation": "Hash chain over ledger events; Ed25519 signature on the chain head",
+  "assumption": "Signer key obtained outside the bundle"
+ },
+ {
+  "property": "Ledger not rolled back or forked",
+  "status": "conditional",
+  "implementation": "Only against a checkpoint the auditor already holds",
+  "assumption": "Auditor kept an earlier head; no public log exists"
+ },
+ {
+  "property": "Quote means what it is filed as (stance, basis)",
+  "status": "not checked",
+  "implementation": "Not checked",
+  "assumption": "Model assignment; inverted polarity is accepted if filed so"
+ },
+ {
+  "property": "Quote is about the claim's subject, scope and time",
+  "status": "not checked",
+  "implementation": "Compared only through model-assigned labels",
+  "assumption": "Model assignment; a wrong-entity quote is accepted if filed so"
+ },
+ {
+  "property": "Qualifier is necessary rather than incidental",
+  "status": "not checked",
+  "implementation": "Not checked",
+  "assumption": "Model assignment; the largest measured source of lost recall"
+ },
+ {
+  "property": "No contrary evidence exists elsewhere",
+  "status": "not checked",
+  "implementation": "Not checked; nothing is retrieved",
+  "assumption": "Only the supplied context is read"
+ }
+]

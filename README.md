@@ -3,12 +3,14 @@
 A quote-grounded, rule-based citation checker with signed, replayable certificates, built for the AI × Epistemics
 Research Sprint (13–15 Nov 2026), Track 2.
 
-**Headline (two registered evaluations, one model).** Structure did not make the verifier more accurate than asking
-directly. On four public benchmarks (754 items) the revised structured method accepted equal or fewer unsupported
-claims than a direct judge on every dataset (29 vs 40 of 402 in total) but recovered fewer supported ones (190 vs
-218 of 352). A generic structured verifier performed the same as the Nyāya-typed one. Verbatim quote grounding
-changed no outcome. On our own 117 items no system accepted an unsupported claim; those labels are AI-drafted and
-**not yet human-reviewed**. See `submission/report.pdf` and `submission/CLAIMS.md`.
+**Headline (prospective repository freeze, one primary model).** On 754 items from four public benchmarks the typed
+record accepted no more unsupported claims than a direct judge on any dataset (29 vs 40 of 402) but recovered fewer
+supported ones (188 vs 218 of 352). No clear advantage over a generic structured verifier was detected. Qualifier
+enforcement is the main cost: switching it off regains 37 supported claims and admits 6 unsupported ones. Quotation
+checking refused 9 of 2,540 quotes and changed no decision. A part-binding defect in the registered rule was found
+after the freeze, fixed (rules N1/3.2, B1/1.1) and replayed: 5 verdicts and 153 per-part explanations changed; both
+versions are kept. A single-author review of 30 of our own 117 items agreed with their binary labels on 30/30.
+See `submission/report.pdf`, `submission/CLAIMS.md`, `submission/RECONCILIATION.md`, `submission/HUMAN_REVIEW.md`.
 
 ## Where things are
 | Path | What |
@@ -16,6 +18,9 @@ changed no outcome. On our own 117 items no system accepted an unsupported claim
 | `submission/report.pdf`, `submission/CLAIMS.md` | research report in the official template's structure; table linking every number to its result file |
 | `submission/exp1_report/` | the earlier Experiment-1-only report, kept for the record |
 | `experiments/exp1/` | immutable manifest of Experiment 1, exploratory rule replay, stage-level error table |
+| `experiments/exp2b/` | the same frozen replies decided by the corrected rules; before/after table; signed ledger |
+| `experiments/exp3/` | second-model protocol, subsample and results (two of four datasets completed) |
+| `experiments/human_review/` | archived review upload, import script, results |
 | `experiments/exp2/` | protocol, annotation policy, blind review packet, dataset manifest and adapters, runs, signed ledger for the external evaluation |
 | `INVENTORY.md` | every module: behaviour, tests run, limits, dependency versions |
 | `eval/PROTOCOL.md` | analysis protocol frozen before the held-out run |

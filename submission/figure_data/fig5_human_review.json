@@ -1,0 +1,166 @@
+{
+ "source": "experiments/human_review/RESULTS.json",
+ "three_way_confusion": {
+  "contradicted -> contradicted": 5,
+  "contradicted -> not_established": 4,
+  "not_established -> contradicted": 4,
+  "not_established -> not_established": 4,
+  "supported -> supported": 13
+ },
+ "binary_agreement": {
+  "k": 30,
+  "n": 30,
+  "wilson95": [
+   0.886,
+   1
+  ],
+  "cohen_kappa": 1.0
+ },
+ "systems": {
+  "direct_1": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 12,
+     "n": 13,
+     "wilson95": [
+      0.667,
+      0.986
+     ]
+    },
+    "accuracy": {
+     "k": 29,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 12,
+     "n": 13,
+     "wilson95": [
+      0.667,
+      0.986
+     ]
+    },
+    "accuracy": {
+     "k": 29,
+     "n": 30
+    }
+   }
+  },
+  "taxonomy_3": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 11,
+     "n": 13,
+     "wilson95": [
+      0.578,
+      0.957
+     ]
+    },
+    "accuracy": {
+     "k": 28,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 11,
+     "n": 13,
+     "wilson95": [
+      0.578,
+      0.957
+     ]
+    },
+    "accuracy": {
+     "k": 28,
+     "n": 30
+    }
+   }
+  },
+  "pipeline_noguard": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 8,
+     "n": 13,
+     "wilson95": [
+      0.355,
+      0.823
+     ]
+    },
+    "accuracy": {
+     "k": 25,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 8,
+     "n": 13,
+     "wilson95": [
+      0.355,
+      0.823
+     ]
+    },
+    "accuracy": {
+     "k": 25,
+     "n": 30
+    }
+   }
+  }
+ },
+ "provenance": {
+  "reviewer": "R1 = the project author (single reviewer)",
+  "design": "post-evaluation review; not part of the prospective freeze",
+  "subset": "30 of 117 held-out Experiment 1 items, drawn with a fixed seed (random.Random(30)), 13 originally supported and 17 not",
+  "concealed_in_packet": "original labels, subtypes, rationales, evidence highlights, item file names and all system predictions",
+  "inter_reviewer_reliability": "not available: one reviewer"
+ }
+}

@@ -1,0 +1,31 @@
+review_id,label (supported / contradicted / not_established / ambiguous),failure_tags (optional),reason (one sentence),reviewer_pseudonym,timestamp_utc
+R7F4E908B,not_established,,"The source does not explicitly state anything about the Deputy Speaker's rights, and the rights listed are only tailored towards the Speaker.",R1,2026-11-16T03:04:26Z
+R1829B8B5,supported,,"The last sentence in the source context clearly says by under the Court's discretion, require facts to be proven otherwise.",R1,2026-11-16T03:04:26Z
+R34B69BAB,supported,,"The first sentence quite literally establishes how traffic is prohibited under the law and punishable.",R1,2026-11-16T03:04:26Z
+R4DE7AB46,not_established,,"The speaker itself carries the rights to speaking or taking part in proceedings, as it is the Deputy Speaker whose rights are limited.",R1,2026-11-16T03:04:26Z
+RE2FE8DBE,not_established,,"The claim overstates the punishment, as the source context claims the punishment is a penalty of five hundred rupees, but not imprisonment as the claim wrongly states.",R1,2026-11-16T03:04:26Z
+RC336F941,supported,,"The last line of the source states that experience is not relevant to the issue of consent.",R1,2026-11-16T03:04:26Z
+R5EA2FB67,supported,,"The language in the source context strongly implies that it is the court's right to provide an accused individual the right to have translations ready.",R1,2026-11-16T03:04:26Z
+RDE0EEBDD,supported,,"The first line of the source context clearly dates the therapy back to the 1980s and connects it to the testing of fetal tissue cell.",R1,2026-11-16T03:04:26Z
+R3060C994,not_established,,"There is no specification of free lawyers, there is simply an expanded access of them, but no guarantee they're free.",R1,2026-11-16T03:04:26Z
+RA59B0943,contradicted,,"The claim uses quite ambiguous language of whether the person knows their qualification status, while the source text explicitly claims that they do know regardless.",R1,2026-11-16T03:04:26Z
+R7DFDCC16,supported,,"Quite clearly supported in the first sentence of the source text, given its a repetition of the claim.",R1,2026-11-16T03:04:26Z
+R490A2C2B,supported,,"Election officials claim that steps towards signature verification allows for legitimacy in the voting process.",R1,2026-11-16T03:04:26Z
+R8EC0BB38,supported,,"The last sentence of the source context verifies the fatality rate is 2.72%, matching the claim's estimate.",R1,2026-11-16T03:04:26Z
+R1F132F66,contradicted,,"Though the global case recovery rate is approx. 68%, the rate specific to the USA is roughly 40%, thereby contradicting the claim.",R1,2026-11-16T03:04:26Z
+RE07E4411,contradicted,,"The claim says it can never be executed, but the source text shows a clear contradiction where the executing officer has the authority to execute the warrant, and the local police can assist.",R1,2026-11-16T03:04:26Z
+R48FBC6C3,contradicted,,"There is nothing in the article, as said in source context, that can prevent the State from imposing compulsory service for the following reasons.",R1,2026-11-16T03:04:26Z
+R30EF8EC6,not_established,,"Claim misrepresents the source context -- nothing in the context refers to predators but rather the existing sex offender registry and how the judge has more control over its contents and handling.",R1,2026-11-16T03:04:26Z
+R525AE761,supported,,"The first line of the source context repeats the content of the claim.",R1,2026-11-16T03:04:26Z
+RD1237074,not_established,,"The claim overstates the source text -- the text says there is no means of discrimination in minority institutions on the basis of religion or language, but no guarantee that they're obligated to provide financial aid.",R1,2026-11-16T03:04:26Z
+RE69D3C49,contradicted,,"Source text states that the Court has the power and means to decide whether it's necessary to interpret the document, no formal obligation for them to do so.",R1,2026-11-16T03:04:26Z
+RC1EC7FC2,not_established,,"There is no evidence that it may be up to 7 days, and the source context addresses the issue of twenty-four hours for bond or bail, not necessarily identity.",R1,2026-11-16T03:04:26Z
+R1EF85017,contradicted,,"Nowhere does the source text say the members must be present and voting, as the claim states, instead, the source says removal is strictly by resolution of Assembly.",R1,2026-11-16T03:04:26Z
+R2044D8B6,supported,,"The first sentence of the source context reiterates the claim clearly.",R1,2026-11-16T03:04:26Z
+R1DDE081E,contradicted,,"The source context explicitly claims vaccines can only be administered by appropriate practitioners.",R1,2026-11-16T03:04:26Z
+R44884AE2,contradicted,,"The source context implies that 500 rupees fine is administered every day the person sits or votes, not just as a single sum.",R1,2026-11-16T03:04:26Z
+R34AE649C,supported,,"First sentence of the source context reiterates the same point made in the claim.",R1,2026-11-16T03:04:26Z
+RA57D2AE8,contradicted,,"The source context explicitly limits judicial discretion over sex offender registry if the case involves a teen 15 years or over, whereas in the claim, they are 11, meaning the rule allowing a judge to warrant do not apply.",R1,2026-11-16T03:04:26Z
+R6DFDF67E,not_established,,"The source context does not reference this case whatsoever and claims such instances are misleading.",R1,2026-11-16T03:04:26Z
+RFA44E999,supported,,"It is up to the Court to interpret how much of the document is necessary for formal proof as said in point #3.",R1,2026-11-16T03:04:26Z
+R770D7958,supported,,"The source context, in the first sentence, reiterates the claim.",R1,2026-11-16T03:04:26Z

@@ -1,0 +1,128 @@
+{
+ "certificate_id": "urn:pramana:cert:61d0114ec555a8e669658ef3f628942e09c3d11db7b484f4cb17c13b93cd07b1",
+ "item": "vitaminc:5ede072ec9e77c00084d23f2_2",
+ "ledger": "experiments/exp2b/ledger/ledger.jsonl",
+ "rules": "N1/3.2",
+ "claim": "On Rotten Tomatoes , John Wick : Chapter 3 has a more than 85 % approval rating according to less than 322 reviews .",
+ "source": "On review aggregator Rotten Tomatoes , the film holds an approval rating of 90 % , with an average rating of 7.48/10 , based on 323 reviews .",
+ "record": {
+  "claim": {
+   "subject": "John Wick: Chapter 3 Rotten Tomatoes approval rating and review count",
+   "parts": [
+    {
+     "predicate": "has an approval rating above 85% on Rotten Tomatoes",
+     "polarity": "affirmative",
+     "quantifier": "unspecified",
+     "universal_wording": false,
+     "modality": "certain",
+     "time": null
+    },
+    {
+     "predicate": "is based on fewer than 322 reviews on Rotten Tomatoes",
+     "polarity": "affirmative",
+     "quantifier": "unspecified",
+     "universal_wording": false,
+     "modality": "certain",
+     "time": null
+    }
+   ]
+  },
+  "evidence": [
+   {
+    "part": 1,
+    "role": "bears_on_part",
+    "stance": "affirms",
+    "basis": "necessarily_implies",
+    "subject_match": "same",
+    "quote": "the film holds an approval rating of 90 %"
+   },
+   {
+    "part": 2,
+    "role": "bears_on_part",
+    "stance": "denies",
+    "basis": "necessarily_implies",
+    "subject_match": "same",
+    "quote": "based on 323 reviews"
+   }
+  ],
+  "qualifiers": [
+   {
+    "part": 1,
+    "relation": "incidental_detail",
+    "claim_part_changed": "none",
+    "stated_in_claim": false,
+    "text": "The source also gives an average rating of 7.48/10, which does not affect whether the approval rating exceeds 85%.",
+    "quote": "with an average rating of 7.48/10"
+   }
+  ],
+  "inference_path": "deduction"
+ },
+ "derived": {
+  "status": "contradicted",
+  "reasons": [
+   "part1:source_denies"
+  ],
+  "parts": [
+   {
+    "status": "supported",
+    "reasons": [],
+    "conflict": false,
+    "n_affirm": 1,
+    "n_deny": 0
+   },
+   {
+    "status": "contradicted",
+    "reasons": [
+     "source_denies"
+    ],
+    "conflict": false,
+    "n_affirm": 0,
+    "n_deny": 1
+   }
+  ],
+  "conflict": false,
+  "path": "deduction",
+  "evidence_located": [
+   {
+    "located": true,
+    "reason": "ok",
+    "start": 39,
+    "end": 80,
+    "match": "exact",
+    "offsets_source": "system"
+   },
+   {
+    "located": true,
+    "reason": "ok",
+    "start": 119,
+    "end": 139,
+    "match": "exact",
+    "offsets_source": "system"
+   }
+  ],
+  "qualifiers_located": [
+   {
+    "located": true,
+    "reason": "ok",
+    "start": 83,
+    "end": 116,
+    "match": "exact",
+    "offsets_source": "system"
+   }
+  ],
+  "evidence_part_index": [
+   0,
+   1
+  ],
+  "qualifier_part_index": [
+   0
+  ],
+  "part_numbering": "one_based",
+  "invalid_part_references": 0,
+  "quotes_proposed": 3,
+  "quotes_located": 3,
+  "rules_version": "N1/3.2",
+  "grounding": true,
+  "use_qualifiers": true
+ }
+}

@@ -1,0 +1,19 @@
+$ python -m pramana_bind audit ledger_exp2/ledger.jsonl --pubkey "$(cat ledger_exp2/signer.pub)"
+PASS  hash_chain  6 events, head f21213fe2dea
+PASS  signature seq 5  head seq 5 signed by pinned key 6b/BwQKkE8VdXvxN...
+PASS  certificate_id seq 1  
+PASS  source_hashes seq 1  
+PASS  versions seq 1  schema 3, rules N1/3.2
+PASS  part_references seq 1  one_based numbering; 0 invalid reference(s)
+PASS  quote_offsets seq 1  3/3 quotes re-located
+PASS  status seq 1  supported []
+PASS  decision seq 1  supported
+This does not assert that the extracted interpretation of the source is correct.
+
+$ # tampered copy: in ledger line 3, "323 reviews" changed to "320 reviews"
+FAIL  hash_chain seq 2  this_hash mismatch
+AUDIT FAILED: 0 certificates, 2 events
+
+$ # no separately obtained key
+FAIL  signature seq 5  no trusted public key supplied: the key inside the bundle cannot vouch for itself (pass --pubkey)
+AUDIT FAILED: 5 certificates, 6 events

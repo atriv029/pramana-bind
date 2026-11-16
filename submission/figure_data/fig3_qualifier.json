@@ -1,0 +1,128 @@
+{
+ "transitions_source": "submission/metrics_master.json -> qualifier",
+ "per_dataset": {
+  "contractnli": {
+   "transitions (gold, with, without)": {
+    "supported | contradicted | contradicted": 3,
+    "supported | not_established | not_established": 36,
+    "supported | not_established | supported": 13,
+    "supported | supported | supported": 34,
+    "unsupported | contradicted | contradicted": 31,
+    "unsupported | not_established | not_established": 77,
+    "unsupported | supported | supported": 10
+   },
+   "supported_gold_newly_accepted": 13,
+   "unsupported_gold_newly_accepted": 0,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 13
+  },
+  "vitaminc": {
+   "transitions (gold, with, without)": {
+    "supported | contradicted | contradicted": 1,
+    "supported | not_established | not_established": 27,
+    "supported | not_established | supported": 5,
+    "supported | supported | supported": 87,
+    "unsupported | contradicted | contradicted": 61,
+    "unsupported | not_established | not_established": 54,
+    "unsupported | not_established | supported": 1,
+    "unsupported | supported | supported": 4
+   },
+   "supported_gold_newly_accepted": 5,
+   "unsupported_gold_newly_accepted": 1,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 6
+  },
+  "scicite": {
+   "transitions (gold, with, without)": {
+    "supported | contradicted | contradicted": 4,
+    "supported | failed | failed": 1,
+    "supported | not_established | not_established": 26,
+    "supported | not_established | supported": 11,
+    "supported | supported | supported": 18,
+    "unsupported | contradicted | contradicted": 26,
+    "unsupported | not_established | not_established": 67,
+    "unsupported | not_established | supported": 2,
+    "unsupported | supported | supported": 5
+   },
+   "supported_gold_newly_accepted": 11,
+   "unsupported_gold_newly_accepted": 2,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 13
+  },
+  "attributionbench": {
+   "transitions (gold, with, without)": {
+    "supported | not_established | not_established": 29,
+    "supported | not_established | supported": 8,
+    "supported | supported | supported": 49,
+    "unsupported | contradicted | contradicted": 3,
+    "unsupported | not_established | not_established": 48,
+    "unsupported | not_established | supported": 3,
+    "unsupported | supported | supported": 10
+   },
+   "supported_gold_newly_accepted": 8,
+   "unsupported_gold_newly_accepted": 3,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 11
+  }
+ },
+ "mechanisms": {
+  "provenance": "AI-assisted single-pass reading by the authoring assistant; not human-reviewed; categories are the reader's judgement of why the qualifier blocked",
+  "n_cases": 43,
+  "table": [
+   {
+    "mechanism": "exception or duration clause applied to a default-rule claim",
+    "outcome": "gold supported (enforcement lost a correct acceptance)",
+    "count": 11
+   },
+   {
+    "mechanism": "incidental detail treated as a blocking condition",
+    "outcome": "gold supported (enforcement lost a correct acceptance)",
+    "count": 13
+   },
+   {
+    "mechanism": "source genuinely restricts or hedges the statement",
+    "outcome": "gold supported (enforcement lost a correct acceptance)",
+    "count": 11
+   },
+   {
+    "mechanism": "source genuinely restricts or hedges the statement",
+    "outcome": "gold unsupported (enforcement prevented a false acceptance)",
+    "count": 5
+   },
+   {
+    "mechanism": "subject identification treated as a condition",
+    "outcome": "gold supported (enforcement lost a correct acceptance)",
+    "count": 2
+   },
+   {
+    "mechanism": "unresolved",
+    "outcome": "gold unsupported (enforcement prevented a false acceptance)",
+    "count": 1
+   }
+  ],
+  "by_dataset": {
+   "contractnli": {
+    "exception or duration clause applied to a default-rule claim": 11,
+    "incidental detail treated as a blocking condition": 2
+   },
+   "vitaminc": {
+    "incidental detail treated as a blocking condition": 1,
+    "subject identification treated as a condition": 2,
+    "source genuinely restricts or hedges the statement": 3
+   },
+   "scicite": {
+    "source genuinely restricts or hedges the statement": 6,
+    "incidental detail treated as a blocking condition": 6,
+    "unresolved": 1
+   },
+   "attributionbench": {
+    "source genuinely restricts or hedges the statement": 7,
+    "incidental detail treated as a blocking condition": 4
+   }
+  }
+ }
+}

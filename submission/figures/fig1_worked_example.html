@@ -1,0 +1,30 @@
+<!doctype html><meta charset=utf-8><style>@font-face{font-family:'Source Sans 3';font-weight:400;src:url('../fonts/source-sans-3-latin-400-normal.woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:400;src:url('../fonts/source-sans-3-latin-ext-400-normal.woff2');unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:'Source Sans 3';font-weight:600;src:url('../fonts/source-sans-3-latin-600-normal.woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:600;src:url('../fonts/source-sans-3-latin-ext-600-normal.woff2');unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:'IBM Plex Mono';font-weight:400;src:url('../fonts/ibm-plex-mono-latin-400-normal.woff2')}*{box-sizing:border-box}body{margin:0;font:8.6pt/1.32 'Source Sans 3',sans-serif;color:#17354B;background:#fff;width:178mm}
+.m{font-family:'IBM Plex Mono',monospace;font-size:7.4pt}.lab{font-size:7.2pt;letter-spacing:.05em;text-transform:uppercase;color:#64748B;font-weight:600;margin-bottom:1.5pt}
+.box{border:.8pt solid #D5DEE4;border-radius:3pt;padding:4pt 6pt;background:#fff}.model{border-left:3pt solid #7563A6;background:#F5F3FA}.mech{border-left:3pt solid #087F83;background:#EEF7F7}
+.row{display:grid;gap:5pt;margin-top:5pt}.chip{display:inline-block;border-radius:8pt;padding:0 5pt;font-weight:600;font-size:7.6pt;border:.8pt solid currentColor}
+.ok{color:#087F83}.bad{color:#B7464A}.neu{color:#64748B}.arrow{text-align:center;color:#64748B;font-size:9pt;line-height:1;margin:2pt 0}
+table{border-collapse:collapse;width:100%}td,th{border:.6pt solid #D5DEE4;padding:2.6pt 4.5pt;vertical-align:top;text-align:left}th{background:#EDF2F5;font-weight:600;font-size:7.8pt}
+.y{color:#087F83;font-weight:600}.n{color:#B7464A;font-weight:600}.a{color:#B7791F;font-weight:600}mark{background:#FBE9C8;color:inherit;padding:0 1pt}</style><body>
+<div class="row" style="grid-template-columns:1fr 1.25fr;margin-top:0"><div class="box"><div class="lab">Claim</div>On Rotten Tomatoes , John Wick : Chapter 3 has a more than 85 % approval rating according to less than 322 reviews .</div>
+<div class="box"><div class="lab">Source (sha256 <span class="m">0f7915b4cc10…</span>)</div>On review aggregator Rotten Tomatoes , <mark>the film holds an approval rating of 90 %</mark> , with an average rating of 7.48/10 , <mark>based on 323 reviews</mark> .</div></div>
+<div class="arrow">▼ model extraction (one call) ▼</div>
+<div class="row" style="grid-template-columns:1fr 1fr;margin-top:0"><div><div class="box model"><div class="lab">Claim part 1 (model)</div><b>has an approval rating above 85% on Rotten Tomatoes</b><br>
+<span style="color:#64748B">polarity affirmative · quantifier unspecified · modality certain</span></div><div class="box model" style="margin-top:3pt"><div class="lab">Evidence filed by the model (reference “part 1”)</div>
+“the film holds an approval rating of 90 %”<br>stance: <b>affirms</b> · basis: <b>necessarily implies</b> · subject: <b>same</b></div>
+<div class="box mech" style="margin-top:3pt"><div class="lab">Checked by program</div>quote found once at characters <span class="m">39–80</span> (exact match) · bound to part <span class="m">1</span> (one-based numbering)</div>
+<div class="arrow">▼</div><div class="box mech"><div class="lab">Rule N1/3.2 (program)</div>
+a located passage <b>affirms</b> this part by statement or necessary implication; none denies it; no blocking qualifier → <span class="chip ok">supported</span></div></div><div><div class="box model"><div class="lab">Claim part 2 (model)</div><b>is based on fewer than 322 reviews on Rotten Tomatoes</b><br>
+<span style="color:#64748B">polarity affirmative · quantifier unspecified · modality certain</span></div><div class="box model" style="margin-top:3pt"><div class="lab">Evidence filed by the model (reference “part 2”)</div>
+“based on 323 reviews”<br>stance: <b>denies</b> · basis: <b>necessarily implies</b> · subject: <b>same</b></div>
+<div class="box mech" style="margin-top:3pt"><div class="lab">Checked by program</div>quote found once at characters <span class="m">119–139</span> (exact match) · bound to part <span class="m">2</span> (one-based numbering)</div>
+<div class="arrow">▼</div><div class="box mech"><div class="lab">Rule N1/3.2 (program)</div>
+a located passage <b>denies</b> this part, none affirms it → <span class="chip bad">contradicted</span></div></div></div>
+<div class="arrow">▼</div>
+<div class="box mech"><div class="lab">Aggregate (program)</div>every part must be supported; one contradicted part makes the claim contradicted → <span class="chip bad">contradicted</span>
+&nbsp; <span style="color:#64748B">certificate <span class="m">cb17c13b93cd07b1</span> · benchmark label: REFUTES</span></div>
+<div style="margin-top:4pt;font-size:7.6pt;color:#64748B"><span style="border-left:3pt solid #7563A6;padding-left:4pt">violet: assigned by the model, not checked</span> &nbsp;&nbsp;
+<span style="border-left:3pt solid #087F83;padding-left:4pt">teal: computed by program, recomputed on audit</span></div></body>

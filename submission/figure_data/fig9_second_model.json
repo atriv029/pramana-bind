@@ -1,0 +1,257 @@
+{
+ "note": "Second model claude-sonnet-5-5 (same vendor family). Completed datasets only; the run stopped on an account usage limit after VitaminC and AttributionBench (see RECONCILIATION). Exploratory.",
+ "datasets": {
+  "vitaminc": {
+   "n": 86,
+   "families": 25,
+   "haiku": {
+    "B0": {
+     "false_support": [
+      4,
+      43
+     ],
+     "supported_recall": [
+      27,
+      43
+     ],
+     "failed": 0
+    },
+    "B1": {
+     "false_support": [
+      3,
+      43
+     ],
+     "supported_recall": [
+      30,
+      43
+     ],
+     "failed": 0
+    },
+    "N1": {
+     "false_support": [
+      3,
+      43
+     ],
+     "supported_recall": [
+      30,
+      43
+     ],
+     "failed": 0
+    }
+   },
+   "sonnet": {
+    "B0": {
+     "false_support": [
+      2,
+      43
+     ],
+     "supported_recall": [
+      34,
+      43
+     ],
+     "failed": 1
+    },
+    "B1": {
+     "false_support": [
+      4,
+      43
+     ],
+     "supported_recall": [
+      31,
+      43
+     ],
+     "failed": 0
+    },
+    "N1": {
+     "false_support": [
+      2,
+      43
+     ],
+     "supported_recall": [
+      29,
+      43
+     ],
+     "failed": 0
+    }
+   },
+   "N1_minus_B0_fs": {
+    "haiku": {
+     "diff": -0.023,
+     "ci95": [
+      -0.073,
+      0.0
+     ]
+    },
+    "sonnet": {
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "interaction_sonnet_minus_haiku": {
+     "diff": 0.023,
+     "ci95": [
+      0.0,
+      0.073
+     ]
+    }
+   },
+   "N1_minus_B0_recall": {
+    "haiku": {
+     "diff": 0.07,
+     "ci95": [
+      -0.067,
+      0.209
+     ]
+    },
+    "sonnet": {
+     "diff": -0.116,
+     "ci95": [
+      -0.237,
+      -0.023
+     ]
+    },
+    "interaction_sonnet_minus_haiku": {
+     "diff": -0.186,
+     "ci95": [
+      -0.356,
+      -0.023
+     ]
+    }
+   }
+  },
+  "attributionbench": {
+   "n": 56,
+   "families": 50,
+   "haiku": {
+    "B0": {
+     "false_support": [
+      4,
+      25
+     ],
+     "supported_recall": [
+      20,
+      31
+     ],
+     "failed": 0
+    },
+    "B1": {
+     "false_support": [
+      4,
+      25
+     ],
+     "supported_recall": [
+      16,
+      31
+     ],
+     "failed": 0
+    },
+    "N1": {
+     "false_support": [
+      3,
+      25
+     ],
+     "supported_recall": [
+      17,
+      31
+     ],
+     "failed": 0
+    }
+   },
+   "sonnet": {
+    "B0": {
+     "false_support": [
+      7,
+      25
+     ],
+     "supported_recall": [
+      24,
+      31
+     ],
+     "failed": 0
+    },
+    "B1": {
+     "false_support": [
+      3,
+      25
+     ],
+     "supported_recall": [
+      22,
+      31
+     ],
+     "failed": 0
+    },
+    "N1": {
+     "false_support": [
+      4,
+      25
+     ],
+     "supported_recall": [
+      19,
+      31
+     ],
+     "failed": 0
+    }
+   },
+   "N1_minus_B0_fs": {
+    "haiku": {
+     "diff": -0.04,
+     "ci95": [
+      -0.19,
+      0.1
+     ]
+    },
+    "sonnet": {
+     "diff": -0.12,
+     "ci95": [
+      -0.273,
+      0.0
+     ]
+    },
+    "interaction_sonnet_minus_haiku": {
+     "diff": -0.08,
+     "ci95": [
+      -0.292,
+      0.107
+     ]
+    }
+   },
+   "N1_minus_B0_recall": {
+    "haiku": {
+     "diff": -0.097,
+     "ci95": [
+      -0.265,
+      0.067
+     ]
+    },
+    "sonnet": {
+     "diff": -0.161,
+     "ci95": [
+      -0.3,
+      -0.037
+     ]
+    },
+    "interaction_sonnet_minus_haiku": {
+     "diff": -0.065,
+     "ci95": [
+      -0.222,
+      0.088
+     ]
+    }
+   }
+  }
+ },
+ "calls": {
+  "successful": 426,
+  "cost_usd": 5.42,
+  "served_models": {
+   "claude-sonnet-5-5": 426
+  }
+ },
+ "not_completed": {
+  "scicite": "152 of 228 calls succeeded before the limit; not scored",
+  "contractnli": "16 of 204 calls; not scored",
+  "taxonomy judge": "omitted by protocol"
+ }
+}

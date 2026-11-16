@@ -1,0 +1,423 @@
+{
+ "source": "experiments/exp2b/runs/eval-*/metrics.json (rules N1/3.2, B1/1.1)",
+ "rates": {
+  "contractnli": {
+   "B0": {
+    "false_support": {
+     "k": 11,
+     "n": 118,
+     "rate": 0.0932,
+     "wilson95": [
+      0.0529,
+      0.1592
+     ]
+    },
+    "supported_recall": {
+     "k": 45,
+     "n": 86,
+     "rate": 0.5233,
+     "wilson95": [
+      0.419,
+      0.6255
+     ]
+    }
+   },
+   "T": {
+    "false_support": {
+     "k": 14,
+     "n": 118,
+     "rate": 0.1186,
+     "wilson95": [
+      0.072,
+      0.1893
+     ]
+    },
+    "supported_recall": {
+     "k": 46,
+     "n": 86,
+     "rate": 0.5349,
+     "wilson95": [
+      0.4302,
+      0.6365
+     ]
+    }
+   },
+   "B1": {
+    "false_support": {
+     "k": 10,
+     "n": 118,
+     "rate": 0.0847,
+     "wilson95": [
+      0.0467,
+      0.149
+     ]
+    },
+    "supported_recall": {
+     "k": 26,
+     "n": 86,
+     "rate": 0.3023,
+     "wilson95": [
+      0.2154,
+      0.4061
+     ]
+    }
+   },
+   "N1": {
+    "false_support": {
+     "k": 10,
+     "n": 118,
+     "rate": 0.0847,
+     "wilson95": [
+      0.0467,
+      0.149
+     ]
+    },
+    "supported_recall": {
+     "k": 34,
+     "n": 86,
+     "rate": 0.3953,
+     "wilson95": [
+      0.2986,
+      0.501
+     ]
+    }
+   }
+  },
+  "vitaminc": {
+   "B0": {
+    "false_support": {
+     "k": 8,
+     "n": 120,
+     "rate": 0.0667,
+     "wilson95": [
+      0.0342,
+      0.1261
+     ]
+    },
+    "supported_recall": {
+     "k": 82,
+     "n": 120,
+     "rate": 0.6833,
+     "wilson95": [
+      0.5955,
+      0.7598
+     ]
+    }
+   },
+   "T": {
+    "false_support": {
+     "k": 5,
+     "n": 120,
+     "rate": 0.0417,
+     "wilson95": [
+      0.0179,
+      0.0938
+     ]
+    },
+    "supported_recall": {
+     "k": 94,
+     "n": 120,
+     "rate": 0.7833,
+     "wilson95": [
+      0.7015,
+      0.8476
+     ]
+    }
+   },
+   "B1": {
+    "false_support": {
+     "k": 4,
+     "n": 120,
+     "rate": 0.0333,
+     "wilson95": [
+      0.013,
+      0.0826
+     ]
+    },
+    "supported_recall": {
+     "k": 86,
+     "n": 120,
+     "rate": 0.7167,
+     "wilson95": [
+      0.6303,
+      0.7896
+     ]
+    }
+   },
+   "N1": {
+    "false_support": {
+     "k": 4,
+     "n": 120,
+     "rate": 0.0333,
+     "wilson95": [
+      0.013,
+      0.0826
+     ]
+    },
+    "supported_recall": {
+     "k": 87,
+     "n": 120,
+     "rate": 0.725,
+     "wilson95": [
+      0.6391,
+      0.797
+     ]
+    }
+   }
+  },
+  "scicite": {
+   "B0": {
+    "false_support": {
+     "k": 9,
+     "n": 100,
+     "rate": 0.09,
+     "wilson95": [
+      0.0481,
+      0.1623
+     ]
+    },
+    "supported_recall": {
+     "k": 36,
+     "n": 60,
+     "rate": 0.6,
+     "wilson95": [
+      0.4737,
+      0.7143
+     ]
+    }
+   },
+   "T": {
+    "false_support": {
+     "k": 11,
+     "n": 100,
+     "rate": 0.11,
+     "wilson95": [
+      0.0625,
+      0.1863
+     ]
+    },
+    "supported_recall": {
+     "k": 33,
+     "n": 60,
+     "rate": 0.55,
+     "wilson95": [
+      0.4249,
+      0.6691
+     ]
+    }
+   },
+   "B1": {
+    "false_support": {
+     "k": 6,
+     "n": 100,
+     "rate": 0.06,
+     "wilson95": [
+      0.0278,
+      0.1248
+     ]
+    },
+    "supported_recall": {
+     "k": 16,
+     "n": 60,
+     "rate": 0.2667,
+     "wilson95": [
+      0.1713,
+      0.3901
+     ]
+    }
+   },
+   "N1": {
+    "false_support": {
+     "k": 5,
+     "n": 100,
+     "rate": 0.05,
+     "wilson95": [
+      0.0215,
+      0.1118
+     ]
+    },
+    "supported_recall": {
+     "k": 18,
+     "n": 60,
+     "rate": 0.3,
+     "wilson95": [
+      0.199,
+      0.4251
+     ]
+    }
+   }
+  },
+  "attributionbench": {
+   "B0": {
+    "false_support": {
+     "k": 12,
+     "n": 64,
+     "rate": 0.1875,
+     "wilson95": [
+      0.1106,
+      0.2997
+     ]
+    },
+    "supported_recall": {
+     "k": 55,
+     "n": 86,
+     "rate": 0.6395,
+     "wilson95": [
+      0.5341,
+      0.733
+     ]
+    }
+   },
+   "T": {
+    "false_support": {
+     "k": 14,
+     "n": 64,
+     "rate": 0.2188,
+     "wilson95": [
+      0.135,
+      0.3343
+     ]
+    },
+    "supported_recall": {
+     "k": 61,
+     "n": 86,
+     "rate": 0.7093,
+     "wilson95": [
+      0.606,
+      0.7947
+     ]
+    }
+   },
+   "B1": {
+    "false_support": {
+     "k": 13,
+     "n": 64,
+     "rate": 0.2031,
+     "wilson95": [
+      0.1227,
+      0.3171
+     ]
+    },
+    "supported_recall": {
+     "k": 50,
+     "n": 86,
+     "rate": 0.5814,
+     "wilson95": [
+      0.4758,
+      0.68
+     ]
+    }
+   },
+   "N1": {
+    "false_support": {
+     "k": 10,
+     "n": 64,
+     "rate": 0.1562,
+     "wilson95": [
+      0.0871,
+      0.2643
+     ]
+    },
+    "supported_recall": {
+     "k": 49,
+     "n": 86,
+     "rate": 0.5698,
+     "wilson95": [
+      0.4644,
+      0.6692
+     ]
+    }
+   }
+  }
+ },
+ "paired_N1_minus_B0": {
+  "contractnli": {
+   "false_support": {
+    "diff": -0.0085,
+    "ci95": [
+     -0.0515,
+     0.0268
+    ]
+   },
+   "supported_recall": {
+    "diff": -0.1279,
+    "ci95": [
+     -0.1935,
+     -0.051
+    ]
+   },
+   "accuracy_3way": {
+    "diff": -0.0686,
+    "ci95": [
+     -0.1176,
+     -0.0196
+    ]
+   },
+   "method": "family-cluster bootstrap, 5000 resamples, seed 0; 5 comparisons, unadjusted"
+  },
+  "vitaminc": {
+   "false_support": {
+    "diff": -0.0333,
+    "ci95": [
+     -0.0684,
+     -0.0081
+    ]
+   },
+   "supported_recall": {
+    "diff": 0.0417,
+    "ci95": [
+     -0.0417,
+     0.1261
+    ]
+   },
+   "accuracy_3way": {
+    "diff": 0.0208,
+    "ci95": [
+     -0.0325,
+     0.0709
+    ]
+   },
+   "method": "family-cluster bootstrap, 5000 resamples, seed 0; 5 comparisons, unadjusted"
+  },
+  "scicite": {
+   "false_support": {
+    "diff": -0.04,
+    "ci95": [
+     -0.1111,
+     -0.0075
+    ]
+   },
+   "supported_recall": {
+    "diff": -0.3,
+    "ci95": [
+     -0.3621,
+     -0.2308
+    ]
+   },
+   "method": "family-cluster bootstrap, 5000 resamples, seed 0; 5 comparisons, unadjusted"
+  },
+  "attributionbench": {
+   "false_support": {
+    "diff": -0.0312,
+    "ci95": [
+     -0.1311,
+     0.0667
+    ]
+   },
+   "supported_recall": {
+    "diff": -0.0698,
+    "ci95": [
+     -0.163,
+     0.0235
+    ]
+   },
+   "method": "family-cluster bootstrap, 5000 resamples, seed 0; 5 comparisons, unadjusted"
+  }
+ },
+ "families": {
+  "contractnli": 12,
+  "vitaminc": 70,
+  "scicite": 17,
+  "attributionbench": 143
+ }
+}

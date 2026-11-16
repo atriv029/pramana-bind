@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="520.940422pt" height="204.6172pt" viewBox="0 0 520.940422 204.6172" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-16T04:26:28.811936</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 204.6172 
+L 520.940422 204.6172 
+L 520.940422 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 85.615938 171.738 
+L 221.935937 171.738 
+L 221.935937 57.042 
+L 85.615938 57.042 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 85.615938 171.738 
+L 85.615938 57.042 
+" clip-path="url(#p4b1f4d2e49)" style="fill: none; stroke: #d5dee4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 8px; font-family: 'Source Sans 3'; text-anchor: middle; fill: #64748b" x="85.615938" y="183.43" transform="rotate(-0 85.615938 183.43)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 128.215937 171.738 
+L 128.215937 57.042 
+" clip-path="url(#p4b1f4d2e49)" style="fill: none; stroke: #d5dee4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 8px; font-family: 'Source Sans 3'; text-anchor: middle; fill: #64748b" x="128.215937" y="183.43" transform="rotate(-0 128.215937 183.43)">5</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 170.815937 171.738 
+L 170.815937 57.042 
+" clip-path="url(#p4b1f4d2e49)" style="fill: none; stroke: #d5dee4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 8px; font-family: 'Source Sans 3'; text-anchor: middle; fill: #64748b" x="170.815937" y="183.43" transform="rotate(-0 170.815937 183.43)">10</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 213.415937 171.738 
+L 213.415937 57.042 
+" clip-path="url(#p4b1f4d2e49)" style="fill: none; stroke: #d5dee4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 8px; font-family: 'Source Sans 3'; text-anchor: middle; fill: #64748b" x="213.415937" y="183.43" transform="rotate(-0 213.415937 183.43)">15</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 7.8px; font-family: 'Source Sans 3'; text-anchor: start; fill: #17354b" x="85.615938" y="198.6172" transform="rotate(-0 85.615938 198.6172)">items whose outcome changes</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9"/>
+     <g id="text_6">
+      <text style="font-size: 8.5px; font-family: 'Source Sans 3'; text-anchor: end; fill: #17354b" x="82.115938" y="76.698012" transform="rotate(-0 82.115938 76.698012)">ContractNLI</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="font-size: 8.5px; font-family: 'Source Sans 3'; text-anchor: end; fill: #17354b" x="82.115938" y="104.727337" transform="rotate(-0 82.115938 104.727337)">VitaminC</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11"/>
+     <g id="text_8">
+      <text style="font-size: 8.5px; font-family: 'Source Sans 3'; text-anchor: end; fill: #17354b" x="82.115938" y="132.756663" transform="rotate(-0 82.115938 132.756663)">SciCiteVal</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12"/>
+     <g id="text_9">
+      <text style="font-size: 8.5px; font-family: 'Source Sans 3'; text-anchor: end; fill: #17354b" x="82.115938" y="160.785988" transform="rotate(-0 82.115938 160.785988)">AttributionBench OOD</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 85.615938 71.785425 
+L 196.375937 71.785425 
+L 196.375937 62.255455 
+L 85.615938 62.255455 
+z
+" clip-path="url(#p4b1f4d2e49)" style="fill: #17354b"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 85.615938 99.814751 
+L 128.215937 99.814751 
+L 128.215937 90.28478 
+L 85.615938 90.28478 
+z
+" clip-path="url(#p4b1f4d2e49)" style="fill: #17354b"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 85.615938 127.844076 
+L 179.335938 127.844076 
+L 179.335938 118.314106 
+L 85.615938 118.314106 
+z
+" clip-path="url(#p4b1f4d2e49)" style="fill: #17354b"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 85.615938 155.873402 
+L 153.775937 155.873402 
+L 153.775937 146.343431 
+L 85.615938 146.343431 
+z
+" clip-path="url(#p4b1f4d2e49)" style="fill: #17354b"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 85.615938 82.436569 
+L 85.615938 82.436569 
+L 85.615938 72.906598 
+L 85.615938 72.906598 
+z
+" clip-path="url(#p4b1f4d2e49)" style="fill: #b7464a"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 85.615938 110.465894 
+L 94.135937 110.465894 
+L 94.135937 100.935924 
+L 85.615938 100.935924 
+z
+" clip-path="url(#p4b1f4d2e49)" style="fill: #b7464a"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 85.615938 138.49522 
+L 102.655937 138.49522 
+L 102.655937 128.965249 
+L 85.615938 128.965249 
+z
+" clip-path="url(#p4b1f4d2e49)" style="fill: #b7464a"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 85.615938 166.524545 
+L 111.175938 166.524545 
+L 111.175938 156.994575 
+L 85.615938 156.994575 
+z
+" clip-path="url(#p4b1f4d2e49)" style="fill: #b7464a"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 85.615938 171.738 
+L 221.935937 171.738 
+" style="fill: none; stroke: #d5dee4; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8px; font-family: 'IBM Plex Mono'; text-anchor: start; fill: #17354b" x="198.931938" y="70.02044" transform="rotate(-0 198.931938 70.02044)">13</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8px; font-family: 'IBM Plex Mono'; text-anchor: start; fill: #b7464a" x="88.171937" y="80.671584" transform="rotate(-0 88.171937 80.671584)">0</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8px; font-family: 'IBM Plex Mono'; text-anchor: start; fill: #17354b" x="130.771938" y="98.049765" transform="rotate(-0 130.771938 98.049765)">5</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8px; font-family: 'IBM Plex Mono'; text-anchor: start; fill: #b7464a" x="96.691937" y="108.700909" transform="rotate(-0 96.691937 108.700909)">1</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8px; font-family: 'IBM Plex Mono'; text-anchor: start; fill: #17354b" x="181.891937" y="126.079091" transform="rotate(-0 181.891937 126.079091)">11</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8px; font-family: 'IBM Plex Mono'; text-anchor: start; fill: #b7464a" x="105.211938" y="136.730235" transform="rotate(-0 105.211938 136.730235)">2</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8px; font-family: 'IBM Plex Mono'; text-anchor: start; fill: #17354b" x="156.331938" y="154.108416" transform="rotate(-0 156.331938 154.108416)">8</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8px; font-family: 'IBM Plex Mono'; text-anchor: start; fill: #b7464a" x="113.731938" y="164.75956" transform="rotate(-0 113.731938 164.75956)">3</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_12">
+     <path d="M 85.326338 36.72656 
+L 92.926338 36.72656 
+L 92.926338 31.40656 
+L 85.326338 31.40656 
+z
+" style="fill: #17354b"/>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 7.6px; font-family: 'Source Sans 3'; text-anchor: start; fill: #17354b" x="99.006338" y="36.72656" transform="rotate(-0 99.006338 36.72656)">supported claims regained</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 85.326338 51.34896 
+L 92.926338 51.34896 
+L 92.926338 46.02896 
+L 85.326338 46.02896 
+z
+" style="fill: #b7464a"/>
+    </g>
+    <g id="text_19">
+     <text style="font-size: 7.6px; font-family: 'Source Sans 3'; text-anchor: start; fill: #17354b" x="99.006338" y="51.34896" transform="rotate(-0 99.006338 51.34896)">unsupported claims admitted</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_14">
+    <path d="M 340.363937 78.604848 
+L 418.747937 78.604848 
+L 418.747937 58.418352 
+L 340.363937 58.418352 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #17354b; opacity: 0.734615"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 425.563937 78.604848 
+L 503.947937 78.604848 
+L 503.947937 58.418352 
+L 425.563937 58.418352 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #b7464a; opacity: 0.04"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 340.363937 101.544048 
+L 418.747937 101.544048 
+L 418.747937 81.357552 
+L 340.363937 81.357552 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #17354b; opacity: 0.85"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 425.563937 101.544048 
+L 503.947937 101.544048 
+L 503.947937 81.357552 
+L 425.563937 81.357552 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #b7464a; opacity: 0.04"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 340.363937 124.483248 
+L 418.747937 124.483248 
+L 418.747937 104.296752 
+L 340.363937 104.296752 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #17354b; opacity: 0.734615"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 425.563937 124.483248 
+L 503.947937 124.483248 
+L 503.947937 104.296752 
+L 425.563937 104.296752 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #b7464a; opacity: 0.388462"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 340.363937 147.422448 
+L 418.747937 147.422448 
+L 418.747937 127.235952 
+L 340.363937 127.235952 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #17354b; opacity: 0.215385"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 425.563937 147.422448 
+L 503.947937 147.422448 
+L 503.947937 127.235952 
+L 425.563937 127.235952 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #b7464a; opacity: 0.04"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 340.363937 170.361648 
+L 418.747937 170.361648 
+L 418.747937 150.175152 
+L 340.363937 150.175152 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #17354b; opacity: 0.04"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 425.563937 170.361648 
+L 503.947937 170.361648 
+L 503.947937 150.175152 
+L 425.563937 150.175152 
+z
+" clip-path="url(#p6862e7b720)" style="fill: #b7464a; opacity: 0.157692"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(239.686937 64.657742)">Exception or duration clause</text>
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(254.311937 76.367224)">applied to a default rule</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #ffffff" x="379.555937" y="72.0741" transform="rotate(-0 379.555937 72.0741)">11</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #17354b" x="464.755937" y="72.0741" transform="rotate(-0 464.755937 72.0741)">0</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(254.073062 88.34952)">Incidental detail treated</text>
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(256.783562 99.185158)">as a blocking condition</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #ffffff" x="379.555937" y="95.0133" transform="rotate(-0 379.555937 95.0133)">13</text>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #17354b" x="464.755937" y="95.0133" transform="rotate(-0 464.755937 95.0133)">0</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(248.134094 110.461798)">Source genuinely restricts</text>
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(253.040781 122.124358)">or hedges the statement</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #ffffff" x="379.555937" y="117.9525" transform="rotate(-0 379.555937 117.9525)">11</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #17354b" x="464.755937" y="117.9525" transform="rotate(-0 464.755937 117.9525)">5</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(262.169219 133.475342)">Subject identification</text>
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(261.278312 145.89048)">treated as a condition</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #17354b" x="379.555937" y="140.8917" transform="rotate(-0 379.555937 140.8917)">2</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #17354b" x="464.755937" y="140.8917" transform="rotate(-0 464.755937 140.8917)">0</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; text-anchor: end; fill: #17354b" x="331.843937" y="162.9984" transform="rotate(-0 331.843937 162.9984)">Unresolved</text>
+   </g>
+   <g id="text_33">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #17354b" x="379.555937" y="163.8309" transform="rotate(-0 379.555937 163.8309)">0</text>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'IBM Plex Mono'; text-anchor: middle; fill: #17354b" x="464.755937" y="163.8309" transform="rotate(-0 464.755937 163.8309)">1</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(348.948859 40.062096)">correct acceptance</text>
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #17354b" transform="translate(366.561016 51.169296)">lost (37)</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #b7464a" transform="translate(438.02875 40.062096)">false acceptance</text>
+    <text style="font-size: 7.8px; font-family: 'Source Sans 3'; fill: #b7464a" transform="translate(443.006734 51.169296)">prevented (6)</text>
+   </g>
+  </g>
+  <g id="text_37">
+   <text style="font-weight: 700; font-size: 9.5px; font-family: 'Source Sans 3'; text-anchor: start; fill: #17354b" x="9.958338" y="12.608" transform="rotate(-0 9.958338 12.608)">A  What switching the check off changes</text>
+  </g>
+  <g id="text_38">
+   <text style="font-weight: 700; font-size: 9.5px; font-family: 'Source Sans 3'; text-anchor: start; fill: #17354b" x="246.643937" y="12.608" transform="rotate(-0 246.643937 12.608)">B  Why the check fired (AI-assisted reading, not human-reviewed)</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p4b1f4d2e49">
+   <rect x="85.615938" y="57.042" width="136.32" height="114.696"/>
+  </clipPath>
+  <clipPath id="p6862e7b720">
+   <rect x="336.955937" y="57.042" width="170.4" height="114.696"/>
+  </clipPath>
+ </defs>
+</svg>

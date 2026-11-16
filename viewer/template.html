@@ -112,19 +112,21 @@ source_denies:"A located passage states the opposite of the claim.",
 inferred_only:"The source only makes this likely or gives examples. That is not proof.",
 counterexample_in_source:"The source gives a case that cuts against the claim.",
 wrong_entity:"The located passages are about a different subject."});
-function show3(i){const {cert:c,texts,audit}=D.certs[i];const r=c.record||{},d=c.derived||{};
+function show3(i){const X=D.certs[i];const {cert:c,texts,audit}=X;const r=c.record||{},d=c.derived||{};const cf=X.counterfactual_no_qualifiers,an=X.annotation||{};
  document.querySelectorAll(".item").forEach((b,j)=>b.setAttribute("aria-current",j===i));
  const ev=(r.evidence||[]).map((e,k)=>({...e,...(d.evidence_located||[])[k],kind:"ev"}));
  const qu=(r.qualifiers||[]).map((q,k)=>({...q,...(d.qualifiers_located||[])[k],kind:"q"}));
  const sp=ev.concat(qu).filter(x=>x.located&&x.start!=null).map(x=>[x.start,x.end,x.kind==="q"?"cond":(x.stance==="denies"?"neg":(x.stance==="affirms"?"S":"H"))]).sort((a,b)=>a[0]-b[0]);
  let o="",pos=0;const T=texts.T||"";for(const[s0,e0,cl]of sp){if(s0<pos)continue;o+=esc(T.slice(pos,s0))+`<mark class="m-${cl}">`+esc(T.slice(s0,e0))+"</mark>";pos=e0}o+=esc(T.slice(pos));
- const reasons=(d.reasons||[]).map(x=>{const t=x.split(":").pop();const pt=x.includes(":")?x.split(":")[0].replace("part","part ")+": ":"";return `<li>${esc(pt)}${esc(PLAIN[t]||t)}</li>`}).join("");
+ const reasons=(d.reasons||[]).map(x=>{const t=x.split(":").pop();const pt=x.includes(":")?"part "+(parseInt(x.split(":")[0].slice(4))+1)+": ":"";return `<li>${esc(pt)}${esc(PLAIN[t]||t)}</li>`}).join("");
  const allok=audit.every(s=>s.ok)&&D.ledger.steps.every(s=>s.ok);const cmd=`python -m pramana_bind audit ${D.ledger.file} --pubkey ${D.ledger.pubkey}`;
  const runs=(c.extraction.run_statuses||[]);
  document.getElementById("detail").innerHTML=`
-<div class="card"><h2>Claim</h2><p class="claim">${esc(c.subject.claim_text)}</p>${c.subject.note?`<p class="sm mut">${esc(c.subject.note)}</p>`:""}</div>
+<div class="card"><h2>Claim</h2><p class="claim">${esc(c.subject.claim_text)}</p>${an.note?`<p class="sm mut">${esc(an.note)}</p>`:""}</div>
 <div class="two"><div class="card"><h2>Support (the method's conclusion)</h2><p>${chip(c.status)}</p>
 ${c.status==="supported"?`<p>A located passage states or necessarily implies each part of the claim, about the same subject, and no located qualifier of a blocking kind applies.</p>`:`<ul class="why">${reasons}</ul>`}
+${cf?`<details class="sm" style="margin:6px 0"><summary><b>Counterfactual: qualifier check switched off</b> → ${LABEL[cf.status]||cf.status}</summary><p class="sm mut">Recomputed from the same stored record when this page was built. It is a separate, unsigned output; the signed certificate is unchanged. ${cf.status!==c.status?"The outcome differs: a qualifier is what decides this item.":"The outcome is the same: no qualifier decides this item."}</p></details>`:""}
+<p class="sm"><b>Reference label:</b> ${esc(an.reference||"none recorded")}<br><b>Human-review status:</b> ${esc(an.review||"not reviewed")}</p>
 <p class="sm"><b>Inference path reported by the model:</b> ${esc(d.path||"none")}${d.conflict?" · <b>conflict flagged</b>":""}</p>
 ${runs.length>1?`<p class="sm"><b>Extraction runs:</b> ${runs.map(chip).join(" ")}</p>`:""}
 <p class="sm mut">Every label in the table below (stance, basis, subject match, relation) was assigned by ${esc(c.extraction["gen_ai.request.model"]||"a model")}. Only the quotes were checked, and only for occurring verbatim. The decision is a fixed function of those labels.</p></div>
@@ -137,10 +139,10 @@ ${runs.length>1?`<p class="sm"><b>Extraction runs:</b> ${runs.map(chip).join(" "
 <div class="src" style="max-height:420px;overflow:auto">${o}</div><p class="sm mut">sha256 ${esc(c.texts.T||"—")}</p></div>
 <div class="card"><h2>Structured record (model-assigned) and quote checks (mechanical)</h2>
 <p class="sm"><b>Subject:</b> ${esc((r.claim||{}).subject)}</p>
-<div class="tw"><table><tr><th>Claim part</th><th>Polarity</th><th>Quantifier</th><th>Modality</th><th>Outcome</th></tr>
-${((r.claim||{}).parts||[]).map((p,k)=>`<tr><td>${esc(p.predicate)}</td><td>${esc(p.polarity)}</td><td>${esc(p.quantifier)}${p.universal_wording?" (universal wording)":""}</td><td>${esc(p.modality)}</td><td>${chip(((d.parts||[])[k]||{}).status||"")}</td></tr>`).join("")}</table></div>
+<div class="tw"><table><tr><th>#</th><th>Claim part</th><th>Polarity</th><th>Quantifier</th><th>Modality</th><th>Outcome</th></tr>
+${((r.claim||{}).parts||[]).map((p,k)=>`<tr><td>${k+1}</td><td>${esc(p.predicate)}</td><td>${esc(p.polarity)}</td><td>${esc(p.quantifier)}${p.universal_wording?" (universal wording)":""}</td><td>${esc(p.modality)}</td><td>${chip(((d.parts||[])[k]||{}).status||"")}</td></tr>`).join("")}</table></div>
 <div class="tw"><table><tr><th>Evidence: stance · basis · subject</th><th>Quote</th><th>Located?</th></tr>
-${ev.map(e=>`<tr><td>part ${e.part??0}: ${esc(e.stance)} · ${esc(e.basis)} · ${esc(e.subject_match)}${e.role==="counterexample"?" · counterexample":""}</td><td>“${esc(e.quote)}”</td><td class="${e.located?"pass":"fail"}">${e.located?"yes "+(e.start!=null?e.start+"–"+e.end:""):"refused ("+esc(e.reason)+")"}</td></tr>`).join("")||'<tr><td colspan=3 class="mut">No evidence proposed.</td></tr>'}</table></div>
+${ev.map((e,k)=>`<tr><td>${(d.evidence_part_index&&d.evidence_part_index[k]!=null)?"part "+(d.evidence_part_index[k]+1):(d.evidence_part_index?"<b>invalid part reference</b>":"part ref "+(e.part??"?"))}: ${esc(e.stance)} · ${esc(e.basis)} · ${esc(e.subject_match)}${e.role==="counterexample"?" · counterexample":""}</td><td>“${esc(e.quote)}”</td><td class="${e.located?"pass":"fail"}">${e.located?"yes "+(e.start!=null?e.start+"–"+e.end:""):"refused ("+esc(e.reason)+")"}</td></tr>`).join("")||'<tr><td colspan=3 class="mut">No evidence proposed.</td></tr>'}</table></div>
 <div class="tw"><table><tr><th>Qualifier: relation · changes · stated in claim?</th><th>Quote</th><th>Located?</th></tr>
 ${qu.map(q=>`<tr><td>${esc(q.relation)} · ${esc(q.claim_part_changed)} · ${q.stated_in_claim?"yes":"no"}<br><span class="sm mut">${esc(q.text)}</span></td><td>“${esc(q.quote)}”</td><td class="${q.located?"pass":"fail"}">${q.located?"yes":"refused"}</td></tr>`).join("")||'<tr><td colspan=3 class="mut">No qualifiers proposed.</td></tr>'}</table></div></div>
 <div class="card"><h2>Certificate</h2><p class="sm">id <code>${esc(c.id)}</code><br>ledger seq ${c.seq} · ${esc(c.t)} · schema ${esc(c.schema_version)} · rules ${esc(c.checks.rules_version)}</p></div>`;

@@ -1,0 +1,1 @@
+MAUVE: Measuring the Gap Between Neural Text and Human Text using Divergence Frontiers Krishna Pillutla, Swabha Swayamdipta, Rowan Zellers, John Thickstun, Sean Wellecks, Yejin Choi, and Zaid Harchaoui In Proc. of NeurIPS 2021 Abstract Code Outstanding Paper Award

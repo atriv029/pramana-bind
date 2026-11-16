@@ -13,11 +13,12 @@ from pravrudhi_kernel.ledger.verify import iter_events
 ap = argparse.ArgumentParser()
 ap.add_argument("ledger"); ap.add_argument("pubkey"); ap.add_argument("out")
 ap.add_argument("--ids", default=""); ap.add_argument("--title", default="Pramāṇa-Bind certificates")
-ap.add_argument("--note", default="")
+ap.add_argument("--note", default=""); ap.add_argument("--annot", default="")
 a = ap.parse_args()
 ledger = Path(a.ledger); pub = Path(a.pubkey).read_text().strip()
 rep = c.audit(ledger, pub).to_dict()
 want = [x for x in a.ids.split(",") if x]
+ANN = json.load(open(a.annot)) if a.annot else {}
 certs = []
 for ev in iter_events(ledger):
     if ev.payload.get("kind") != c.PAYLOAD_KIND:
@@ -29,7 +30,15 @@ for ev in iter_events(ledger):
     for sid, sha in b.get("texts", {}).items():
         f = c.sources_dir(ledger) / f"{sha}.txt"
         texts[sid] = f.read_text(encoding="utf-8") if f.exists() else None
-    certs.append({"cert": {**b, "seq": ev.seq, "t": ev.t, "prev_hash": ev.prev_hash, "this_hash": ev.this_hash},
+    extra = {}
+    if b.get("schema_version") == "3" and texts.get("T") is not None:
+        from pramana_bind import v3
+        legacy = b["checks"]["rules_version"] in v3.LEGACY_RULES
+        cf = v3.decide_n1(b["record"], texts["T"], use_qualifiers=False, legacy_part_index=legacy)
+        # computed when this page is built; NOT part of the signed record
+        extra["counterfactual_no_qualifiers"] = {"status": cf["status"], "reasons": cf["reasons"]}
+    extra["annotation"] = ANN.get(b["subject"].get("item_id"), {})
+    certs.append({**extra, "cert": {**b, "seq": ev.seq, "t": ev.t, "prev_hash": ev.prev_hash, "this_hash": ev.this_hash},
                   "texts": texts, "audit": [s for s in rep["steps"] if s.get("cert") == b["id"]]})
 if want:
     certs.sort(key=lambda x: want.index(x["cert"]["subject"]["item_id"]))

@@ -1,0 +1,328 @@
+{
+ "calls": {
+  "exp1_development (21 items; prompt v2 then v3; baselines copied into the v3 folder are counted once, in v2)": {
+   "successful_calls": 189,
+   "failed_call_records": 0,
+   "cost_usd": 0.13,
+   "by_prompt": {
+    "direct_repeat": 42,
+    "direct": 21,
+    "taxonomy_repeat": 42,
+    "taxonomy": 21,
+    "extract": 21,
+    "extract_repeat": 42
+   },
+   "served_models": {
+    "claude-haiku-5-5": 189
+   },
+   "failure_reasons": {}
+  },
+  "exp1_development_extract_v3": {
+   "successful_calls": 63,
+   "failed_call_records": 0,
+   "cost_usd": 0.08,
+   "by_prompt": {
+    "extract": 63
+   },
+   "served_models": {},
+   "failure_reasons": {}
+  },
+  "exp1_attack_development (7 items)": {
+   "successful_calls": 63,
+   "failed_call_records": 0,
+   "cost_usd": 0.03,
+   "by_prompt": {
+    "direct_repeat": 14,
+    "taxonomy_repeat": 14,
+    "direct": 7,
+    "taxonomy": 7,
+    "extract_repeat": 14,
+    "extract": 7
+   },
+   "served_models": {
+    "claude-haiku-5-5": 63
+   },
+   "failure_reasons": {}
+  },
+  "exp1_heldout (117 items)": {
+   "successful_calls": 1053,
+   "failed_call_records": 170,
+   "cost_usd": 0.8,
+   "by_prompt": {
+    "direct_repeat": 234,
+    "taxonomy": 117,
+    "taxonomy_repeat": 234,
+    "direct": 117,
+    "extract_repeat": 234,
+    "extract": 117
+   },
+   "served_models": {
+    "claude-haiku-5-5": 1053
+   },
+   "failure_reasons": {
+    "RuntimeError: You've hit your 5-hour lim": 170
+   }
+  },
+  "exp1_attack_heldout (23 items)": {
+   "successful_calls": 207,
+   "failed_call_records": 207,
+   "cost_usd": 0.11,
+   "by_prompt": {
+    "direct_repeat": 46,
+    "direct": 23,
+    "taxonomy_repeat": 46,
+    "taxonomy": 23,
+    "extract_repeat": 46,
+    "extract": 23
+   },
+   "served_models": {
+    "claude-haiku-5-5": 207
+   },
+   "failure_reasons": {
+    "RuntimeError: You've hit your 5-hour lim": 207
+   }
+  },
+  "exp2_development (dev1, dev2, dev3)": {
+   "successful_calls": 1000,
+   "failed_call_records": 0,
+   "cost_usd": 1.44,
+   "by_prompt": {
+    "B0": 240,
+    "T": 240,
+    "B1": 280,
+    "N1": 240
+   },
+   "served_models": {
+    "claude-haiku-5-5": 1000
+   },
+   "failure_reasons": {}
+  },
+  "exp3_second_model": {
+   "successful_calls": 168,
+   "failed_call_records": 0,
+   "cost_usd": 2.01,
+   "by_prompt": {
+    "B0": 57,
+    "B1": 56,
+    "N1": 55
+   },
+   "served_models": {
+    "claude-sonnet-5-5": 168
+   },
+   "failure_reasons": {}
+  },
+  "exp2_heldout_main (754 items x 4 prompts, run 0)": {
+   "successful_calls": 3016,
+   "cost_usd": 3.92,
+   "failed_call_records": 0
+  },
+  "exp2_heldout_repeats (40 items x 4 datasets x 2 prompts x 2 extra runs)": {
+   "successful_calls": 640,
+   "cost_usd": 0.66
+  },
+  "RECONCILIATION": {
+   "exp2_heldout_total": 3656,
+   "exp2_heldout_cost": 4.58,
+   "exp2_development_total": 1000,
+   "exp2_all": 4656,
+   "exp2_all_cost": 6.02,
+   "explanation": "The earlier report's figure counted held-out evaluation calls only; the earlier status message's figure added the development pilots."
+  }
+ },
+ "quotes": {
+  "contractnli": {
+   "N1": {
+    "proposed": 800,
+    "located": 796,
+    "refusal_reasons": {
+     "quote_not_found": 2,
+     "ambiguous_quote": 2
+    },
+    "items_with_a_refused_quote": 4,
+    "items_whose_status_changes_without_grounding": 0
+   },
+   "B1": {
+    "proposed": 527,
+    "located": 526,
+    "refusal_reasons": {
+     "quote_not_found": 1
+    },
+    "items_with_a_refused_quote": 1,
+    "items_whose_status_changes_without_grounding": 0
+   }
+  },
+  "vitaminc": {
+   "N1": {
+    "proposed": 472,
+    "located": 471,
+    "refusal_reasons": {
+     "quote_not_found": 1
+    },
+    "items_with_a_refused_quote": 1,
+    "items_whose_status_changes_without_grounding": 0
+   },
+   "B1": {
+    "proposed": 388,
+    "located": 388,
+    "refusal_reasons": {},
+    "items_with_a_refused_quote": 0,
+    "items_whose_status_changes_without_grounding": 0
+   }
+  },
+  "scicite": {
+   "N1": {
+    "proposed": 751,
+    "located": 747,
+    "refusal_reasons": {
+     "quote_not_found": 4
+    },
+    "items_with_a_refused_quote": 3,
+    "items_whose_status_changes_without_grounding": 0
+   },
+   "B1": {
+    "proposed": 564,
+    "located": 561,
+    "refusal_reasons": {
+     "quote_not_found": 3
+    },
+    "items_with_a_refused_quote": 3,
+    "items_whose_status_changes_without_grounding": 0
+   }
+  },
+  "attributionbench": {
+   "N1": {
+    "proposed": 517,
+    "located": 517,
+    "refusal_reasons": {},
+    "items_with_a_refused_quote": 0,
+    "items_whose_status_changes_without_grounding": 0
+   },
+   "B1": {
+    "proposed": 401,
+    "located": 401,
+    "refusal_reasons": {},
+    "items_with_a_refused_quote": 0,
+    "items_whose_status_changes_without_grounding": 0
+   }
+  },
+  "TOTAL_N1": {
+   "proposed": 2540,
+   "located": 2531,
+   "items_with_a_refused_quote": 8,
+   "items_whose_status_changes_without_grounding": 0
+  },
+  "TOTAL_B1": {
+   "proposed": 1880,
+   "located": 1876,
+   "items_with_a_refused_quote": 4,
+   "items_whose_status_changes_without_grounding": 0
+  },
+  "TOTAL_N1_plus_B1": {
+   "proposed": 4420,
+   "located": 4407
+  },
+  "exp1": {
+   "k": 319,
+   "n": 319,
+   "rate": 1.0,
+   "wilson95": [
+    0.9881,
+    1.0
+   ]
+  }
+ },
+ "certificates": {
+  "exp2_items": 754,
+  "n1_records_parsed": 753,
+  "certificates_rules_3.1": 753,
+  "certificates_rules_3.2": 753,
+  "items_without_certificate": [
+   "scicite:row152"
+  ],
+  "many_to_one": "none: certificate ids are content hashes that include the item id, so each certificate maps to exactly one item",
+  "explanation": "754 items, 753 certificates: one N1 reply (SciCiteVal) was not a parseable JSON object. It has no certificate, is scored as a failure and stays in every denominator. No de-duplication occurs.",
+  "part_numbering": {
+   "one_based": 753
+  },
+  "multi_part_records": 272,
+  "records_with_invalid_part_reference": 4,
+  "exp1_certificates": 117
+ },
+ "qualifier": {
+  "contractnli": {
+   "transitions (gold, with, without)": {
+    "supported | contradicted | contradicted": 3,
+    "supported | not_established | not_established": 36,
+    "supported | not_established | supported": 13,
+    "supported | supported | supported": 34,
+    "unsupported | contradicted | contradicted": 31,
+    "unsupported | not_established | not_established": 77,
+    "unsupported | supported | supported": 10
+   },
+   "supported_gold_newly_accepted": 13,
+   "unsupported_gold_newly_accepted": 0,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 13
+  },
+  "vitaminc": {
+   "transitions (gold, with, without)": {
+    "supported | contradicted | contradicted": 1,
+    "supported | not_established | not_established": 27,
+    "supported | not_established | supported": 5,
+    "supported | supported | supported": 87,
+    "unsupported | contradicted | contradicted": 61,
+    "unsupported | not_established | not_established": 54,
+    "unsupported | not_established | supported": 1,
+    "unsupported | supported | supported": 4
+   },
+   "supported_gold_newly_accepted": 5,
+   "unsupported_gold_newly_accepted": 1,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 6
+  },
+  "scicite": {
+   "transitions (gold, with, without)": {
+    "supported | contradicted | contradicted": 4,
+    "supported | failed | failed": 1,
+    "supported | not_established | not_established": 26,
+    "supported | not_established | supported": 11,
+    "supported | supported | supported": 18,
+    "unsupported | contradicted | contradicted": 26,
+    "unsupported | not_established | not_established": 67,
+    "unsupported | not_established | supported": 2,
+    "unsupported | supported | supported": 5
+   },
+   "supported_gold_newly_accepted": 11,
+   "unsupported_gold_newly_accepted": 2,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 13
+  },
+  "attributionbench": {
+   "transitions (gold, with, without)": {
+    "supported | not_established | not_established": 29,
+    "supported | not_established | supported": 8,
+    "supported | supported | supported": 49,
+    "unsupported | contradicted | contradicted": 3,
+    "unsupported | not_established | not_established": 48,
+    "unsupported | not_established | supported": 3,
+    "unsupported | supported | supported": 10
+   },
+   "supported_gold_newly_accepted": 8,
+   "unsupported_gold_newly_accepted": 3,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 11
+  },
+  "TOTAL": {
+   "supported_gold_newly_accepted": 37,
+   "unsupported_gold_newly_accepted": 6,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 43
+  },
+  "monotonic": true
+ }
+}

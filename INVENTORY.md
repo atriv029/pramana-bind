@@ -77,3 +77,13 @@ Not done from the handoff: human review and adjudication; independently annotate
 corrected-extraction diagnostic (needs human-corrected records); pipeline-level synthetic interventions beyond
 VitaminC's own contrast pairs; human audit study; FOLIO/ProofWriter/SciFact/ERASER; a second model; fine-tuning;
 the full-size allocation (754 items evaluated, not ~5,000).
+
+## Addendum: 16 Nov 2026
+- **Part-binding defect** in `v3.py` (rules N1/3.1, B1/1.0) fixed as N1/3.2, B1/1.1 (`resolve_part_refs`); old rule kept for replay of old
+  certificates; 7 new regression tests. Replay in `experiments/exp2b/`.
+- `experiments/reconcile.py` → `submission/metrics_master.json`, `COVERAGE_MANIFEST.json`, `QUALIFIER_TRANSITIONS.json`.
+- `experiments/human_review/analyze.py` → `RESULTS.json`, `submission/HUMAN_REVIEW.md`.
+- `experiments/exp3/`: second model `claude-sonnet-5-5`, served id verified on all 426 scored calls; stopped by usage limit.
+- Tests: 83 pass (80 correctness, 3 known-limit characterisations).
+- Figures: `submission/figure_scripts/` (matplotlib for empirical figures; HTML rendered by Chromium for Figures 1 and 5), fonts Source Serif 4,
+  Source Sans 3, IBM Plex Mono (SIL OFL, bundled in `submission/fonts/`; obtained from the fontsource npm packages).

@@ -1,0 +1,471 @@
+{
+ "validation": {
+  "sha256_of_upload": "c2d0740b7bc7794b77b27c70abb7239087d4b69dc92fc49a978d501280ffeae1",
+  "rows": 30,
+  "expected_ids": 30,
+  "missing_ids": [],
+  "unexpected_ids": [],
+  "duplicate_ids": [],
+  "invalid_labels": [],
+  "empty_reasons": [],
+  "reviewer_ids": {
+   "R1": 30
+  },
+  "timestamps": {
+   "2026-11-16T03:04:26Z": 30
+  },
+  "label_counts": {
+   "not_established": 8,
+   "supported": 13,
+   "contradicted": 9
+  },
+  "normalizations": [],
+  "timestamp_note": "All rows carry one identical timestamp. It is a single session time entered by the reviewer, not a measured completion time for each item."
+ },
+ "coverage": {
+  "reviewed": 30,
+  "of_subset": 30,
+  "of_heldout": 117,
+  "ambiguous": 0,
+  "families_in_subset": 19
+ },
+ "original_to_human_transition": {
+  "not_supported -> contradicted": 9,
+  "not_supported -> not_established": 8,
+  "supported -> supported": 13
+ },
+ "binary_agreement": {
+  "k": 30,
+  "n": 30,
+  "wilson95": [
+   0.886,
+   1
+  ],
+  "cohen_kappa": 1.0
+ },
+ "three_way_agreement": {
+  "k": 22,
+  "n": 30,
+  "cohen_kappa": 0.59,
+  "note": "Original three-way label derived from the item author's subtype: 'contradicted' subtype -> contradicted; every other unsupported subtype -> not_established. The original labels were binary; this mapping is post hoc.",
+  "confusion": {
+   "contradicted -> contradicted": 5,
+   "contradicted -> not_established": 4,
+   "not_established -> contradicted": 4,
+   "not_established -> not_established": 4,
+   "supported -> supported": 13
+  }
+ },
+ "binary_disagreements": [],
+ "three_way_disagreements": [
+  {
+   "item_id": "test-stat-COI-Article96-2",
+   "original_3way": "contradicted",
+   "human_label": "not_established",
+   "human_reason": "The speaker itself carries the rights to speaking or taking part in proceedings, as it is the Deputy Speaker whose rights are limited."
+  },
+  {
+   "item_id": "test-avt-496-0",
+   "original_3way": "contradicted",
+   "human_label": "not_established",
+   "human_reason": "There is no specification of free lawyers, there is simply an expanded access of them, but no guarantee they're free."
+  },
+  {
+   "item_id": "test-stat-COI-Article193-3",
+   "original_3way": "not_established",
+   "human_label": "contradicted",
+   "human_reason": "The claim uses quite ambiguous language of whether the person knows their qualification status, while the source text explicitly claims that they do know regardless."
+  },
+  {
+   "item_id": "test-avt-48-2",
+   "original_3way": "not_established",
+   "human_label": "contradicted",
+   "human_reason": "Though the global case recovery rate is approx. 68%, the rate specific to the USA is roughly 40%, thereby contradicting the claim."
+  },
+  {
+   "item_id": "test-stat-BNSS-Section81-1",
+   "original_3way": "not_established",
+   "human_label": "contradicted",
+   "human_reason": "The claim says it can never be executed, but the source text shows a clear contradiction where the executing officer has the authority to execute the warrant, and the local police can assist."
+  },
+  {
+   "item_id": "test-stat-COI-Article23-1",
+   "original_3way": "not_established",
+   "human_label": "contradicted",
+   "human_reason": "There is nothing in the article, as said in source context, that can prevent the State from imposing compulsory service for the following reasons."
+  },
+  {
+   "item_id": "test-stat-BNSS-Section39-2",
+   "original_3way": "contradicted",
+   "human_label": "not_established",
+   "human_reason": "There is no evidence that it may be up to 7 days, and the source context addresses the issue of twenty-four hours for bond or bail, not necessarily identity."
+  },
+  {
+   "item_id": "test-avt-245-0",
+   "original_3way": "contradicted",
+   "human_label": "not_established",
+   "human_reason": "The source context does not reference this case whatsoever and claims such instances are misleading."
+  }
+ ],
+ "systems": {
+  "direct_1": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 12,
+     "n": 13,
+     "wilson95": [
+      0.667,
+      0.986
+     ]
+    },
+    "accuracy": {
+     "k": 29,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 12,
+     "n": 13,
+     "wilson95": [
+      0.667,
+      0.986
+     ]
+    },
+    "accuracy": {
+     "k": 29,
+     "n": 30
+    }
+   }
+  },
+  "direct_3": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 13,
+     "n": 13,
+     "wilson95": [
+      0.772,
+      1
+     ]
+    },
+    "accuracy": {
+     "k": 30,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 13,
+     "n": 13,
+     "wilson95": [
+      0.772,
+      1
+     ]
+    },
+    "accuracy": {
+     "k": 30,
+     "n": 30
+    }
+   }
+  },
+  "taxonomy_1": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 11,
+     "n": 13,
+     "wilson95": [
+      0.578,
+      0.957
+     ]
+    },
+    "accuracy": {
+     "k": 28,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 11,
+     "n": 13,
+     "wilson95": [
+      0.578,
+      0.957
+     ]
+    },
+    "accuracy": {
+     "k": 28,
+     "n": 30
+    }
+   }
+  },
+  "taxonomy_3": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 11,
+     "n": 13,
+     "wilson95": [
+      0.578,
+      0.957
+     ]
+    },
+    "accuracy": {
+     "k": 28,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 11,
+     "n": 13,
+     "wilson95": [
+      0.578,
+      0.957
+     ]
+    },
+    "accuracy": {
+     "k": 28,
+     "n": 30
+    }
+   }
+  },
+  "pipeline_noguard": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 8,
+     "n": 13,
+     "wilson95": [
+      0.355,
+      0.823
+     ]
+    },
+    "accuracy": {
+     "k": 25,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 8,
+     "n": 13,
+     "wilson95": [
+      0.355,
+      0.823
+     ]
+    },
+    "accuracy": {
+     "k": 25,
+     "n": 30
+    }
+   }
+  },
+  "pipeline": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 7,
+     "n": 13,
+     "wilson95": [
+      0.291,
+      0.768
+     ]
+    },
+    "accuracy": {
+     "k": 24,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 7,
+     "n": 13,
+     "wilson95": [
+      0.291,
+      0.768
+     ]
+    },
+    "accuracy": {
+     "k": 24,
+     "n": 30
+    }
+   }
+  },
+  "pipeline_noground": {
+   "original_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 8,
+     "n": 13,
+     "wilson95": [
+      0.355,
+      0.823
+     ]
+    },
+    "accuracy": {
+     "k": 25,
+     "n": 30
+    }
+   },
+   "human_labels": {
+    "false_support": {
+     "k": 0,
+     "n": 17,
+     "wilson95": [
+      0,
+      0.184
+     ]
+    },
+    "supported_recall": {
+     "k": 8,
+     "n": 13,
+     "wilson95": [
+      0.355,
+      0.823
+     ]
+    },
+    "accuracy": {
+     "k": 25,
+     "n": 30
+    }
+   }
+  }
+ },
+ "full_117_original_labels_reference": {
+  "direct_1": {
+   "false_support": "0/68",
+   "supported_recall": "43/49"
+  },
+  "direct_3": {
+   "false_support": "0/68",
+   "supported_recall": "45/49"
+  },
+  "taxonomy_1": {
+   "false_support": "0/68",
+   "supported_recall": "37/49"
+  },
+  "taxonomy_3": {
+   "false_support": "0/68",
+   "supported_recall": "37/49"
+  },
+  "pipeline_noguard": {
+   "false_support": "0/68",
+   "supported_recall": "29/49"
+  },
+  "pipeline": {
+   "false_support": "0/68",
+   "supported_recall": "24/49"
+  },
+  "pipeline_noground": {
+   "false_support": "0/68",
+   "supported_recall": "29/49"
+  }
+ },
+ "provenance": {
+  "reviewer": "R1 = the project author (single reviewer)",
+  "design": "post-evaluation review; not part of the prospective freeze",
+  "subset": "30 of 117 held-out Experiment 1 items, drawn with a fixed seed (random.Random(30)), 13 originally supported and 17 not",
+  "concealed_in_packet": "original labels, subtypes, rationales, evidence highlights, item file names and all system predictions",
+  "inter_reviewer_reliability": "not available: one reviewer"
+ }
+}

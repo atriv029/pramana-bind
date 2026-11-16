@@ -1,0 +1,27 @@
+{
+ "vitaminc:5ede072ec9e77c00084d23f2_1": {
+  "reference": "VitaminC label: SUPPORTS",
+  "review": "No project human review. Benchmark annotators' label shown.",
+  "note": "Demonstration A, version 1 of the source sentence: 320 reviews."
+ },
+ "vitaminc:5ede072ec9e77c00084d23f2_2": {
+  "reference": "VitaminC label: REFUTES",
+  "review": "No project human review. Benchmark annotators' label shown.",
+  "note": "Demonstration A, version 2 of the source sentence: 323 reviews. Only this figure differs."
+ },
+ "vitaminc:5ed50882c9e77c000848fb28_3": {
+  "reference": "VitaminC label: SUPPORTS",
+  "review": "Qualifier diagnosed as unnecessary by an AI-assisted reading; not human-reviewed.",
+  "note": "Demonstration B, blocker that should not block: the model filed the stage name as a condition."
+ },
+ "scicite:row539": {
+  "reference": "SciCiteVal label: Incorrect (human-written distortion)",
+  "review": "Qualifier diagnosed as genuine by an AI-assisted reading; not human-reviewed.",
+  "note": "Demonstration B, blocker that should block: the source limits which batches receive gradients."
+ },
+ "contractnli:59-nda-3": {
+  "reference": "ContractNLI label: NotMentioned",
+  "review": "No project human review. The method's reading disagrees with the benchmark label.",
+  "note": "A semantic reading that is challenged, with integrity checks that still pass."
+ }
+}

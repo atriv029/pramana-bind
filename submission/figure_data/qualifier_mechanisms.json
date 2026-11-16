@@ -1,0 +1,56 @@
+{
+ "provenance": "AI-assisted single-pass reading by the authoring assistant; not human-reviewed; categories are the reader's judgement of why the qualifier blocked",
+ "n_cases": 43,
+ "table": [
+  {
+   "mechanism": "exception or duration clause applied to a default-rule claim",
+   "outcome": "gold supported (enforcement lost a correct acceptance)",
+   "count": 11
+  },
+  {
+   "mechanism": "incidental detail treated as a blocking condition",
+   "outcome": "gold supported (enforcement lost a correct acceptance)",
+   "count": 13
+  },
+  {
+   "mechanism": "source genuinely restricts or hedges the statement",
+   "outcome": "gold supported (enforcement lost a correct acceptance)",
+   "count": 11
+  },
+  {
+   "mechanism": "source genuinely restricts or hedges the statement",
+   "outcome": "gold unsupported (enforcement prevented a false acceptance)",
+   "count": 5
+  },
+  {
+   "mechanism": "subject identification treated as a condition",
+   "outcome": "gold supported (enforcement lost a correct acceptance)",
+   "count": 2
+  },
+  {
+   "mechanism": "unresolved",
+   "outcome": "gold unsupported (enforcement prevented a false acceptance)",
+   "count": 1
+  }
+ ],
+ "by_dataset": {
+  "contractnli": {
+   "exception or duration clause applied to a default-rule claim": 11,
+   "incidental detail treated as a blocking condition": 2
+  },
+  "vitaminc": {
+   "incidental detail treated as a blocking condition": 1,
+   "subject identification treated as a condition": 2,
+   "source genuinely restricts or hedges the statement": 3
+  },
+  "scicite": {
+   "source genuinely restricts or hedges the statement": 6,
+   "incidental detail treated as a blocking condition": 6,
+   "unresolved": 1
+  },
+  "attributionbench": {
+   "source genuinely restricts or hedges the statement": 7,
+   "incidental detail treated as a blocking condition": 4
+  }
+ }
+}
