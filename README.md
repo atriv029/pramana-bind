@@ -1,4 +1,4 @@
-# Pramāṇa-Bind
+# Pramāna-Bind
 
 **Auditable evidence commitments and the cost of qualification in citation verification.**
 
@@ -185,7 +185,7 @@ One primary model. Modest samples with wide intervals and unadjusted comparisons
 
 ## AI assistance
 
-An AI coding assistant wrote the code, drafted the Experiment 1 items and labels, ran the experiments, produced the figures and drafted the report under the author's direction. The author conceived the project and its framing, set the research questions, directed each stage, carried out the human label review and reviewed the analysis and manuscript. Details are in Appendix D of the report.
+Author conceived and framed the project, defined the research questions, and directed each stage. The author and an AI coding assistant both contributed to the code. The assistant drafted the Experiment 1 items and initial labels, ran the experiments, generated the figures, and drafted the report under the author’s direction. The author conducted the human label review and reviewed the analysis and manuscript. Appendix D provides further details.
 
 ## History
 
