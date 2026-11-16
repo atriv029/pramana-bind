@@ -83,3 +83,26 @@ await p.screenshot({path:n+'.png',fullPage:true});await p.pdf({path:n+'.pdf',wid
 Path("/tmp/diag.js").write_text(js)
 subprocess.run(["node", "/tmp/diag.js", str(OUT / "fig1_worked_example"), str(OUT / "fig6_audit_boundary")], check=True)
 print("diagrams written;", cert["id"][-16:], d["status"], [p["status"] for p in d["parts"]], d["evidence_part_index"])
+
+# ---- compact before/after part-binding figure (same recorded reading, two rule versions) -------------------------
+DD = json.load(open(R / "demo/interactive/demo_data.json"))["cases"]["v323"]
+def col(title, cls, res, note):
+    rows = ""
+    for i, p in enumerate(DD["record"]["claim"]["parts"]):
+        evs = [ev for ev, pi in zip(DD["record"]["evidence"], res["evidence_part_index"]) if pi == i]
+        rows += f"""<tr><td style="width:36%"><b>Part {i + 1}</b><br>{e(p['predicate'])}</td>
+<td>{''.join(f'“{e(ev["quote"])}”<br><span style="color:#64748B">model: {e(ev["stance"])}</span>' for ev in evs) or '—'}</td>
+<td style="width:24%">{chip(res['parts'][i]['status'])}</td></tr>"""
+    return f"""<div class="box {cls}" style="padding:5pt 6pt"><div class="lab">{title}</div><table style="margin:2pt 0">{rows}</table>
+<div>overall verdict {chip(res['status'])} &nbsp;<span style="color:#64748B">{note}</span></div></div>"""
+figb = f"""<!doctype html><meta charset=utf-8><style>{CSS} td{{border:0;border-top:.6pt solid #D5DEE4;padding:3pt 4pt}} .oldrule{{border-left:3pt solid #B7464A;background:#FDF6F6}}</style><body>
+<div class="box" style="margin-bottom:5pt"><span class="lab">Claim</span> {e(DD['claim'])} &nbsp; <span class="lab">Source</span> {e(DD['source'])}</div>
+<div class="row" style="grid-template-columns:1fr 1fr;margin-top:0">
+{col('Registered rule N1/3.1: part references read as zero-based', 'oldrule', DD['python']['original'], 'audit: pass')}
+{col('Corrected rule N1/3.2: numbering resolved per record', 'mech', DD['python']['corrected'], 'audit: pass')}</div></body>"""
+(R / "submission/figure_data/fig_binding_before_after.json").write_text(json.dumps({"item": DD["item"], "claim": DD["claim"], "source": DD["source"],
+    "record": DD["record"], "original_N1_3.1": DD["python"]["original"], "corrected_N1_3.2": DD["python"]["corrected"],
+    "certificates": [DD["certificate_original"], DD["certificate_corrected"]]}, indent=1))
+(OUT / "fig_binding_before_after.html").write_text(figb, encoding="utf-8")
+subprocess.run(["node", "/tmp/diag.js", str(OUT / "fig_binding_before_after")], check=True)
+print("binding figure written")

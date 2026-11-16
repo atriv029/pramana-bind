@@ -7,3 +7,5 @@ eval/runs/*/signer.key
 data_cache/
 review_admin_v2/
 *.key
+dist/
+experiments/exp2/review/blind_key.DO_NOT_SHARE_WITH_REVIEWERS.json

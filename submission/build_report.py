@@ -104,7 +104,8 @@ c("Second model results", {d: {m: {s2: X3["datasets"][d][m][s2] for s2 in ("B0",
 x3d = lambda d, k: X3["datasets"][d][f"N1_minus_B0_{k}"]
 def x3t(d, k, m):
     v = x3d(d, k)[m]; return f"{100 * v['diff']:+.0f} [{100 * v['ci95'][0]:+.0f}, {100 * v['ci95'][1]:+.0f}]"
-V_EXTRA = dict(q_ref=qn1["proposed"] - qn1["located"], q_ref_items=qn1["items_with_a_refused_quote"], qb_ref=qb1["proposed"] - qb1["located"],
+_J = json.load(open(R / 'experiments/human_review/joined_items.json')); _demo = {'test-stat-COI-Article156-0', 'test-stat-COI-Article133-0', 'test-stat-COI-Article30-1', 'test-stat-COI-Article133-3'}
+V_EXTRA = dict(hr_demo=len({j['item_id'] for j in _J} & _demo), q_ref=qn1["proposed"] - qn1["located"], q_ref_items=qn1["items_with_a_refused_quote"], qb_ref=qb1["proposed"] - qb1["located"],
     qt=QT["items_changed"], qt_sup=QT["supported_gold_newly_accepted"], qt_uns=QT["unsupported_gold_newly_accepted"],
     m_exc=mech("exception", "gold supported"), m_inc=mech("incidental", "gold supported"), m_gen_s=mech("source genuinely", "gold supported"),
     m_gen_u=mech("source genuinely", "gold unsupported"), m_subj=mech("subject", "gold supported"), m_unres=mech("unresolved", "gold unsupported"),

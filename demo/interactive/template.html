@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pramāṇa-Bind — interactive demo</title>
+<style>
+/*FONTS*/
+:root{--navy:#17354B;--teal:#087F83;--violet:#7563A6;--amber:#B7791F;--red:#B7464A;--slate:#64748B;--light:#EDF2F5;--line:#D5DEE4;--bg:#F6F8FA;--card:#fff;
+--tealbg:#E6F3F3;--redbg:#F9E9EA;--amberbg:#FBF1DC;--violetbg:#F1EEF8}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--navy);font:16px/1.5 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header{padding:18px 0 6px}h1{font:600 26px/1.15 'Source Serif 4',Georgia,serif;margin:0 0 4px}
+.lede{margin:0;max-width:78ch;color:#2c4a60}.tag{display:inline-block;font-size:13px;font-weight:600;color:var(--slate);border:1px solid var(--line);background:#fff;border-radius:999px;padding:1px 10px;margin:8px 6px 0 0}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 12px;border-bottom:2px solid var(--line)}
+nav button{font:600 15.5px/1.2 inherit;font-family:inherit;color:var(--slate);background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;padding:9px 12px;cursor:pointer;border-radius:6px 6px 0 0}
+nav button[aria-selected=true]{color:var(--navy);border-bottom-color:var(--teal);background:#fff}
+button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #2b6cb0;outline-offset:2px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:14px;align-items:start}
+@media(max-width:860px){.grid{grid-template-columns:1fr}h1{font-size:22px}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.k{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin:0 0 4px}
+.claim{font:600 18px/1.4 'Source Serif 4',Georgia,serif;margin:0 0 12px}
+.src{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15.5px;overflow-wrap:anywhere;max-height:260px;overflow:auto}
+.seg{display:inline-flex;border:1.5px solid var(--navy);border-radius:8px;overflow:hidden;margin:2px 0 10px}
+.seg button{font:600 15px/1 inherit;font-family:inherit;padding:9px 14px;border:0;background:#fff;color:var(--navy);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--navy);color:#fff}
+.sw{display:flex;align-items:center;gap:10px;margin:8px 0;font-weight:600;cursor:pointer;background:none;border:0;padding:4px 0;color:var(--navy);font-family:inherit;font-size:15.5px;text-align:left}
+.sw i{flex:none;width:44px;height:24px;border-radius:999px;background:#9aa8b4;position:relative;transition:background .15s}
+.sw i:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}
+.sw[aria-checked=true] i{background:var(--teal)}.sw[aria-checked=true] i:after{left:23px}
+mark{color:inherit;border-radius:3px;padding:1px 1px}.e1{background:#CDE9EA;box-shadow:inset 0 -2px var(--teal)}.e2{background:#F6E2B8;box-shadow:inset 0 -2px var(--amber)}
+.q{background:#E3DCF3;box-shadow:inset 0 -2px var(--violet)}.chg{outline:2px solid var(--red);outline-offset:1px;border-radius:3px;font-weight:600}
+.part{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:10px;border-left-width:5px}
+.part.p1{border-left-color:var(--teal)}.part.p2{border-left-color:var(--amber)}
+.part h3{margin:0 0 4px;font:600 15.5px/1.3 inherit}.row{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14.5px;align-items:center}
+.by{font-size:12px;font-weight:600;border-radius:4px;padding:0 6px;white-space:nowrap}.by.m{background:var(--violetbg);color:#4f3f86}.by.p{background:var(--tealbg);color:#045d60}
+.v{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14.5px;border-radius:999px;padding:2px 12px;border:1.5px solid currentColor;white-space:nowrap}
+.v.supported{color:#06686b;background:var(--tealbg)}.v.contradicted{color:#97343a;background:var(--redbg)}.v.not_established{color:#7d5410;background:var(--amberbg)}
+.v.pass{color:#06686b;background:var(--tealbg)}.v.fail{color:#97343a;background:var(--redbg)}
+.agg{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.agg b{font-size:15.5px}.note{font-size:14px;color:#3d566b;margin:8px 0 0}.small{font-size:13.5px;color:#3d566b}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:560px){.two{grid-template-columns:1fr}}
+.rule{border:1.5px dashed var(--line);border-radius:8px;padding:8px 10px}.rule.bad{border-color:var(--red);background:#fdf6f6}.rule.good{border-color:var(--teal);background:#f3fafa}
+.rule h4{margin:0 0 6px;font:600 14px/1.25 inherit}
+details{margin-top:10px;border-top:1px solid var(--line);padding-top:8px}summary{cursor:pointer;font-weight:600;font-size:14.5px}
+pre{font:12.5px/1.45 'IBM Plex Mono',ui-monospace,Menlo,monospace;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;white-space:pre-wrap;word-break:break-word;max-height:280px;overflow:auto;margin:6px 0}
+code{font:13px 'IBM Plex Mono',ui-monospace,monospace}
+.stat{display:grid;grid-template-columns:auto 1fr auto;gap:6px 10px;align-items:center;font-size:14.5px;margin-top:6px}
+.bar{height:14px;border-radius:3px}.fields{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;align-items:center;margin:6px 0}
+.fields dt{font-weight:600;font-size:14.5px}.fields dd{margin:0}
+ul.steps{list-style:none;margin:6px 0;padding:0;font-size:14px}ul.steps li{display:flex;gap:8px;padding:2px 0;border-bottom:1px solid var(--light)}
+ul.steps b{flex:none;width:44px}.ok{color:#06686b}.no{color:#97343a}
+footer{color:var(--slate);font-size:13.5px;padding:18px 0 40px;max-width:90ch}
+[hidden]{display:none!important}
+</style></head><body><div class="wrap">
+<header><h1>Pramāṇa-Bind: what a replayable citation check can and cannot tell you</h1>
+<p class="lede">A language model read a claim and a source and filled in a record: which quoted words bear on which part of the claim. A fixed rule turned that record into a verdict. Try changing the evidence, the rule, and the record below.</p>
+<span class="tag">Model outputs are recorded, not live</span><span class="tag">Verdicts are recomputed in your browser</span><span class="tag">Works offline</span></header>
+<nav role="tablist" aria-label="Demonstrations">
+<button role="tab" id="t0" aria-controls="s0" aria-selected="true">1 · Change one number</button>
+<button role="tab" id="t1" aria-controls="s1" aria-selected="false" tabindex="-1">2 · Switch a rule off</button>
+<button role="tab" id="t2" aria-controls="s2" aria-selected="false" tabindex="-1">3 · What a passing audit certifies</button></nav>
+
+<section id="s0" role="tabpanel" aria-labelledby="t0"><div class="grid">
+<div class="card"><p class="k">Claim (two parts)</p><p class="claim" id="a-claim"></p>
+<p class="k">Source sentence — pick a version</p>
+<div class="seg" role="group" aria-label="Source version"><button id="a-320" aria-pressed="false">320 reviews</button><button id="a-323" aria-pressed="true">323 reviews</button></div>
+<div class="src" id="a-src" aria-live="polite"></div>
+<p class="note">Both versions are real items from the VitaminC benchmark. Only the review count differs (outlined in red). Each version was read separately by the model; those two readings are <b>recorded model outputs</b>.</p>
+<button class="sw" role="switch" id="a-bug" aria-checked="false"><i></i><span>Show original binding bug</span></button>
+<p class="small" id="a-bugnote"></p></div>
+<div class="card" aria-live="polite"><p class="k">What the record says, part by part</p><div id="a-parts"></div>
+<div class="agg"><b>Overall verdict</b><span id="a-agg"></span><span class="small" id="a-ref"></span></div>
+<p class="note" id="a-explain"></p>
+<div id="a-compare" hidden><p class="k" style="margin-top:12px">Same recorded reading, two rule versions (323 reviews)</p><div class="two" id="a-two"></div>
+<p class="note">The overall verdict is the same under both rules. Only the explanation of <i>which part fails</i> differs. Across the benchmark this bug changed <b id="n-verd"></b> of <b id="n-items"></b> verdicts but <b id="n-expl"></b> part-level explanations.</p></div>
+<details><summary>Details: record, offsets, hashes, rule versions</summary><div id="a-details"></div></details></div></div></section>
+
+<section id="s1" role="tabpanel" aria-labelledby="t1" hidden><div class="grid">
+<div class="card"><p class="k">Pick a real case</p>
+<div class="seg" role="group" aria-label="Case"><button id="b-c0" aria-pressed="true">A correct claim the rule blocks</button><button id="b-c1" aria-pressed="false">A wrong claim the rule blocks</button></div>
+<p class="k">Claim</p><p class="claim" id="b-claim"></p><p class="k">Source</p><div class="src" id="b-src"></div>
+<button class="sw" role="switch" id="b-enf" aria-checked="true"><i></i><span>Enforce qualifiers</span></button>
+<p class="small">The claim, the source and the model's recorded reading stay fixed. Only the rule changes.</p></div>
+<div class="card" aria-live="polite"><p class="k">The qualifier the model found</p><div id="b-qual"></div>
+<div class="agg"><b>Verdict</b><span id="b-verdict"></span><span class="small" id="b-ref"></span></div>
+<p class="note" id="b-explain"></p>
+<p class="k" style="margin-top:14px">Across four benchmarks (754 claims), switching enforcement off changed <span id="b-n"></span> verdicts</p>
+<div class="stat"><span>correct claims regained</span><div><div class="bar" id="b-bar1" style="background:var(--navy)"></div></div><b id="b-s1"></b>
+<span>wrong claims let through</span><div><div class="bar" id="b-bar2" style="background:var(--red)"></div></div><b id="b-s2"></b></div>
+<p class="note">Every one of those changes goes the same way: from “not established” to “supported”. The rule is cautious, and most of its caution is spent on claims that were fine.</p>
+<details><summary>Details: record, diagnosis provenance, certificate</summary><div id="b-details"></div></details></div></div></section>
+
+<section id="s2" role="tabpanel" aria-labelledby="t2" hidden><div class="grid">
+<div class="card"><p class="k">Genuine signed certificate, as originally issued</p>
+<p class="small">The 323-review case, decided by the original rule version before the binding bug was fixed.</p>
+<dl class="fields"><dt>Support verdict</dt><dd id="c-verdict"></dd><dt>Evidence assignment</dt><dd id="c-assign"></dd><dt>Audit result</dt><dd id="c-audit"></dd></dl>
+<p class="note">The audit passes. It replays the rule that was recorded, and that rule put the evidence on the wrong part. <b>An audit can show a result is reproducible and unaltered. It cannot show the evidence was assigned to the right claim part.</b></p>
+<p class="k" style="margin-top:10px">Recorded audit of the signed ledger (command line)</p><ul class="steps" id="c-steps"></ul>
+<p class="k" style="margin-top:10px">Checked just now, in your browser</p><ul class="steps" id="c-live"></ul></div>
+<div class="card"><p class="k">Deliberately modified test copy</p>
+<p class="small">A copy made for this demonstration. It is not a real record.</p>
+<button class="sw" role="switch" id="c-tamper" aria-checked="false"><i></i><span>Change “323 reviews” to “320 reviews” in the copy</span></button>
+<dl class="fields"><dt>Audit result</dt><dd id="c2-audit"></dd></dl>
+<p class="k">Checked just now, in your browser</p><ul class="steps" id="c2-live" aria-live="polite"></ul>
+<p class="k" style="margin-top:10px">Recorded audit of the modified ledger copy (command line)</p><ul class="steps" id="c2-steps"></ul>
+<details open><summary>Reproduce both audits yourself</summary><p class="small">From the repository root, with the project installed:</p><pre id="c-cmds"></pre>
+<p class="small">The browser checks the source hash, the quotations and the rule. The hash chain and the signature are checked by the command-line tool, and its recorded output is shown here.</p></details></div></div></section>
+
+<footer><p><b>How to read this page.</b> Violet labels mark what the model assigned (not checked by any program). Teal labels mark what a program computed. A supported verdict means the recorded reading supports the claim under the rule; it does not mean the reading is right. Data: VitaminC (Schuster et al., 2021) and SciCiteVal (Liu et al., 2026). Sprint entry: Pramāṇa-Bind, AI × Epistemics Research Sprint, November 2026.</p></footer></div>
+<script>
+const D=/*DATA*/null;
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $=id=>document.getElementById(id);
+const VL={supported:["✓","Supported"],contradicted:["✕","Contradicted"],not_established:["△","Not established"],pass:["✓","Pass"],fail:["✕","Fail"]};
+const chip=s=>`<span class="v ${s}"><span aria-hidden="true">${VL[s][0]}</span>${VL[s][1]}</span>`;
+/* ---------- local replay: quote location and the decision rule, ported from pramana_bind/v3.py ---------- */
+function locate(text,quote){if(typeof quote!=="string"||!quote.trim())return{located:false};
+ let i=text.indexOf(quote);if(i!==-1){if(text.indexOf(quote,i+1)!==-1)return{located:false,reason:"found more than once"};return{located:true,start:i,end:i+quote.length,match:"exact"}}
+ const map=[];let c="";let gap=false;for(let k=0;k<text.length;k++){const ch=text[k];if(/\s/.test(ch)){gap=c.length>0;continue}if(gap){c+=" ";map.push(-1);gap=false}c+=ch;map.push(k)}
+ const q=quote.split(/\s+/).filter(Boolean).join(" ");i=c.indexOf(q);if(i===-1)return{located:false,reason:"not found"};if(c.indexOf(q,i+1)!==-1)return{located:false,reason:"found more than once"};
+ return{located:true,start:map[i],end:map[i+q.length-1]+1,match:"whitespace-collapsed"}}
+function resolve(refs,n,legacy){if(legacy)return refs.map(r=>Number.isInteger(r)&&r>=0&&r<n?r:0);
+ const base=refs.some(r=>r===0)?0:1;return refs.map(r=>Number.isInteger(r)&&r-base>=0&&r-base<n?r-base:(n===1&&r==null?0:null))}
+const BLOCK={necessary_condition:"necessary_condition_omitted",scope_restriction:"scope_extension",temporal_restriction:"temporal_mismatch",uncertainty_qualifier:"strength_inflation"};
+function decide(rec,text,{useQualifiers=true,legacy=false}={}){const parts=((rec.claim||{}).parts||[{}]).slice(0,4),n=parts.length,ev=rec.evidence||[],qs=rec.qualifiers||[];
+ const el=ev.map(e=>locate(text,e.quote)),ql=qs.map(q=>locate(text,q.quote));const all=resolve(ev.map(e=>e.part).concat(qs.map(q=>q.part)),n,legacy);
+ const ep=all.slice(0,ev.length),qp=all.slice(ev.length);
+ const out=parts.map((part,i)=>{const mine=ev.filter((e,k)=>ep[k]===i&&el[k].located);const covers=e=>["same","broader"].includes(e.subject_match);
+  const proof=e=>e.role!=="counterexample"&&["states","necessarily_implies"].includes(e.basis);
+  let affirm=mine.filter(e=>proof(e)&&e.stance==="affirms"&&covers(e));const deny=mine.filter(e=>proof(e)&&e.stance==="denies"&&covers(e));
+  const exist=part.modality==="possible"||["some","one"].includes(part.quantifier);
+  if(exist&&!affirm.length)affirm=mine.filter(e=>proof(e)&&e.stance==="affirms"&&e.subject_match==="narrower");
+  let status,reasons=[];
+  if(affirm.length&&deny.length){status="not_established";reasons=["conflicting_evidence"]}
+  else if(deny.length){status="contradicted";reasons=["source_denies"]}
+  else if(affirm.length){if(useQualifiers&&!exist)qs.forEach((q,k)=>{if(qp[k]!==i||!ql[k].located||q.stated_in_claim===true)return;
+     if(BLOCK[q.relation]&&q.claim_part_changed!=="none")reasons.push(BLOCK[q.relation]);else if(q.relation==="exception"&&part.universal_wording===true)reasons.push("exception_omitted_from_universal")});
+    reasons=[...new Set(reasons)].sort();status=reasons.length?"not_established":"supported"}
+  else{status="not_established";if(mine.some(e=>e.stance==="affirms"&&e.subject_match==="narrower"))reasons.push("scope_extension");
+    if(mine.some(e=>e.stance==="denies"&&e.subject_match==="narrower"))reasons.push("counterexample_in_source");if(mine.some(e=>e.stance==="weaker"))reasons.push("strength_inflation");
+    if(mine.some(e=>e.stance==="affirms"&&e.basis==="suggests"))reasons.push("inferred_only");if(mine.some(e=>e.role==="counterexample"))reasons.push("counterexample_in_source");
+    if(mine.some(e=>e.subject_match==="different")&&!reasons.length)reasons.push("wrong_entity");reasons=[...new Set(reasons)].sort();if(!reasons.length)reasons=["insufficient_evidence"]}
+  return{status,reasons}});
+ const st=out.map(p=>p.status);const status=st.includes("contradicted")?"contradicted":st.every(s=>s==="supported")?"supported":"not_established";
+ return{status,parts:out,ep,qp,el,ql}}
+/* self-test: the browser's replay must equal the Python results stored with each case */
+window.__selftest=()=>{const bad=[];for(const[k,c]of Object.entries(D.cases)){for(const[name,opt]of[["corrected",{}],["corrected_no_qualifiers",{useQualifiers:false}],["original",{legacy:true}]]){
+ const j=decide(c.record,c.source,opt),p=c.python[name];const same=j.status===p.status&&JSON.stringify(j.parts.map(x=>[x.status,x.reasons]))===JSON.stringify(p.parts.map(x=>[x.status,x.reasons]))
+  &&JSON.stringify(j.ep)===JSON.stringify(p.evidence_part_index)&&JSON.stringify(j.el.map(l=>[l.located,l.start??null,l.end??null]))===JSON.stringify(p.evidence_located.map(l=>[l.located,l.start??null,l.end??null]));
+ if(!same)bad.push(k+":"+name)}}return bad};
+const WHY={source_denies:"a located passage says the opposite",necessary_condition_omitted:"the source makes this conditional on something the claim leaves out",scope_extension:"the source says this only of a narrower subject",
+ temporal_mismatch:"the source limits this to a time the claim does not carry",strength_inflation:"the source says something weaker than the claim",insufficient_evidence:"no located passage states or necessarily implies this",
+ conflicting_evidence:"located passages point both ways",exception_omitted_from_universal:"the claim is universal and the source gives an exception",wrong_entity:"the passages are about a different subject",inferred_only:"the source only makes this likely"};
+function mark(text,spans){spans=spans.filter(s=>s&&s[0]!=null).sort((a,b)=>a[0]-b[0]);let o="",pos=0;for(const[s,e,cls]of spans){if(s<pos)continue;o+=esc(text.slice(pos,s))+`<mark class="${cls}">`+esc(text.slice(s,e))+"</mark>";pos=e}return o+esc(text.slice(pos))}
+function partCards(c,r,label){return((c.record.claim||{}).parts||[]).map((p,i)=>{const evs=(c.record.evidence||[]).map((e,k)=>({e,k})).filter(x=>r.ep[x.k]===i);
+ return `<div class="part p${i+1}"><h3>Part ${i+1}: ${esc(p.predicate)}</h3>${evs.map(({e,k})=>`<div class="row"><span class="by m">model</span><span>quoted “<mark class="e${i+1}">${esc(e.quote)}</mark>” as <b>${esc(e.stance)}</b> this part</span></div>
+ <div class="row"><span class="by p">program</span><span>${r.el[k].located?`found once in the source`:`quote refused (${esc(r.el[k].reason)})`}</span></div>`).join("")||`<div class="row small">No evidence is bound to this part.</div>`}
+ <div class="row" style="margin-top:6px"><span class="by p">program</span>${chip(r.parts[i].status)}<span class="small">${r.parts[i].reasons.map(x=>esc(WHY[x]||x)).join("; ")}</span></div></div>`}).join("")}
+/* ---------- A ---------- */
+let aVer="v323",aBug=false;
+function numSpan(c){const m=/based on (\d+) reviews/.exec(c.source);return m?[m.index+9,m.index+9+m[1].length,"chg"]:null}
+function renderA(){const c=D.cases[aVer],r=decide(c.record,c.source);$("a-320").setAttribute("aria-pressed",aVer==="v320");$("a-323").setAttribute("aria-pressed",aVer==="v323");
+ $("a-claim").textContent=c.claim.replace(/\s+([,.:%])/g,"$1");
+ const ns=numSpan(c);let html="",pos=0;const spans=r.el.map((l,k)=>l.located?[l.start,l.end,"e"+(r.ep[k]+1)]:null).filter(Boolean).sort((a,b)=>a[0]-b[0]);
+ for(const[s,e,cls]of spans){html+=esc(c.source.slice(pos,s));let inner=c.source.slice(s,e);if(ns&&ns[0]>=s&&ns[1]<=e)inner=esc(inner.slice(0,ns[0]-s))+`<span class="chg">${esc(inner.slice(ns[0]-s,ns[1]-s))}</span>`+esc(inner.slice(ns[1]-s));else inner=esc(inner);html+=`<mark class="${cls}">${inner}</mark>`;pos=e}
+ $("a-src").innerHTML=html+esc(c.source.slice(pos));
+ $("a-parts").innerHTML=partCards(c,r);$("a-agg").innerHTML=chip(r.status);$("a-ref").textContent="Benchmark label: "+c.reference_label;
+ $("a-explain").innerHTML=aVer==="v323"?"The rating is still 90%, so part 1 is unaffected. 323 is not fewer than 322, so the model filed that quote as <b>denying</b> part 2, and one contradicted part makes the whole claim contradicted. <span class='by p'>local replay</span> Your browser located each quote and applied rule N1/3.2 to the recorded reading.":"320 is fewer than 322, so both parts are affirmed and the claim is supported. <span class='by p'>local replay</span> Your browser located each quote and applied rule N1/3.2 to the recorded reading.";
+ $("a-bug").setAttribute("aria-checked",aBug);const show=aBug&&aVer==="v323";$("a-compare").hidden=!show;
+ $("a-bugnote").textContent=aBug&&aVer!=="v323"?"Switch to 323 reviews to see the bug: with 320 both parts are supported, so the mix-up is invisible.":"The model numbers the claim parts 1 and 2. The original rule counted from 0, so each quote landed on the other part.";
+ if(show){const c3=D.cases.v323,o=decide(c3.record,c3.source,{legacy:true}),n=decide(c3.record,c3.source);
+  const col=(title,cls,res,src)=>`<div class="rule ${cls}"><h4>${title}</h4>${(c3.record.claim.parts).map((p,i)=>`<div class="row" style="margin:4px 0"><span style="min-width:4.6em"><b>Part ${i+1}</b></span>${chip(res.parts[i].status)}</div><div class="small">${(c3.record.evidence||[]).filter((e,k)=>res.ep[k]===i).map(e=>"“"+esc(e.quote)+"” ("+esc(e.stance)+")").join("; ")||"no evidence"}</div>`).join("")}
+  <div class="row" style="margin-top:8px;border-top:1px solid var(--line);padding-top:6px"><b>Overall</b>${chip(res.status)}</div><div class="small">${src}</div></div>`;
+  $("a-two").innerHTML=col("Original rule (N1/3.1) ✕ wrong binding","bad",o,"certificate "+esc(c3.certificate_original.id.slice(-12))+", issued and signed under N1/3.1")+col("Corrected rule (N1/3.2) ✓","good",n,"certificate "+esc(c3.certificate_corrected.id.slice(-12))+", replayed from the same recorded reading")}
+ $("a-details").innerHTML=`<p class="small">Item <code>${esc(c.item)}</code> · model <code>${esc(c.model)}</code> (recorded) · source sha256 <code>${esc(c.source_sha256.slice(0,16))}…</code><br>Corrected certificate <code>${esc(c.certificate_corrected.id)}</code> (rule ${esc(c.certificate_corrected.rules)}, ledger entry ${c.certificate_corrected.seq})<br>Original certificate <code>${esc(c.certificate_original.id)}</code> (rule ${esc(c.certificate_original.rules)}, ledger entry ${c.certificate_original.seq})</p>
+ <p class="small">Quote offsets (program): ${r.el.map((l,k)=>`“${esc(c.record.evidence[k].quote)}” → ${l.located?l.start+"–"+l.end+" ("+l.match+")":"refused"}`).join(" · ")}</p><pre>${esc(JSON.stringify(c.record,null,1))}</pre>`}
+/* ---------- B ---------- */
+let bCase="q_supported",bEnf=true;
+function renderB(){const c=D.cases[bCase],r=decide(c.record,c.source,{useQualifiers:bEnf}),on=decide(c.record,c.source);
+ $("b-c0").setAttribute("aria-pressed",bCase==="q_supported");$("b-c1").setAttribute("aria-pressed",bCase==="q_unsupported");$("b-enf").setAttribute("aria-checked",bEnf);
+ $("b-claim").textContent=c.claim.replace(/\s+([,.:%])/g,"$1");
+ const qs=c.record.qualifiers||[];const blocking=qs.map((q,k)=>({q,k,l:on.ql[k],pi:on.qp[k]})).filter(x=>x.l.located&&x.q.stated_in_claim!==true&&x.pi!=null&&BLOCK[x.q.relation]&&x.q.claim_part_changed!=="none");
+ $("b-src").innerHTML=mark(c.source,blocking.map(x=>[x.l.start,x.l.end,"q"]));
+ $("b-qual").innerHTML=blocking.map(x=>`<div class="part" style="border-left-color:var(--violet)"><div class="row"><span class="by m">model</span><span>“<mark class="q">${esc(x.q.quote)}</mark>”</span></div>
+ <div class="row" style="margin-top:4px"><span>type: <b>${esc(x.q.relation.replace(/_/g," "))}</b></span><span>applies to: <b>part ${x.pi+1}</b> — ${esc(c.record.claim.parts[x.pi].predicate)}</span><span>already in the claim: <b>no</b></span></div>
+ <div class="small" style="margin-top:4px">Model's note: ${esc(x.q.text)}</div><div class="row" style="margin-top:4px"><span class="by p">program</span><span>phrase found once in the source · ${bEnf?"<b>counted against the claim</b>":"<b>ignored</b> (enforcement off)"}</span></div></div>`).join("");
+ $("b-verdict").innerHTML=chip(r.status);const good=c.reference_label==="SUPPORTS";$("b-ref").textContent="Reference label: "+c.reference_label+(good?" (the claim is correct)":" (the citation is wrong: a human-written distortion)");
+ const dg=c.diagnosis?c.diagnosis.category:"";
+ $("b-explain").innerHTML=(bEnf?(good?"With enforcement on, a correct claim is rejected. The model filed the stage name as a condition the claim leaves out, and the rule obeyed.":"With enforcement on, a wrong citation is rejected. The source limits which batches receive gradients, and the claim drops that limit.")
+  :(good?"With enforcement off, the claim is accepted, which matches the benchmark.":"With enforcement off, the wrong citation is accepted."))
+  +` <span class="by p">counterfactual replay</span> ${bEnf?"This is the verdict in the signed certificate.":"Recomputed in your browser from the same recorded reading. It is <b>not</b> the signed certificate, which is unchanged."}
+  <br><span class="small">Project diagnosis of this qualifier: “${esc(dg)}”. ${esc(c.diagnosis?c.diagnosis.provenance:"")}.</span>`;
+ const q=D.aggregate.qualifier;$("b-n").textContent=q.items_changed;$("b-s1").textContent=q.supported_gold_newly_accepted;$("b-s2").textContent=q.unsupported_gold_newly_accepted;
+ $("b-bar1").style.width=(100*q.supported_gold_newly_accepted/q.items_changed)+"%";$("b-bar2").style.width=(100*q.unsupported_gold_newly_accepted/q.items_changed)+"%";
+ $("b-details").innerHTML=`<p class="small">Item <code>${esc(c.item)}</code> (${esc(c.dataset)}) · signed certificate <code>${esc(c.certificate_corrected.id)}</code> (rule ${esc(c.certificate_corrected.rules)}): ${esc(on.status.replace("_"," "))}<br>Part statuses now: ${r.parts.map((p,i)=>"part "+(i+1)+" "+p.status.replace("_"," ")).join(", ")}</p><pre>${esc(JSON.stringify(c.record,null,1))}</pre>`}
+/* ---------- C ---------- */
+let tam=false;
+async function sha(t){try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}catch(e){return null}}
+const li=(ok,name,detail)=>`<li><b class="${ok?"ok":"no"}">${ok?"✓ pass":"✕ fail"}</b><span><b>${esc(name)}</b>${detail?" — "+esc(detail):""}</span></li>`;
+async function liveChecks(c,text){const h=await sha(text);const r=decide(c.record,text,{legacy:true});const out=[];
+ out.push(h===null?`<li><b>n/a</b><span><b>source hash</b> — this browser does not allow hashing for local files; see the recorded audit</span></li>`:li(h===c.source_sha256,"source hash","SHA-256 of the text "+(h===c.source_sha256?"matches":"does not match")+" the certificate"));
+ const allq=r.el.every(l=>l.located);out.push(li(allq,"quotations",allq?"every quoted phrase occurs once in the text":"a quoted phrase is no longer in the text"));
+ const same=r.status===c.python.original.status&&JSON.stringify(r.parts.map(p=>p.status))===JSON.stringify(c.python.original.parts.map(p=>p.status));
+ out.push(li(same,"rule replay (N1/3.1)",same?"recomputing gives the stored verdict":"recomputing gives a different result"));return{html:out.join(""),ok:(h===null||h===c.source_sha256)&&allq&&same}}
+async function renderC(){const c=D.cases.v323,o=c.python.original;$("c-verdict").innerHTML=chip(o.status);
+ $("c-assign").innerHTML=`<span class="v fail"><span aria-hidden="true">✕</span>Wrong part</span> <span class="small">“323 reviews” was attached to the rating part</span>`;
+ $("c-audit").innerHTML=chip(D.audit.genuine.ok?"pass":"fail")+` <span class="small">recorded · ${D.audit.genuine.n_certificates} certificates in the ledger</span>`;
+ $("c-steps").innerHTML=D.audit.genuine.steps.map(s=>li(s.ok,s.step.replace(/_/g," "),s.detail.replace(/\[.*?\]/,""))).join("");
+ const g=await liveChecks(c,c.source);$("c-live").innerHTML=g.html;
+ $("c-tamper").setAttribute("aria-checked",tam);const t=tam?c.source.replace("323 reviews","320 reviews"):c.source;const m=await liveChecks(c,t);
+ $("c2-live").innerHTML=m.html;$("c2-audit").innerHTML=tam?chip("fail")+` <span class="small">the copy no longer matches what was signed</span>`:`<span class="small">Not modified yet. Use the switch above.</span>`;
+ $("c2-steps").innerHTML=tam?D.audit.modified.steps.map(s=>li(s.ok,s.step.replace(/_/g," "),s.detail+" at ledger entry "+s.seq)).join("")+`<li><span class="small">Recorded: ${esc(D.audit.modified.what_changed)}.</span></li>`:`<li><span class="small">Shown after you modify the copy.</span></li>`;
+ $("c-cmds").textContent=D.audit.commands.join("\n\n")}
+/* ---------- wiring ---------- */
+const tabs=[0,1,2].map(i=>$("t"+i));function sel(i,focus){tabs.forEach((t,k)=>{t.setAttribute("aria-selected",k===i);t.tabIndex=k===i?0:-1;$("s"+k).hidden=k!==i});if(focus)tabs[i].focus()}
+tabs.forEach((t,i)=>{t.onclick=()=>sel(i);t.onkeydown=e=>{if(e.key==="ArrowRight")sel((i+1)%3,true);if(e.key==="ArrowLeft")sel((i+2)%3,true)}});
+$("a-320").onclick=()=>{aVer="v320";renderA()};$("a-323").onclick=()=>{aVer="v323";renderA()};$("a-bug").onclick=()=>{aBug=!aBug;renderA()};
+$("b-c0").onclick=()=>{bCase="q_supported";renderB()};$("b-c1").onclick=()=>{bCase="q_unsupported";renderB()};$("b-enf").onclick=()=>{bEnf=!bEnf;renderB()};
+$("c-tamper").onclick=()=>{tam=!tam;renderC()};
+$("n-verd").textContent=D.aggregate.binding_verdicts_changed;$("n-items").textContent=D.aggregate.items;$("n-expl").textContent=D.aggregate.binding_explanations_changed;
+renderA();renderB();renderC();
+</script></body></html>

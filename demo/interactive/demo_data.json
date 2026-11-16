@@ -1,0 +1,1089 @@
+{
+ "cases": {
+  "v320": {
+   "item": "vitaminc:5ede072ec9e77c00084d23f2_1",
+   "dataset": "vitaminc",
+   "claim": "On Rotten Tomatoes , John Wick : Chapter 3 has a more than 85 % approval rating according to less than 322 reviews .",
+   "source": "On review aggregator Rotten Tomatoes , the film holds an approval rating of 90 % , with an average rating of 7.48/10 , based on 320 reviews .",
+   "source_sha256": "ba87a181761a9b0e50ffd334ba691af4502929a821f5b4855bd321dd718bef02",
+   "reference_label": "SUPPORTS",
+   "record": {
+    "claim": {
+     "subject": "John Wick: Chapter 3 approval rating and review count on Rotten Tomatoes",
+     "parts": [
+      {
+       "predicate": "has a Rotten Tomatoes approval rating of more than 85%",
+       "polarity": "affirmative",
+       "quantifier": "unspecified",
+       "universal_wording": false,
+       "modality": "certain",
+       "time": null
+      },
+      {
+       "predicate": "has its Rotten Tomatoes approval rating based on fewer than 322 reviews",
+       "polarity": "affirmative",
+       "quantifier": "unspecified",
+       "universal_wording": false,
+       "modality": "certain",
+       "time": null
+      }
+     ]
+    },
+    "evidence": [
+     {
+      "part": 1,
+      "role": "bears_on_part",
+      "stance": "affirms",
+      "basis": "necessarily_implies",
+      "subject_match": "same",
+      "quote": "the film holds an approval rating of 90 %"
+     },
+     {
+      "part": 2,
+      "role": "bears_on_part",
+      "stance": "affirms",
+      "basis": "necessarily_implies",
+      "subject_match": "same",
+      "quote": "based on 320 reviews"
+     }
+    ],
+    "qualifiers": [
+     {
+      "part": 1,
+      "relation": "incidental_detail",
+      "claim_part_changed": "none",
+      "stated_in_claim": false,
+      "text": "The source also gives an average rating of 7.48/10, which does not affect whether the approval rating exceeds 85%.",
+      "quote": "with an average rating of 7.48/10"
+     }
+    ],
+    "inference_path": "deduction"
+   },
+   "model": "claude-haiku-5-5",
+   "python": {
+    "corrected": {
+     "status": "supported",
+     "reasons": [],
+     "parts": [
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      },
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      0,
+      1
+     ],
+     "qualifier_part_index": [
+      0
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 39,
+       "end": 80,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 119,
+       "end": 139,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 83,
+       "end": 116,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.2"
+    },
+    "corrected_no_qualifiers": {
+     "status": "supported",
+     "reasons": [],
+     "parts": [
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      },
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      0,
+      1
+     ],
+     "qualifier_part_index": [
+      0
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 39,
+       "end": 80,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 119,
+       "end": 139,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 83,
+       "end": 116,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.2"
+    },
+    "original": {
+     "status": "supported",
+     "reasons": [],
+     "parts": [
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      },
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      1,
+      0
+     ],
+     "qualifier_part_index": [
+      1
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 39,
+       "end": 80,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 119,
+       "end": 139,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 83,
+       "end": 116,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.1"
+    }
+   },
+   "certificate_original": {
+    "id": "urn:pramana:cert:09c9d61fcadd28d778ca94b11f0491b51cfd51942a7bd63d16163143d7add7ac",
+    "rules": "N1/3.1",
+    "ledger": "experiments/exp2/ledger/ledger.jsonl",
+    "seq": 215
+   },
+   "certificate_corrected": {
+    "id": "urn:pramana:cert:58fae2b28e34571320ee2e45728dbb7201b41c956276c709514683324ffc75f3",
+    "rules": "N1/3.2",
+    "ledger": "experiments/exp2b/ledger/ledger.jsonl",
+    "seq": 215
+   },
+   "diagnosis": null
+  },
+  "v323": {
+   "item": "vitaminc:5ede072ec9e77c00084d23f2_2",
+   "dataset": "vitaminc",
+   "claim": "On Rotten Tomatoes , John Wick : Chapter 3 has a more than 85 % approval rating according to less than 322 reviews .",
+   "source": "On review aggregator Rotten Tomatoes , the film holds an approval rating of 90 % , with an average rating of 7.48/10 , based on 323 reviews .",
+   "source_sha256": "0f7915b4cc101c62a809ed6fe7221c9d39a213e3e2dd347a3bbcaf7cb56e2cec",
+   "reference_label": "REFUTES",
+   "record": {
+    "claim": {
+     "subject": "John Wick: Chapter 3 Rotten Tomatoes approval rating and review count",
+     "parts": [
+      {
+       "predicate": "has an approval rating above 85% on Rotten Tomatoes",
+       "polarity": "affirmative",
+       "quantifier": "unspecified",
+       "universal_wording": false,
+       "modality": "certain",
+       "time": null
+      },
+      {
+       "predicate": "is based on fewer than 322 reviews on Rotten Tomatoes",
+       "polarity": "affirmative",
+       "quantifier": "unspecified",
+       "universal_wording": false,
+       "modality": "certain",
+       "time": null
+      }
+     ]
+    },
+    "evidence": [
+     {
+      "part": 1,
+      "role": "bears_on_part",
+      "stance": "affirms",
+      "basis": "necessarily_implies",
+      "subject_match": "same",
+      "quote": "the film holds an approval rating of 90 %"
+     },
+     {
+      "part": 2,
+      "role": "bears_on_part",
+      "stance": "denies",
+      "basis": "necessarily_implies",
+      "subject_match": "same",
+      "quote": "based on 323 reviews"
+     }
+    ],
+    "qualifiers": [
+     {
+      "part": 1,
+      "relation": "incidental_detail",
+      "claim_part_changed": "none",
+      "stated_in_claim": false,
+      "text": "The source also gives an average rating of 7.48/10, which does not affect whether the approval rating exceeds 85%.",
+      "quote": "with an average rating of 7.48/10"
+     }
+    ],
+    "inference_path": "deduction"
+   },
+   "model": "claude-haiku-5-5",
+   "python": {
+    "corrected": {
+     "status": "contradicted",
+     "reasons": [
+      "part1:source_denies"
+     ],
+     "parts": [
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      },
+      {
+       "status": "contradicted",
+       "reasons": [
+        "source_denies"
+       ],
+       "conflict": false,
+       "n_affirm": 0,
+       "n_deny": 1
+      }
+     ],
+     "evidence_part_index": [
+      0,
+      1
+     ],
+     "qualifier_part_index": [
+      0
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 39,
+       "end": 80,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 119,
+       "end": 139,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 83,
+       "end": 116,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.2"
+    },
+    "corrected_no_qualifiers": {
+     "status": "contradicted",
+     "reasons": [
+      "part1:source_denies"
+     ],
+     "parts": [
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      },
+      {
+       "status": "contradicted",
+       "reasons": [
+        "source_denies"
+       ],
+       "conflict": false,
+       "n_affirm": 0,
+       "n_deny": 1
+      }
+     ],
+     "evidence_part_index": [
+      0,
+      1
+     ],
+     "qualifier_part_index": [
+      0
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 39,
+       "end": 80,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 119,
+       "end": 139,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 83,
+       "end": 116,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.2"
+    },
+    "original": {
+     "status": "contradicted",
+     "reasons": [
+      "part0:source_denies"
+     ],
+     "parts": [
+      {
+       "status": "contradicted",
+       "reasons": [
+        "source_denies"
+       ],
+       "conflict": false,
+       "n_affirm": 0,
+       "n_deny": 1
+      },
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      1,
+      0
+     ],
+     "qualifier_part_index": [
+      1
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 39,
+       "end": 80,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 119,
+       "end": 139,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 83,
+       "end": 116,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.1"
+    }
+   },
+   "certificate_original": {
+    "id": "urn:pramana:cert:5f081839e1bb3c6164aaddaf65df10553ad143bb253c97e9981a2b93da378b93",
+    "rules": "N1/3.1",
+    "ledger": "experiments/exp2/ledger/ledger.jsonl",
+    "seq": 216
+   },
+   "certificate_corrected": {
+    "id": "urn:pramana:cert:61d0114ec555a8e669658ef3f628942e09c3d11db7b484f4cb17c13b93cd07b1",
+    "rules": "N1/3.2",
+    "ledger": "experiments/exp2b/ledger/ledger.jsonl",
+    "seq": 216
+   },
+   "diagnosis": null
+  },
+  "q_supported": {
+   "item": "vitaminc:5ed50882c9e77c000848fb28_3",
+   "dataset": "vitaminc",
+   "claim": "Pink was born on September 8 , 1979 .",
+   "source": "Alecia Beth Moore -LRB- born September 8 , 1979 -RRB- , known professionally as Pink -LRB- frequently stylized as -RRB- , is an American singer , songwriter , dancer , and actress .",
+   "source_sha256": "2689616204715fe89fc829ee8fe29eefeb91fa61ca81ca49be726dd97d14a78a",
+   "reference_label": "SUPPORTS",
+   "record": {
+    "claim": {
+     "subject": "Pink (the singer)",
+     "parts": [
+      {
+       "predicate": "was born on September 8, 1979",
+       "polarity": "affirmative",
+       "quantifier": "unspecified",
+       "universal_wording": false,
+       "modality": "certain",
+       "time": null
+      }
+     ]
+    },
+    "evidence": [
+     {
+      "part": 1,
+      "role": "bears_on_part",
+      "stance": "affirms",
+      "basis": "states",
+      "subject_match": "same",
+      "quote": "born September 8 , 1979"
+     }
+    ],
+    "qualifiers": [
+     {
+      "part": 1,
+      "relation": "necessary_condition",
+      "claim_part_changed": "subject",
+      "stated_in_claim": false,
+      "text": "The source identifies the person born on this date as known professionally as Pink, which links the birth date to the claim's subject.",
+      "quote": "known professionally as Pink"
+     }
+    ],
+    "inference_path": "direct_assertion"
+   },
+   "model": "claude-haiku-5-5",
+   "python": {
+    "corrected": {
+     "status": "not_established",
+     "reasons": [
+      "necessary_condition_omitted"
+     ],
+     "parts": [
+      {
+       "status": "not_established",
+       "reasons": [
+        "necessary_condition_omitted"
+       ],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      0
+     ],
+     "qualifier_part_index": [
+      0
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 24,
+       "end": 47,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 56,
+       "end": 84,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.2"
+    },
+    "corrected_no_qualifiers": {
+     "status": "supported",
+     "reasons": [],
+     "parts": [
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      0
+     ],
+     "qualifier_part_index": [
+      0
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 24,
+       "end": 47,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 56,
+       "end": 84,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.2"
+    },
+    "original": {
+     "status": "not_established",
+     "reasons": [
+      "necessary_condition_omitted"
+     ],
+     "parts": [
+      {
+       "status": "not_established",
+       "reasons": [
+        "necessary_condition_omitted"
+       ],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      0
+     ],
+     "qualifier_part_index": [
+      0
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 24,
+       "end": 47,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 56,
+       "end": 84,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.1"
+    }
+   },
+   "certificate_original": {
+    "id": "urn:pramana:cert:b956c53ace573a9d01b6bd56375d59d56bd511125ddf90f15252a37657622bb1",
+    "rules": "N1/3.1",
+    "ledger": "experiments/exp2/ledger/ledger.jsonl",
+    "seq": 265
+   },
+   "certificate_corrected": {
+    "id": "urn:pramana:cert:ee70430f7080fc267c1b903a44d0181582c6324526b82dc331b3797d8cc91479",
+    "rules": "N1/3.2",
+    "ledger": "experiments/exp2b/ledger/ledger.jsonl",
+    "seq": 265
+   },
+   "diagnosis": {
+    "code": "D",
+    "category": "subject identification treated as a condition",
+    "provenance": "AI-assisted single-pass reading by the authoring assistant; not human-reviewed"
+   }
+  },
+  "q_unsupported": {
+   "item": "scicite:row539",
+   "dataset": "scicite",
+   "claim": "This work uses Back spread Through Time for Text Classification (BPT3C) where a document is divided into fixed-length batches and the gradients are back-propagated to batches.",
+   "source": "Language models are trained with backpropagation through time (BPTT) to enable gradient propagation for large input sequences. In order to make fine-tuning a classifier for large documents feasible, we propose BPTT for Text Classification (BPT3C): We divide the document into fixed-length batches of size b. At the beginning of each batch, the model is initialized with the final state of the previous batch; we keep track of the hidden states for mean and max-pooling; gradients are back-propagated to the batches whose hidden states contributed to the final prediction. In practice, we use variable length backpropagation sequences Merity et al. (2017a).",
+   "source_sha256": "fb4329b68dfa4a33d3f05a2291e2e6f38ebd4dd47860d636cfdbade1ff2e1b1f",
+   "reference_label": "Incorrect",
+   "record": {
+    "claim": {
+     "subject": "BPT3C (BPTT for Text Classification), the method that divides a document into fixed-length batches and back-propagates gradients to batches",
+     "parts": [
+      {
+       "predicate": "divides a document into fixed-length batches",
+       "polarity": "affirmative",
+       "quantifier": "unspecified",
+       "universal_wording": false,
+       "modality": "certain",
+       "time": null
+      },
+      {
+       "predicate": "gradients are back-propagated to batches",
+       "polarity": "affirmative",
+       "quantifier": "unspecified",
+       "universal_wording": false,
+       "modality": "certain",
+       "time": null
+      }
+     ]
+    },
+    "evidence": [
+     {
+      "part": 1,
+      "role": "bears_on_part",
+      "stance": "affirms",
+      "basis": "states",
+      "subject_match": "same",
+      "quote": "We divide the document into fixed-length batches of size b."
+     },
+     {
+      "part": 2,
+      "role": "bears_on_part",
+      "stance": "affirms",
+      "basis": "states",
+      "subject_match": "same",
+      "quote": "gradients are back-propagated to the batches whose hidden states contributed to the final prediction"
+     }
+    ],
+    "qualifiers": [
+     {
+      "part": 2,
+      "relation": "scope_restriction",
+      "claim_part_changed": "quantifier",
+      "stated_in_claim": false,
+      "text": "Gradients go to a subset of batches: those whose hidden states contributed to the final prediction.",
+      "quote": "whose hidden states contributed to the final prediction"
+     },
+     {
+      "part": 2,
+      "relation": "exception",
+      "claim_part_changed": "predicate",
+      "stated_in_claim": false,
+      "text": "In practice, the backpropagation sequences are of variable length rather than the fixed-length batches.",
+      "quote": "In practice, we use variable length backpropagation sequences Merity et al. (2017a)."
+     }
+    ],
+    "inference_path": "direct_assertion"
+   },
+   "model": "claude-haiku-5-5",
+   "python": {
+    "corrected": {
+     "status": "not_established",
+     "reasons": [
+      "part1:scope_extension"
+     ],
+     "parts": [
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      },
+      {
+       "status": "not_established",
+       "reasons": [
+        "scope_extension"
+       ],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      0,
+      1
+     ],
+     "qualifier_part_index": [
+      1,
+      1
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 248,
+       "end": 307,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 470,
+       "end": 570,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 515,
+       "end": 570,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 572,
+       "end": 656,
+       "match": "whitespace_collapsed",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.2"
+    },
+    "corrected_no_qualifiers": {
+     "status": "supported",
+     "reasons": [],
+     "parts": [
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      },
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      0,
+      1
+     ],
+     "qualifier_part_index": [
+      1,
+      1
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 248,
+       "end": 307,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 470,
+       "end": 570,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 515,
+       "end": 570,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 572,
+       "end": 656,
+       "match": "whitespace_collapsed",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.2"
+    },
+    "original": {
+     "status": "not_established",
+     "reasons": [
+      "part0:scope_extension"
+     ],
+     "parts": [
+      {
+       "status": "not_established",
+       "reasons": [
+        "scope_extension"
+       ],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      },
+      {
+       "status": "supported",
+       "reasons": [],
+       "conflict": false,
+       "n_affirm": 1,
+       "n_deny": 0
+      }
+     ],
+     "evidence_part_index": [
+      1,
+      0
+     ],
+     "qualifier_part_index": [
+      0,
+      0
+     ],
+     "evidence_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 248,
+       "end": 307,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 470,
+       "end": 570,
+       "match": "exact",
+       "offsets_source": "system"
+      }
+     ],
+     "qualifiers_located": [
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 515,
+       "end": 570,
+       "match": "exact",
+       "offsets_source": "system"
+      },
+      {
+       "located": true,
+       "reason": "ok",
+       "start": 572,
+       "end": 656,
+       "match": "whitespace_collapsed",
+       "offsets_source": "system"
+      }
+     ],
+     "rules_version": "N1/3.1"
+    }
+   },
+   "certificate_original": {
+    "id": "urn:pramana:cert:6636acc1380619f6b0642420f66b90c032227822ef897c94dca0a71cd1d7c9e8",
+    "rules": "N1/3.1",
+    "ledger": "experiments/exp2/ledger/ledger.jsonl",
+    "seq": 450
+   },
+   "certificate_corrected": {
+    "id": "urn:pramana:cert:41b53402c7a87770164670d6ac811a5b64c2c387034ad790a2196c98ac05ee0b",
+    "rules": "N1/3.2",
+    "ledger": "experiments/exp2b/ledger/ledger.jsonl",
+    "seq": 450
+   },
+   "diagnosis": {
+    "code": "A",
+    "category": "source genuinely restricts or hedges the statement",
+    "provenance": "AI-assisted single-pass reading by the authoring assistant; not human-reviewed"
+   }
+  }
+ },
+ "audit": {
+  "genuine": {
+   "ok": true,
+   "n_events": 754,
+   "n_certificates": 753,
+   "steps": [
+    {
+     "step": "hash_chain",
+     "ok": true,
+     "detail": "754 events, head 6eb434311e20"
+    },
+    {
+     "step": "signature",
+     "ok": true,
+     "detail": "head seq 753 signed by pinned key kKiPMELfZsOMTK0v..."
+    },
+    {
+     "step": "certificate_id",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "step": "source_hashes",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "step": "versions",
+     "ok": true,
+     "detail": "schema 3, rules N1/3.1 (superseded: replayed under its own rules; known part-binding defect)"
+    },
+    {
+     "step": "quote_offsets",
+     "ok": true,
+     "detail": "3/3 quotes re-located"
+    },
+    {
+     "step": "status",
+     "ok": true,
+     "detail": "contradicted ['part0:source_denies']"
+    },
+    {
+     "step": "decision",
+     "ok": true,
+     "detail": "contradicted"
+    }
+   ],
+   "ledger": "experiments/exp2/ledger/ledger.jsonl",
+   "seq": 216,
+   "certificate": "urn:pramana:cert:5f081839e1bb3c6164aaddaf65df10553ad143bb253c97e9981a2b93da378b93"
+  },
+  "modified": {
+   "ok": false,
+   "steps": [
+    {
+     "step": "hash_chain",
+     "ok": false,
+     "detail": "this_hash mismatch",
+     "seq": 216
+    }
+   ],
+   "what_changed": "in ledger line 217 of a copy, \"based on 323 reviews\" was changed to \"based on 320 reviews\""
+  },
+  "commands": [
+   "python -m pramana_bind audit experiments/exp2/ledger/ledger.jsonl --pubkey \"$(cat experiments/exp2/ledger/signer.pub)\"",
+   "cp -r experiments/exp2/ledger /tmp/modified_copy && sed -i '217s/based on 323 reviews/based on 320 reviews/' /tmp/modified_copy/ledger.jsonl",
+   "python -m pramana_bind audit /tmp/modified_copy/ledger.jsonl --pubkey \"$(cat experiments/exp2/ledger/signer.pub)\""
+  ]
+ },
+ "aggregate": {
+  "qualifier": {
+   "supported_gold_newly_accepted": 37,
+   "unsupported_gold_newly_accepted": 6,
+   "acceptances_lost": 0,
+   "changes_among_non_support": 0,
+   "items_changed": 43
+  },
+  "items": 754,
+  "binding_verdicts_changed": 5,
+  "binding_explanations_changed": 153,
+  "multi_part_records": 272,
+  "direct": {
+   "fs": [
+    40,
+    402
+   ],
+   "rec": [
+    218,
+    352
+   ]
+  },
+  "typed": {
+   "fs": [
+    29,
+    402
+   ],
+   "rec": [
+    188,
+    352
+   ]
+  }
+ }
+}

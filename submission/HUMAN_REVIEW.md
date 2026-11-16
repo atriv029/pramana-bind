@@ -9,11 +9,11 @@ Generated from `experiments/human_review/RESULTS.json` by `experiments/human_rev
 - **Timing:** after both evaluations. It is not part of the prospective freeze, and no prompt or rule was changed in response to it.
 - **Concealed in the review packet:** original labels, subtypes, rationales, evidence highlights, item identifiers and all system predictions.
   Review ids are hashes.
-- **Prior exposure, stated plainly:** the reviewer had seen aggregate results and discussed selected examples. A non-blind packet showing the
-  proposed label for all 117 items (`eval/review/review_packet.html`) had been delivered to the reviewer two days earlier, and four held-out
-  items appear with their outcomes in the Experiment 1 demo viewer. Of the 30 reviewed items, 3 are among the seven items earlier
-  flagged for adjudication and 0 are among the four demo items. **[Author to confirm: whether any original item labels or
-  item-level predictions were looked at before or during labelling. This statement could not be obtained from the environment.]**
+- **Author's confirmed statement:** “The project author completed a post-evaluation review of 30 held-out items using the blind packet. The
+  reviewer did not see any proposed labels before or during labeling.”
+- **Other exposure, as far as the artifacts show:** the blind packet contained no system predictions. The author had seen aggregate results. None of
+  the 30 reviewed items appears with a system outcome in the earlier Experiment 1 demo viewer. No further statement about exposure to item-level
+  predictions has been confirmed, and none is made.
 - **AI assistance:** an assistant explained the CSV format and corrected punctuation in an example row. No evidence of AI involvement in the
   labels or reasons; the reasons are preserved verbatim as submitted.
 

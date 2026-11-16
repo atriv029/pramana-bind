@@ -1,0 +1,25 @@
+<!doctype html><meta charset=utf-8><style>@font-face{font-family:'Source Sans 3';font-weight:400;src:url('../fonts/source-sans-3-latin-400-normal.woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:400;src:url('../fonts/source-sans-3-latin-ext-400-normal.woff2');unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:'Source Sans 3';font-weight:600;src:url('../fonts/source-sans-3-latin-600-normal.woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:600;src:url('../fonts/source-sans-3-latin-ext-600-normal.woff2');unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:'IBM Plex Mono';font-weight:400;src:url('../fonts/ibm-plex-mono-latin-400-normal.woff2')}*{box-sizing:border-box}body{margin:0;font:8.6pt/1.32 'Source Sans 3',sans-serif;color:#17354B;background:#fff;width:178mm}
+.m{font-family:'IBM Plex Mono',monospace;font-size:7.4pt}.lab{font-size:7.2pt;letter-spacing:.05em;text-transform:uppercase;color:#64748B;font-weight:600;margin-bottom:1.5pt}
+.box{border:.8pt solid #D5DEE4;border-radius:3pt;padding:4pt 6pt;background:#fff}.model{border-left:3pt solid #7563A6;background:#F5F3FA}.mech{border-left:3pt solid #087F83;background:#EEF7F7}
+.row{display:grid;gap:5pt;margin-top:5pt}.chip{display:inline-block;border-radius:8pt;padding:0 5pt;font-weight:600;font-size:7.6pt;border:.8pt solid currentColor}
+.ok{color:#087F83}.bad{color:#B7464A}.neu{color:#64748B}.arrow{text-align:center;color:#64748B;font-size:9pt;line-height:1;margin:2pt 0}
+table{border-collapse:collapse;width:100%}td,th{border:.6pt solid #D5DEE4;padding:2.6pt 4.5pt;vertical-align:top;text-align:left}th{background:#EDF2F5;font-weight:600;font-size:7.8pt}
+.y{color:#087F83;font-weight:600}.n{color:#B7464A;font-weight:600}.a{color:#B7791F;font-weight:600}mark{background:#FBE9C8;color:inherit;padding:0 1pt} td{border:0;border-top:.6pt solid #D5DEE4;padding:3pt 4pt} .oldrule{border-left:3pt solid #B7464A;background:#FDF6F6}</style><body>
+<div class="box" style="margin-bottom:5pt"><span class="lab">Claim</span> On Rotten Tomatoes , John Wick : Chapter 3 has a more than 85 % approval rating according to less than 322 reviews . &nbsp; <span class="lab">Source</span> On review aggregator Rotten Tomatoes , the film holds an approval rating of 90 % , with an average rating of 7.48/10 , based on 323 reviews .</div>
+<div class="row" style="grid-template-columns:1fr 1fr;margin-top:0">
+<div class="box oldrule" style="padding:5pt 6pt"><div class="lab">Registered rule N1/3.1: part references read as zero-based</div><table style="margin:2pt 0"><tr><td style="width:36%"><b>Part 1</b><br>has an approval rating above 85% on Rotten Tomatoes</td>
+<td>“based on 323 reviews”<br><span style="color:#64748B">model: denies</span></td>
+<td style="width:24%"><span class="chip bad">contradicted</span></td></tr><tr><td style="width:36%"><b>Part 2</b><br>is based on fewer than 322 reviews on Rotten Tomatoes</td>
+<td>“the film holds an approval rating of 90 %”<br><span style="color:#64748B">model: affirms</span></td>
+<td style="width:24%"><span class="chip ok">supported</span></td></tr></table>
+<div>overall verdict <span class="chip bad">contradicted</span> &nbsp;<span style="color:#64748B">audit: pass</span></div></div>
+<div class="box mech" style="padding:5pt 6pt"><div class="lab">Corrected rule N1/3.2: numbering resolved per record</div><table style="margin:2pt 0"><tr><td style="width:36%"><b>Part 1</b><br>has an approval rating above 85% on Rotten Tomatoes</td>
+<td>“the film holds an approval rating of 90 %”<br><span style="color:#64748B">model: affirms</span></td>
+<td style="width:24%"><span class="chip ok">supported</span></td></tr><tr><td style="width:36%"><b>Part 2</b><br>is based on fewer than 322 reviews on Rotten Tomatoes</td>
+<td>“based on 323 reviews”<br><span style="color:#64748B">model: denies</span></td>
+<td style="width:24%"><span class="chip bad">contradicted</span></td></tr></table>
+<div>overall verdict <span class="chip bad">contradicted</span> &nbsp;<span style="color:#64748B">audit: pass</span></div></div></div></body>
