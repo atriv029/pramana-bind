@@ -2,7 +2,7 @@
 
 **Auditable evidence commitments and the cost of qualification in citation verification.**
 
-Aaina Trivedi (Independent Researcher). Built for the Apart Research AI × Epistemics Research Sprint, 13-15 November 2026, Track 2 (trust infrastructure).
+Aaina Trivedi (Independent Researcher). Built for the Apart Research AI x Epistemics Research Sprint, 13-15 November 2026, Track 2 (trust infrastructure).
 
 A citation can point to a real, relevant source that does not support the claim attached to it. Pramāṇa-Bind is a citation verifier in which a language model must commit to an explicit record (which quoted passage bears on which part of a claim, and which conditions qualify it), a program applies a fixed, versioned rule to that record, and the result is saved as a signed certificate that anyone can replay without a model. The record is motivated by the Nyāya analysis of inference: subject, property claimed, reason, the relation that warrants the step, and conditions that defeat it.
 
