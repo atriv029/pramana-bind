@@ -12,7 +12,7 @@ Deadline: Monday 16 November 2026, 11:59 UTC (Sunday 15 November 23:59 Anywhere 
 | Interested in publishing | your choice |
 | Author | Aaina Trivedi — Independent Researcher |
 | Demo link (if the form has a link or “other artifacts” field) | pending: host `index.html` from `Pramana_Bind_demo_hosting.zip` and paste the public link. If the form accepts attachments instead, attach `Pramana_Bind_demo.html`. |
-| Code repository link (optional) | pending: no public repository exists yet. Leave blank, or add the link once the repository is pushed. |
+| Code repository link (optional) | https://github.com/atriv029/pramana-bind (use it only if the repository is set to public, so judges can open it) |
 
 The report does not depend on either optional link.
 
