@@ -10,7 +10,7 @@ A citation can point to a real, relevant source that does not support the claim 
 - **Interactive demo (one file, works offline):** [`demo/Pramana_Bind_demo.html`](demo/Pramana_Bind_demo.html). Download it and open it in a browser.
 - **Every number traced to a file:** [`submission/CLAIMS.md`](submission/CLAIMS.md)
 
-## What we found
+## What I found
 
 The project asks two questions.
 
@@ -21,7 +21,7 @@ The project asks two questions.
 | Direct judge (ask the model) | 40 of 402 | 218 of 352 |
 | Typed verifier (this project) | 29 of 402 | 188 of 352 |
 
-The typed verifier is more cautious. One rule explains most of the gap: holding the model's extracted records fixed and switching off qualifier enforcement regained 37 supported claims and admitted 6 unsupported ones (43 verdicts changed, all in the same direction). We detected no clear advantage over a generic structured verifier that uses entities, polarity, scope and conditions without the Nyāya-motivated typing. Verbatim quote checking refused 9 of 2,540 quotations and changed no decision.
+The typed verifier is more cautious. One rule explains most of the gap: holding the model's extracted records fixed and switching off qualifier enforcement regained 37 supported claims and admitted 6 unsupported ones (43 verdicts changed, all in the same direction). I detected no clear advantage over a generic structured verifier that uses entities, polarity, scope and conditions without the Nyāya-motivated typing. Verbatim quote checking refused 9 of 2,540 quotations and changed no decision.
 
 **2. What can an auditor establish from a replayable certificate?** That a decision is reproducible and unaltered. A part-numbering error in our own registered rule attached evidence to the wrong claim part: it changed 5 of 754 final verdicts and 153 part-level explanations, and every affected certificate passed its audit, because replay executed the same faulty rule. The error was found by a person reading one record against its source. It is fixed under new rule versions, and both versions are kept.
 
@@ -181,11 +181,11 @@ Only the adapted evaluation samples are committed, each item carrying its licenc
 
 ## Limitations in brief
 
-One primary model. Modest samples with wide intervals and unadjusted comparisons. Stance, basis, subject match and qualifier type are unchecked model assignments. Experiment 1 labels were drafted by an AI assistant; 30 of 117 were reviewed by the author. Qualifier-mechanism diagnoses are AI-assisted. The corrected rules were applied after the registered freeze, and both versions are reported. The second-model run is partial and from the same vendor. No retrieval of counter-evidence, no formal verification, no study of whether people catch more errors with these records. Full list: `submission/LIMITATIONS.md`.
+One primary model. Modest samples with wide intervals and unadjusted comparisons. Stance, basis, subject match and qualifier type are unchecked model assignments. Experiment 1 labels were drafted by an AI assistant; 30 of 117 were reviewed by me. Qualifier-mechanism diagnoses are AI-assisted. The corrected rules were applied after the registered freeze, and both versions are reported. The second-model run is partial and from the same vendor. No retrieval of counter-evidence, no formal verification, no study of whether people catch more errors with these records. Full list: `submission/LIMITATIONS.md`.
 
 ## AI assistance
 
-Author conceived and framed the project, defined the research questions, and directed each stage. The author and an AI coding assistant both contributed to the code. The assistant drafted the Experiment 1 items and initial labels, ran the experiments, generated the figures, and drafted the report under the author’s direction. The author conducted the human label review and reviewed the analysis and manuscript. Appendix D provides further details.
+I conceived and framed the project, defined the research questions, and directed each stage. Me and Claude Code assistant both contributed to the code. The assistant drafted the Experiment 1 items and initial labels, ran the experiments, generated the figures, and drafted the report under the author’s direction. The author conducted the human label review and reviewed the analysis and manuscript. Appendix D provides further details.
 
 ## History
 
