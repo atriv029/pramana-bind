@@ -1,0 +1,40 @@
+{
+ "contractnli": {
+  "items": 68,
+  "families": 4,
+  "labels": {
+   "not_established": 25,
+   "supported": 34,
+   "contradicted": 9
+  },
+  "sha256": "4ee00ffbceb55a6498360a7ae0cb085a1430b5627c2126f47abd95a69d0a53c8"
+ },
+ "vitaminc": {
+  "items": 86,
+  "families": 25,
+  "labels": {
+   "not_established": 7,
+   "supported": 43,
+   "contradicted": 36
+  },
+  "sha256": "95c83ee3d7f7a524b01a553f3c0408e823b9fa7c92a28c407729c2388cc224cf"
+ },
+ "scicite": {
+  "items": 76,
+  "families": 6,
+  "labels": {
+   "supported": 25,
+   "not_supported": 51
+  },
+  "sha256": "d8c26fafbc513755a04b547421e3016416256312394f54e73bb6a81dba22a260"
+ },
+ "attributionbench": {
+  "items": 56,
+  "families": 50,
+  "labels": {
+   "supported": 31,
+   "not_supported": 25
+  },
+  "sha256": "b18044ef71ddce859bda1ab9bbd510592b482d00f04afb362e972c4f57eafc4f"
+ }
+}

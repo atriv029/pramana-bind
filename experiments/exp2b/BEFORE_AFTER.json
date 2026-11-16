@@ -1,0 +1,454 @@
+{
+ "note": "Replay of the frozen Experiment 2 extractions (no model call) under rules N1/3.2 and B1/1.1, which fix part-reference binding. 'before' = rules N1/3.1, B1/1.0 as registered.",
+ "datasets": {
+  "contractnli": {
+   "B0": {
+    "before_fs_rec": [
+     11,
+     118,
+     45,
+     86
+    ],
+    "after_fs_rec": [
+     11,
+     118,
+     45,
+     86
+    ],
+    "changed_items": []
+   },
+   "T": {
+    "before_fs_rec": [
+     14,
+     118,
+     46,
+     86
+    ],
+    "after_fs_rec": [
+     14,
+     118,
+     46,
+     86
+    ],
+    "changed_items": []
+   },
+   "B1": {
+    "before_fs_rec": [
+     10,
+     118,
+     26,
+     86
+    ],
+    "after_fs_rec": [
+     10,
+     118,
+     26,
+     86
+    ],
+    "changed_items": []
+   },
+   "N1": {
+    "before_fs_rec": [
+     10,
+     118,
+     34,
+     86
+    ],
+    "after_fs_rec": [
+     10,
+     118,
+     34,
+     86
+    ],
+    "changed_items": []
+   },
+   "N1_noqual": {
+    "before_fs_rec": [
+     10,
+     118,
+     47,
+     86
+    ],
+    "after_fs_rec": [
+     10,
+     118,
+     47,
+     86
+    ],
+    "changed_items": []
+   },
+   "N1_noground": {
+    "before_fs_rec": [
+     10,
+     118,
+     34,
+     86
+    ],
+    "after_fs_rec": [
+     10,
+     118,
+     34,
+     86
+    ],
+    "changed_items": []
+   },
+   "N1_items_with_changed_reasons": 8
+  },
+  "vitaminc": {
+   "B0": {
+    "before_fs_rec": [
+     8,
+     120,
+     82,
+     120
+    ],
+    "after_fs_rec": [
+     8,
+     120,
+     82,
+     120
+    ],
+    "changed_items": []
+   },
+   "T": {
+    "before_fs_rec": [
+     5,
+     120,
+     94,
+     120
+    ],
+    "after_fs_rec": [
+     5,
+     120,
+     94,
+     120
+    ],
+    "changed_items": []
+   },
+   "B1": {
+    "before_fs_rec": [
+     4,
+     120,
+     86,
+     120
+    ],
+    "after_fs_rec": [
+     4,
+     120,
+     86,
+     120
+    ],
+    "changed_items": []
+   },
+   "N1": {
+    "before_fs_rec": [
+     4,
+     120,
+     87,
+     120
+    ],
+    "after_fs_rec": [
+     4,
+     120,
+     87,
+     120
+    ],
+    "changed_items": []
+   },
+   "N1_noqual": {
+    "before_fs_rec": [
+     5,
+     120,
+     92,
+     120
+    ],
+    "after_fs_rec": [
+     5,
+     120,
+     92,
+     120
+    ],
+    "changed_items": []
+   },
+   "N1_noground": {
+    "before_fs_rec": [
+     4,
+     120,
+     87,
+     120
+    ],
+    "after_fs_rec": [
+     4,
+     120,
+     87,
+     120
+    ],
+    "changed_items": []
+   },
+   "N1_items_with_changed_reasons": 19
+  },
+  "scicite": {
+   "B0": {
+    "before_fs_rec": [
+     9,
+     100,
+     36,
+     60
+    ],
+    "after_fs_rec": [
+     9,
+     100,
+     36,
+     60
+    ],
+    "changed_items": []
+   },
+   "T": {
+    "before_fs_rec": [
+     11,
+     100,
+     33,
+     60
+    ],
+    "after_fs_rec": [
+     11,
+     100,
+     33,
+     60
+    ],
+    "changed_items": []
+   },
+   "B1": {
+    "before_fs_rec": [
+     6,
+     100,
+     16,
+     60
+    ],
+    "after_fs_rec": [
+     6,
+     100,
+     16,
+     60
+    ],
+    "changed_items": []
+   },
+   "N1": {
+    "before_fs_rec": [
+     5,
+     100,
+     19,
+     60
+    ],
+    "after_fs_rec": [
+     5,
+     100,
+     18,
+     60
+    ],
+    "changed_items": [
+     {
+      "id": "scicite:row148",
+      "gold": "supported",
+      "before": "supported",
+      "after": "not_established"
+     },
+     {
+      "id": "scicite:row390",
+      "gold": "supported",
+      "before": "supported",
+      "after": "not_established"
+     },
+     {
+      "id": "scicite:row402",
+      "gold": "supported",
+      "before": "not_established",
+      "after": "supported"
+     },
+     {
+      "id": "scicite:row409",
+      "gold": "not_supported",
+      "before": "not_established",
+      "after": "contradicted"
+     }
+    ]
+   },
+   "N1_noqual": {
+    "before_fs_rec": [
+     7,
+     100,
+     28,
+     60
+    ],
+    "after_fs_rec": [
+     7,
+     100,
+     29,
+     60
+    ],
+    "changed_items": [
+     {
+      "id": "scicite:row458",
+      "gold": "supported",
+      "before": "not_established",
+      "after": "supported"
+     },
+     {
+      "id": "scicite:row409",
+      "gold": "not_supported",
+      "before": "not_established",
+      "after": "contradicted"
+     }
+    ]
+   },
+   "N1_noground": {
+    "before_fs_rec": [
+     5,
+     100,
+     19,
+     60
+    ],
+    "after_fs_rec": [
+     5,
+     100,
+     18,
+     60
+    ],
+    "changed_items": [
+     {
+      "id": "scicite:row148",
+      "gold": "supported",
+      "before": "supported",
+      "after": "not_established"
+     },
+     {
+      "id": "scicite:row390",
+      "gold": "supported",
+      "before": "supported",
+      "after": "not_established"
+     },
+     {
+      "id": "scicite:row402",
+      "gold": "supported",
+      "before": "not_established",
+      "after": "supported"
+     },
+     {
+      "id": "scicite:row409",
+      "gold": "not_supported",
+      "before": "not_established",
+      "after": "contradicted"
+     }
+    ]
+   },
+   "N1_items_with_changed_reasons": 79
+  },
+  "attributionbench": {
+   "B0": {
+    "before_fs_rec": [
+     12,
+     64,
+     55,
+     86
+    ],
+    "after_fs_rec": [
+     12,
+     64,
+     55,
+     86
+    ],
+    "changed_items": []
+   },
+   "T": {
+    "before_fs_rec": [
+     14,
+     64,
+     61,
+     86
+    ],
+    "after_fs_rec": [
+     14,
+     64,
+     61,
+     86
+    ],
+    "changed_items": []
+   },
+   "B1": {
+    "before_fs_rec": [
+     13,
+     64,
+     50,
+     86
+    ],
+    "after_fs_rec": [
+     13,
+     64,
+     50,
+     86
+    ],
+    "changed_items": []
+   },
+   "N1": {
+    "before_fs_rec": [
+     10,
+     64,
+     50,
+     86
+    ],
+    "after_fs_rec": [
+     10,
+     64,
+     49,
+     86
+    ],
+    "changed_items": [
+     {
+      "id": "attributionbench:HAGRID-HAGRID_71b23a66-df9e-42d4-83a6-1bd699ee0380",
+      "gold": "supported",
+      "before": "supported",
+      "after": "not_established"
+     }
+    ]
+   },
+   "N1_noqual": {
+    "before_fs_rec": [
+     13,
+     64,
+     57,
+     86
+    ],
+    "after_fs_rec": [
+     13,
+     64,
+     57,
+     86
+    ],
+    "changed_items": []
+   },
+   "N1_noground": {
+    "before_fs_rec": [
+     10,
+     64,
+     50,
+     86
+    ],
+    "after_fs_rec": [
+     10,
+     64,
+     49,
+     86
+    ],
+    "changed_items": [
+     {
+      "id": "attributionbench:HAGRID-HAGRID_71b23a66-df9e-42d4-83a6-1bd699ee0380",
+      "gold": "supported",
+      "before": "supported",
+      "after": "not_established"
+     }
+    ]
+   },
+   "N1_items_with_changed_reasons": 47
+  }
+ }
+}

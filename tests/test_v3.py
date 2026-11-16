@@ -130,3 +130,74 @@ def test_versioned_audit_dispatch(tmp_path):
     for s in rep.steps:
         by.setdefault(s.seq, {})[s.step] = s.ok
     assert all(by[1].values()) and by[2]["status"] is False and by[2]["decision"] is False and by[2]["certificate_id"]
+
+
+# ---- part binding (regression for the defect found on vitaminc:5ede072ec9e77c00084d23f2_2) ---------------------
+from pramana_bind.v3 import resolve_part_refs
+
+TWO = [{"predicate": "rating above 85%"}, {"predicate": "fewer than 322 reviews"}]
+SRC2 = "The film holds an approval rating of 90 % , based on 323 reviews ."
+
+
+def test_one_based_references_bind_to_the_right_part():
+    r = rec(parts=TWO, evidence=[ev("approval rating of 90 %", part=1), ev("based on 323 reviews", stance="denies", part=2)])
+    d = decide_n1(r, SRC2)
+    assert d["part_numbering"] == "one_based" and d["evidence_part_index"] == [0, 1]
+    assert [p["status"] for p in d["parts"]] == ["supported", "contradicted"]      # rating affirmed, review count denied
+    assert d["reasons"] == ["part1:source_denies"] and d["status"] == "contradicted"
+    legacy = decide_n1(r, SRC2, legacy_part_index=True)                            # the defect, preserved for replay
+    assert [p["status"] for p in legacy["parts"]] == ["contradicted", "supported"] and legacy["rules_version"] == "N1/3.1"
+
+
+def test_zero_based_references_still_work():
+    r = rec(parts=TWO, evidence=[ev("approval rating of 90 %", part=0), ev("based on 323 reviews", stance="denies", part=1)])
+    d = decide_n1(r, SRC2)
+    assert d["part_numbering"] == "zero_based" and [p["status"] for p in d["parts"]] == ["supported", "contradicted"]
+
+
+def test_invalid_reference_is_reported_not_moved_to_part_zero():
+    r = rec(parts=TWO, evidence=[ev("approval rating of 90 %", part=1), ev("based on 323 reviews", part=7)])
+    d = decide_n1(r, SRC2)
+    assert d["evidence_part_index"] == [0, None] and d["invalid_part_references"] == 1
+    assert [p["status"] for p in d["parts"]] == ["supported", "not_established"]
+
+
+def test_resolve_part_refs_cases():
+    assert resolve_part_refs([1, 2, 2], 2) == ([0, 1, 1], "one_based")
+    assert resolve_part_refs([0, 1], 2) == ([0, 1], "zero_based")
+    assert resolve_part_refs([1, 1], 3) == ([0, 0], "one_based")          # no 0 anywhere: one-based
+    assert resolve_part_refs([None, "1", True, 3], 2)[0] == [None, None, None, None]
+    assert resolve_part_refs([None, 1], 1)[0] == [0, 0]                    # single part: missing ref means that part
+
+
+def test_qualifier_binds_to_its_own_part_and_conflict_is_per_part():
+    cond = q("if the High Court certifies the case", "necessary_condition", part=2)
+    r = rec(parts=[{"predicate": "a"}, {"predicate": "b"}], evidence=[ev("The drug may reduce symptoms", part=1), dict(A, part=2)],
+            qualifiers=[cond])
+    d = decide_n1(r, SRC)
+    assert [p["status"] for p in d["parts"]] == ["supported", "not_established"] and d["reasons"] == ["part1:necessary_condition_omitted"]
+    # affirm on one part and deny on another is NOT a conflict; on the same part it is
+    r2 = rec(parts=[{"predicate": "a"}, {"predicate": "b"}], evidence=[dict(A, part=1), ev("The drug may reduce symptoms", stance="denies", part=2)])
+    assert decide_n1(r2, SRC)["conflict"] is False and decide_n1(r2, SRC)["status"] == "contradicted"
+    r3 = rec(parts=[{"predicate": "a"}, {"predicate": "b"}], evidence=[dict(A, part=1), ev("The drug may reduce symptoms", stance="denies", part=1)])
+    assert decide_n1(r3, SRC)["conflict"] is True
+
+
+def test_b1_one_based_binding():
+    e1 = {"part": 1, "relation": "entails", "same_entity": True, "same_scope": True, "quote": "approval rating of 90 %"}
+    e2 = {"part": 2, "relation": "contradicts", "same_entity": True, "same_scope": True, "quote": "based on 323 reviews"}
+    d = decide_b1({"claim_parts": ["a", "b"], "evidence": [e1, e2]}, SRC2)
+    assert [p["status"] for p in d["parts"]] == ["supported", "contradicted"]
+
+
+def test_superseded_certificate_replays_under_its_own_rules(tmp_path):
+    import hashlib
+    r = rec(parts=TWO, evidence=[ev("approval rating of 90 %", part=1), ev("based on 323 reviews", stance="denies", part=2)])
+    old = make_body_v3("claim", SRC2, r, decide_n1(r, SRC2, legacy_part_index=True), model="fixture")
+    new = make_body_v3("claim", SRC2, r, decide_n1(r, SRC2), model="fixture")
+    assert old["checks"]["rules_version"] == "N1/3.1" and new["checks"]["rules_version"] == "N1/3.2" and old["id"] != new["id"]
+    path = tmp_path / "l.jsonl"; w = c.open_ledger(path)
+    c.emit(old, w, {hashlib.sha256(SRC2.encode()).hexdigest(): SRC2}); c.emit(new, w, {})
+    pub = c.generate_key(tmp_path / "k.key"); c.sign_head(path, c.load_key(tmp_path / "k.key"))
+    rep = c.audit(path, pub)
+    assert rep.ok and any("superseded" in s.detail for s in rep.steps) and any(s.step == "part_references" for s in rep.steps)

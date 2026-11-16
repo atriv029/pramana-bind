@@ -5,3 +5,5 @@ __pycache__/
 *.key
 eval/runs/*/signer.key
 data_cache/
+review_admin_v2/
+*.key
